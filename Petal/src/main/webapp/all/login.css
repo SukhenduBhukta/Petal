@@ -1,0 +1,217 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.maincontainer {
+	padding: 0;
+	margin: 0;
+	display: flex;
+	width: 100%;
+	height: 100vh;
+	background: url("./Img/login.png");
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
+.maincontainer .doc {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+	align-items: center;
+	width: 80%;
+}
+
+.maincontainer .doc h3 {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	margin-top: 6.5rem;
+	font-size: 3rem;
+	height: 50%;
+	width: 50rem;
+	color: rgb(255, 0, 85);
+	text-shadow: 1px 1px 2px rgb(0, 0, 0);
+}
+
+.maincontainer .doc .logologin {
+	display: flex;
+	justify-content: space-between;
+	align-items: flex-end;
+	width: 100%;
+	bottom: 0;
+	background: transparent;
+}
+
+.maincontainer .doc .logologin .dog {
+	height: 20rem;
+	width: 15rem;
+}
+
+.maincontainer .doc .logologin .cat {
+	transform: translateY(2px);
+	height: 15rem;
+	width: 18rem;
+}
+
+.maincontainer .doc .logologin .pedegee {
+	height: 8rem;
+	width: 15rem;
+}
+
+.maincontainer .contain {
+	height: 100%;
+	width: 60%;
+	padding: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: rgb(63, 63, 63);
+	gap: 30px;
+}
+
+.maincontainer .contain .logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border-radius: 50%;
+	height: 10rem;
+	width: 10rem;
+}
+
+.maincontainer .contain .logo img {
+	height: 70%;
+	width: 70%;
+}
+
+.maincontainer .contain h2 {
+	color: rgb(255, 255, 255);
+	font-size: 3rem;
+}
+
+.maincontainer .contain .inputbox {
+	position: relative;
+	width: 70%;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	background: rgb(86, 86, 86);
+	border-left: 3px solid #00c8ff;
+	border-right: 3px solid #00c8ff;
+	border-radius: 1rem;
+}
+
+.maincontainer .contain .inputbox i {
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+.maincontainer .contain .inputbox .labinput {
+	border-left: 1px solid rgb(205, 204, 204);
+	width: 100%;
+	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.maincontainer .contain .inputbox .labinput .text {
+	border-bottom: 1px solid rgb(188, 188, 188);
+	padding: 0.5rem 0;
+}
+
+.maincontainer .contain .inputbox .labinput .text label {
+	padding-left: 1rem;
+	font-size: 1.3rem;
+	color: #ffffff;
+}
+
+.maincontainer .contain .inputbox .labinput input {
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border: none;
+	background: transparent;
+	outline: none;
+	color: rgb(0, 0, 0);
+	font-size: 1.5rem;
+	transition: 0.5s;
+}
+
+.maincontainer .contain .inputbox .labinput select {
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border: none;
+	background: transparent;
+	outline: none;
+	color: rgb(0, 0, 0);
+	font-size: 1.5rem;
+	transition: 0.5s;
+}
+
+.maincontainer .contain .inputbox2 {
+	color: rgb(255, 255, 255);
+	position: relative;
+}
+
+.maincontainer .contain .inputbox2 span {
+	color: rgb(255, 255, 255);
+	padding-left: 0.5rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.maincontainer .contain button {
+	cursor: pointer;
+	background: linear-gradient(45deg, #cf0d5b -18.43%, #d012aa 80.63%);
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	border: none;
+	padding: 1rem 5rem;
+	border-radius: 2rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.maincontainer .contain button:hover {
+	background: linear-gradient(45deg, #d012aa -18.43%, #cf0d5b 80.63%);
+	color: rgb(191, 191, 191);
+}
+
+.maincontainer .contain p {
+	font-size: 1.5rem;
+	color: rgb(216, 216, 216);
+}
+
+.maincontainer .contain p a {
+	padding-left: 0.5rem;
+	color: #ff0066;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+.maincontainer .contain p :hover {
+	color: #ff00e6;
+} /*# sourceMappingURL=login.css.map */
