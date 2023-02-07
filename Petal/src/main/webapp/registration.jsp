@@ -8,6 +8,7 @@
 <meta charset="UTF-8">
 <title>PETAL: Registration</title>
 <%@include file="all/loginreg.jsp"%>
+<%@include file="all/commonCss.jsp"%>
 </head>
 <body>
 	<div class="maincontainer">
@@ -15,22 +16,30 @@
 		<form action="register" method="post" class="contain">
 			<h2>SIGN UP</h2>
 			<c:if test="${not empty sucMsg }">
-					<p style="color:red;">${sucMsg }</p>
+					<p style="color:rgb(47, 254, 0);">${sucMsg }</p>
 					<c:remove var="sucMsg" scope="session"/>
 				</c:if>
 				<c:if test="${not empty faildMsg }">
 					<p style="color:red;">${faildMsg }</p>
 					<c:remove var="faildMsg" scope="session"/>
 				</c:if>
-			<div class="inputbox">
-				<i class="fa-solid fa-user"></i>
-				<div class="labinput">
-					<div class="text">
-						<label for="">Name</label>
-					</div>
-					<input type="text" required="required" name="name"/>
-				</div>
-			</div>
+			<div class="name">
+                    <div class="inputboxf">
+                        <i class="fa-solid fa-user"></i>
+                        <div class="labinput">
+                            <div class="text"><label for="">First Name</label></div>
+                            <input type="text" required="required" name="fname" />
+                        </div>
+                    </div>
+                    
+                    <div class="inputboxl">
+                        
+                        <div class="labinput">
+                            <div class="text"><label for="">Last Name</label></div>
+                            <input type="text" required="required" name="lname" />
+                        </div>
+                    </div>
+                </div>
 			<div class="inputbox">
 				<i class="fa-solid fa-phone"></i>
 				<div class="labinput">
@@ -40,8 +49,9 @@
 					<input type="number" required="required" name="phone"/>
 				</div>
 			</div>
+			
 			<div class="inputbox">
-				<i class="fa-solid fa-phone"></i>
+				<i class="fa-solid fa-filter"></i>
 				<div class="labinput">
 					<div class="text">
 						<label for="">Choose Option</label>
@@ -75,7 +85,7 @@
 			</div>
 			
 			<div class="inputbox2">
-				<input type="checkbox" name="check"> <span>Please Check Me</span>
+				<input type="checkbox" name="check"> <span>Please Check Agree term & condition</span>
 			</div>
 
 			<button type="submit">Registration</button>

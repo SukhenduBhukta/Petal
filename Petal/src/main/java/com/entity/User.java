@@ -2,7 +2,8 @@ package com.entity;
 
 public class User {
 	private int userid;
-	private String name;
+	private String fname;
+	private String lname;
 	private String phone;
 	private String email;
 	private String option;
@@ -19,11 +20,18 @@ public class User {
 	public void setUserid(int userid) {
 		this.userid = userid;
 	}
-	public String getName() {
-		return name;
+
+	public String getFname() {
+		return fname;
 	}
-	public void setName(String name) {
-		this.name = name;
+	public void setFname(String fname) {
+		this.fname = fname;
+	}
+	public String getLname() {
+		return lname;
+	}
+	public void setLname(String lname) {
+		this.lname = lname;
 	}
 	public String getPhone() {
 		return phone;
@@ -51,8 +59,10 @@ public class User {
 	}
 	@Override
 	public String toString() {
-		return "User [userid=" + userid + ", name=" + name + ", phone=" + phone + ", email=" + email + ", option="
-				+ option + ", password=" + password + "]";
+		return "User [userid=" + userid + ", fname=" + fname + ", lname=" + lname + ", phone=" + phone + ", email="
+				+ email + ", option=" + option + ", password=" + password + "]";
 	}
+	
+
 	
 }

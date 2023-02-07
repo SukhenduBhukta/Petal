@@ -50,7 +50,7 @@ input[type=number] {
 	align-items: center;
 	margin-top: 6.5rem;
 	font-size: 3rem;
-	height: 50%;
+	height: 35%;
 	width: 50rem;
 	color: rgb(255, 0, 85);
 	text-shadow: 1px 1px 2px rgb(0, 0, 0);
@@ -112,7 +112,59 @@ input[type=number] {
 	color: rgb(255, 255, 255);
 	font-size: 3rem;
 }
-
+.maincontainer .contain .name {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+}
+.maincontainer .contain .name .inputboxf {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: rgb(86, 86, 86);
+  border-left: 3px solid #00c8ff;
+  border-radius: 1rem 0 0 1rem;
+}
+.maincontainer .contain .name .inputboxl {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: rgb(86, 86, 86);
+  border-right: 3px solid #00c8ff;
+  border-radius: 0 1rem 1rem 0;
+}
+.maincontainer .contain .name i {
+  padding: 1rem;
+  font-size: 2rem;
+}
+.maincontainer .contain .name .labinput {
+  border-left: 1px solid rgb(205, 204, 204);
+  width: 100%;
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.1);
+}
+.maincontainer .contain .name .labinput .text {
+  border-bottom: 1px solid rgb(188, 188, 188);
+  padding: 0.5rem 0;
+}
+.maincontainer .contain .name .labinput .text label {
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+.maincontainer .contain .name .labinput input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
 .maincontainer .contain .inputbox {
 	position: relative;
 	width: 70%;

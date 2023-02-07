@@ -24,7 +24,8 @@ public class RegisterServlet extends HttpServlet {
 	@Override
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
-			String name = req.getParameter("name");
+			String fname = req.getParameter("fname");
+			String lname = req.getParameter("lname");
 			String phone = req.getParameter("phone");
 			String email = req.getParameter("email");
 			String password = req.getParameter("password");
@@ -34,7 +35,8 @@ public class RegisterServlet extends HttpServlet {
 			//System.out.println(name+" "+email+" "+phone+" "+option+" "+password+" "+check);
 			
 			User us = new User();
-			us.setName(name);
+			us.setFname(fname);
+			us.setLname(lname);
 			us.setPhone(phone);
 			us.setEmail(email);
 			us.setPassword(password);
@@ -46,7 +48,7 @@ public class RegisterServlet extends HttpServlet {
 				boolean f=dao.userRegister(us);
 				if(f) {
 					session.setAttribute("sucMsg", "Successfully Register...");
-					resp.sendRedirect("registration.jsp");
+					resp.sendRedirect("login.jsp");
 				}
 				else {
 					session.setAttribute("faildMsg", "Something wrong on server...");
