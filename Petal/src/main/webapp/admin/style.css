@@ -1,0 +1,474 @@
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+input, select {
+	border: none;
+	outline: none;
+}
+
+select {
+	cursor: pointer;
+}
+
+input {
+	padding: 0.8rem;
+}
+
+button {
+	border: none;
+	cursor: pointer;
+}
+
+a {
+	text-transform: none;
+	text-decoration: none;
+	cursor: pointer;
+}
+
+img {
+	height: 100%;
+	width: 100%;
+}
+
+i {
+	font-size: 1.8rem;
+	cursor: pointer;
+}
+.container {
+  position: relative;
+  width: 100%;
+}
+.container .navication {
+  position: fixed;
+  width: 18rem;
+  height: 100%;
+  background: #fe5d00;
+  border-left: 1rem solid #fe5d00;
+}
+.container .navication ul {
+  position: absolute;
+  top: 0;
+  left: 0rem;
+  width: 100%;
+}
+.container .navication ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+.container .navication ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+}
+.container .navication ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+.container .navication ul li a .icon img {
+  width: 4rem;
+}
+.container .navication ul li a .icon i {
+  font-size: 1.5rem;
+}
+.container .navication ul li a .icon ion-icon {
+  font-size: 1.5rem;
+}
+.container .navication ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 0.5rem;
+  padding-left: 1.5rem;
+  height: 4rem;
+  line-height: 4.5rem;
+  text-align: start;
+  white-space: nowrap;
+  font-size: 1.5rem;
+}
+.container .navication ul li a .title button {
+  font-size: 1.2rem;
+  outline: none;
+  border: none;
+  border-radius: 0;
+  padding: 1.5rem 3rem 1.5rem 0;
+  cursor: pointer;
+  color: #fff;
+  background: transparent;
+}
+.container .navication ul li a .title button:hover {
+  color: #287bff;
+}
+.container .navication.active {
+  width: 7.5rem;
+}
+.container .navication ul li:hover,
+.container .navication ul li.hovered {
+  background: #fff;
+}
+.container .navication ul li:hover a,
+.container .navication ul li.hovered a {
+  color: #287bff;
+}
+.container .navication ul li:nth-child(1) {
+  margin-bottom: 4rem;
+  pointer-events: none;
+}
+.container .navication ul li:hover a::before,
+.container .navication ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4.8rem;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 3.5rem 3.5rem 0 1rem #fff;
+  pointer-events: none;
+}
+.container .navication ul li:hover a::after,
+.container .navication ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5rem;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 3rem -3rem 0 1rem #fff;
+  pointer-events: none;
+}
+.container .main {
+  position: absolute;
+  width: calc(100% - 20rem);
+  left: 18rem;
+  min-height: 100vh;
+  background: #fff;
+  transition: 0.5s;
+}
+.container .main .container2 {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.container .main .container2 .btn {
+  padding: 1rem 6rem;
+  background: #fff;
+  border: 0;
+  outline: none;
+  cursor: pointer;
+  font-size: 2rem;
+  font-weight: 500;
+  border-radius: 3rem;
+}
+.container .main .container2 .popup {
+  width: 30rem;
+  background: #bababa;
+  border-radius: 6px;
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.1);
+  text-align: center;
+  padding: 3rem;
+  visibility: hidden;
+  transition: transform 0.4s, top 0.4s;
+}
+.container .main .container2 .popup h2 {
+  font-size: 2rem;
+  margin: 2rem 0 2rem;
+  font-weight: 800;
+}
+.container .main .container2 .popup p {
+  font-weight: 600;
+  font-size: 1.5rem;
+}
+.container .main .container2 .popup .btnc {
+  display: flex;
+  justify-content: space-around;
+}
+.container .main .container2 .popup .btnc button {
+  margin-top: 5rem;
+  padding: 1rem 2rem;
+  color: #fff;
+  border: 0;
+  outline: none;
+  font-size: 1.3rem;
+  cursor: pointer;
+  border-radius: 4px;
+  font-weight: 500;
+  box-shadow: 0 5px 5px rgba(0, 0, 0, 0.2);
+}
+.container .main .container2 .popup .btnc .yes {
+  background: #00fb00;
+}
+.container .main .container2 .popup .btnc .cancel {
+  background: #ff0055;
+}
+.container .main .container2 .open-popup {
+  visibility: visible;
+  z-index: 100;
+  top: 50%;
+  transform: translate(-50%, -50%) scale(1);
+}
+.container .main .topbar {
+  width: 100%;
+  height: 6rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 0.1rem;
+}
+.container .main .topbar .toggle {
+  position: relative;
+  top: -1rem;
+  left: -5rem;
+  width: 6rem;
+  height: 6rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+  cursor: pointer;
+}
+.container .main .topbar .search {
+  position: relative;
+  width: 40rem;
+  margin: 0 1rem;
+}
+.container .main .topbar .search label {
+  position: relative;
+  width: 100%;
+}
+.container .main .topbar .search label input {
+  width: 100%;
+  height: 3rem;
+  border-radius: 4rem;
+  padding: 0.5rem 2rem;
+  padding-left: 3.5rem;
+  font-size: 1.4rem;
+  outline: none;
+  border: 0.01rem solid #000000;
+}
+.container .main .topbar .search label ion-icon {
+  position: absolute;
+  top: 0;
+  left: 1rem;
+  font-size: 1.5rem;
+}
+.container .main .topbar .user {
+  position: relative;
+  height: 3.5rem;
+  width: 5rem;
+  overflow: hidden;
+  cursor: pointer;
+}
+.container .main .topbar .user img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .main .cardbox {
+  position: relative;
+  width: 100%;
+  padding: 1rem;
+  display: grid;
+  grid-template-columns: repeat(5, 1fr);
+  grid-gap: 2.5rem;
+}
+.container .main .cardbox .card {
+  position: relative;
+  background: #fff;
+  padding: 2.5rem;
+  border-radius: 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  cursor: pointer;
+  box-shadow: 0 0.7rem 2.5rem rgba(0, 0, 0, 0.08);
+}
+.container .main .cardbox .card .numbers {
+  position: relative;
+  font-weight: 600;
+  font-size: 2rem;
+  color: #287bff;
+}
+.container .main .cardbox .card .cardname {
+  color: #fe5d00;
+  font-size: 1.1rem;
+  margin-top: 0.4rem;
+}
+.container .main .cardbox .card .iconbx {
+  font-size: 1.5rem;
+  color: #777373;
+}
+.container .main .card:hover {
+  box-shadow: 0 0.7rem 2.5rem #fe5d00;
+}
+.container .main .details {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: 2fr 1fr;
+  grid-gap: 2.5rem;
+}
+.container .main .details .recentorders {
+  position: relative;
+  display: grid;
+  min-height: 5rem;
+  background: #fff;
+  padding: 1.5rem;
+  box-shadow: 0 0.6rem 2rem rgba(0, 0, 0, 0.08);
+  border-radius: 1.1rem;
+}
+.container .main .details .recentorders .cardheader {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.container .main .details .recentorders .cardheader h2 {
+  font-weight: 600;
+  color: #287bff;
+}
+.container .main .details .recentorders .cardheader .btn {
+  position: relative;
+  padding: 0.5rem 1rem;
+  background: #287bff;
+  text-decoration: none;
+  color: #fff;
+  border-radius: 0.4rem;
+}
+.container .main .details .recentorders table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-top: 1rem;
+}
+.container .main .details .recentorders table tr {
+  color: #777373;
+  border-bottom: 0.1rem solid rgba(0, 0, 0, 0.1);
+}
+.container .main .details .recentorders table tr td {
+  padding: 1rem;
+}
+.container .main .details .recentorders table thead td {
+  font-weight: 800;
+}
+.container .main .details .recentorders table tbody tr td .status.delivered {
+  padding: 0.2rem 0.4rem;
+  background: #8de02c;
+  color: #fff;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.container .main .details .recentorders table tbody tr td .status.pending {
+  padding: 0.2rem 0.4rem;
+  background: #f9ca3f;
+  color: #fff;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.container .main .details .recentorders table tbody tr td .status.return {
+  padding: 0.2rem 0.4rem;
+  background: #f00;
+  color: #fff;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.container .main .details .recentorders table tbody tr td .status.inprogress {
+  padding: 0.2rem 0.4rem;
+  background: rgb(157, 0, 255);
+  color: #fff;
+  border-radius: 0.4rem;
+  font-size: 1rem;
+  font-weight: 500;
+}
+.container .main .details .active_doctor {
+  position: relative;
+  display: grid;
+  min-height: 5rem;
+  padding: 2rem;
+  box-shadow: 0 0.6rem 2.5rem rgba(0, 0, 0, 0.08);
+  border-radius: 1.5rem;
+}
+.container .main .details .active_doctor .doctor h2 {
+  font-weight: 600;
+  color: #287bff;
+}
+.container .main .details .active_doctor table tr td {
+  padding: 1.2rem 1rem;
+}
+.container .main .details .active_doctor table tr td h4 {
+  font-size: 1.3rem;
+  font-weight: 500;
+  line-height: 1rem;
+}
+.container .main .details .active_doctor table tr td h4 span {
+  font-size: 1rem;
+  color: #777373;
+}
+.container .main .details .active_doctor table tr .imgbox {
+  position: relative;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  overflow: hidden;
+}
+.container .main .details .active_doctor table tr .imgbox img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+.container .main .details .active_doctor table tr:hover {
+  background: #287bff;
+  color: #fff;
+}
+.container .main .details .recentorders table tr:last-child {
+  border-bottom: none;
+}
+.container .main .details .recentorders table tr td:last-child {
+  text-align: end;
+}
+.container .main .details .recentorders table tr td:nth-child(2) {
+  text-align: end;
+}
+.container .main .details .recentorders table tr td:nth-child(3) {
+  text-align: center;
+}
+.container .main .details .recentorders table tbody tr:hover {
+  background: #287bff;
+  color: #fff;
+}
+.container .main.active {
+  width: calc(100% - 10.5rem);
+  left: 8.5rem;
+}/*# sourceMappingURL=admin.css.map */
