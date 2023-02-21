@@ -8,12 +8,27 @@ public class User {
 	private String email;
 	private String option;
 	private String password;
+	private String photoName;
 	
 	
+
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
+	public User(String fname, String lname, String phone, String email, String option, String password,
+			String photoName) {
+		super();
+		this.fname = fname;
+		this.lname = lname;
+		this.phone = phone;
+		this.email = email;
+		this.option = option;
+		this.password = password;
+		this.photoName = photoName;
+	}
+
 	public int getUserid() {
 		return userid;
 	}
@@ -57,11 +72,18 @@ public class User {
 	public void setPassword(String password) {
 		this.password = password;
 	}
+	public String getPhotoName() {
+		return photoName;
+	}
+	public void setPhotoName(String photoName) {
+		this.photoName = photoName;
+	}
 	@Override
 	public String toString() {
 		return "User [userid=" + userid + ", fname=" + fname + ", lname=" + lname + ", phone=" + phone + ", email="
-				+ email + ", option=" + option + ", password=" + password + "]";
+				+ email + ", option=" + option + ", password=" + password + ", photoName=" + photoName + "]";
 	}
+	
 	
 
 	

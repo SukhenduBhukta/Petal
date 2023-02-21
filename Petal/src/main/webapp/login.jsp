@@ -46,6 +46,20 @@
 
 			</div>
 			<div class="inputbox">
+				<i class="fa-solid fa-filter"></i>
+				<div class="labinput">
+					<div class="text">
+						<label for="">Choose Option</label>
+					</div>
+					<select name="option" onchange="changeStatus()" id="option">
+					<option value="null">Select</option>
+  <option value="Patient">Patient</option>
+  <option value="Doctor">Doctor</option>
+  <option value="Seller">Seller</option>
+					</select>
+				</div>
+			</div>
+			<div class="inputbox">
 				<i class="fa-solid fa-key"></i>
 				<div class="labinput">
 					<div class="text">
@@ -55,9 +69,8 @@
 				</div>
 
 			</div>
-			<div class="inputbox2">
-				<input type="checkbox" name="check"> <span>Please Check Me</span>
-			</div>
+
+				 <a href="forgotpswd.jsp"><span>forgot password?</span></a>
 
 			<button type="submit">Login</button>
 			<p>

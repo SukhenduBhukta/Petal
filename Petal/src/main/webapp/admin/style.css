@@ -373,8 +373,20 @@ i {
 .container .main .details .recentorders table tr td {
   padding: 1rem;
 }
+.container .main .details .recentorders table tr td button {
+  padding: .5rem 1rem;
+  color: #fff;
+  border-radius: .5rem
+}
+.container .main .details .recentorders table tr td .add{
+	background: #287bff;
+}
+.container .main .details .recentorders table tr td .reject{
+	background: #ff0079;
+}
 .container .main .details .recentorders table thead td {
   font-weight: 800;
+  align-items: center;
 }
 .container .main .details .recentorders table tbody tr td .status.delivered {
   padding: 0.2rem 0.4rem;
@@ -449,21 +461,13 @@ i {
      object-fit: cover;
 }
 .container .main .details .active_doctor table tr:hover {
-  background: #287bff;
+  background: #c0c0c0;
   color: #fff;
 }
 .container .main .details .recentorders table tr:last-child {
   border-bottom: none;
 }
-.container .main .details .recentorders table tr td:last-child {
-  text-align: end;
-}
-.container .main .details .recentorders table tr td:nth-child(2) {
-  text-align: end;
-}
-.container .main .details .recentorders table tr td:nth-child(3) {
-  text-align: center;
-}
+
 .container .main .details .recentorders table tbody tr:hover {
   background: #287bff;
   color: #fff;

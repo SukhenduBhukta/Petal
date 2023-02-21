@@ -1,0 +1,236 @@
+@charset "UTF-8";
+
+* {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+	font-family: "Inter", sans-serif;
+}
+
+html {
+	font-size: 62.5%;
+	scroll-behavior: smooth;
+}
+
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+/* Firefox */
+input[type=number] {
+  -moz-appearance: textfield;
+}
+
+.container .main .details {
+  position: relative;
+  width: 100%;
+  padding: 1.5rem;
+  display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.container .main .details .contain {
+	height: 100%;
+	width: 60%;
+	padding: 3rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	flex-direction: column;
+	background: rgb(63, 63, 63);
+	gap: 30px;
+	border-radius: 2rem;
+	box-shadow: 0 1rem 1rem rgba(0, 0, 0, .5);
+}
+
+.container .main .details .contain .logo {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	background: #fff;
+	border-radius: 50%;
+	height: 10rem;
+	width: 10rem;
+}
+
+.container .main .details .contain .logo img {
+	height: 70%;
+	width: 70%;
+}
+
+.container .main .details .contain h2 {
+	color: rgb(255, 255, 255);
+	font-size: 3rem;
+}
+.container .main .details .contain .upload {
+  width: 70%;
+}
+.container .main .details .contain .upload .inputbox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: rgb(86, 86, 86);
+  border-left: 3px solid #00c8ff;
+  border-right: 3px solid #00c8ff;
+  border-radius: 1rem;
+}
+.container .main .details .contain .name {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+}
+.container .main .details .contain .name .inputboxf {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: rgb(86, 86, 86);
+  border-left: 3px solid #00c8ff;
+  border-radius: 1rem 0 0 1rem;
+}
+.container .main .details .contain .name .inputboxl {
+  position: relative;
+  width: 50%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: rgb(86, 86, 86);
+  border-right: 3px solid #00c8ff;
+  border-radius: 0 1rem 1rem 0;
+}
+.container .main .details .contain .name i {
+  padding: 1rem;
+  font-size: 2rem;
+}
+.container .main .details .contain .name .labinput {
+  border-left: 1px solid rgb(205, 204, 204);
+  width: 100%;
+  box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.1);
+}
+.container .main .details .contain .name .labinput .text {
+  border-bottom: 1px solid rgb(188, 188, 188);
+  padding: 0.5rem 0;
+}
+.container .main .details .contain .name .labinput .text label {
+  padding-left: 1rem;
+  font-size: 1.3rem;
+  color: #ffffff;
+}
+.container .main .details .contain .name .labinput input {
+  width: 100%;
+  padding: 0.5rem 1rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  transition: 0.5s;
+}
+.container .main .details .contain .inputbox {
+	position: relative;
+	width: 70%;
+	display: flex;
+	justify-content: left;
+	align-items: center;
+	background: rgb(86, 86, 86);
+	border-left: 3px solid #00c8ff;
+	border-right: 3px solid #00c8ff;
+	border-radius: 1rem;
+}
+
+.container .main .details .contain .inputbox i {
+	padding: 1rem;
+	font-size: 2rem;
+}
+
+.container .main .details .contain .inputbox .labinput {
+	border-left: 1px solid rgb(205, 204, 204);
+	width: 100%;
+	box-shadow: inset 0px 1px 1px rgba(255, 255, 255, 0.1);
+}
+
+.container .main .details .contain .inputbox .labinput .text {
+	border-bottom: 1px solid rgb(188, 188, 188);
+	padding: 0.5rem 0;
+}
+
+.container .main .details .contain .inputbox .labinput .text label {
+	padding-left: 1rem;
+	font-size: 1.3rem;
+	color: #ffffff;
+}
+
+.container .main .details .contain .inputbox .labinput input {
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border: none;
+	background: transparent;
+	outline: none;
+	color: rgb(0, 0, 0);
+	font-size: 1.5rem;
+	transition: 0.5s;
+}
+
+.container .main .details .contain .inputbox .labinput select {
+	width: 100%;
+	padding: 0.5rem 1rem;
+	border: none;
+	background: transparent;
+	outline: none;
+	color: rgb(0, 0, 0);
+	font-size: 1.5rem;
+	transition: 0.5s;
+}
+
+.container .main .details .contain .inputbox2 {
+	color: rgb(255, 255, 255);
+	position: relative;
+}
+
+.container .main .details .contain .inputbox2 span {
+	color: rgb(255, 255, 255);
+	padding-left: 0.5rem;
+	text-transform: uppercase;
+	font-weight: 600;
+	font-size: 1.2rem;
+}
+
+.container .main .details .contain button {
+	cursor: pointer;
+	background: linear-gradient(45deg, #cf0d5b -18.43%, #d012aa 80.63%);
+	position: relative;
+	display: inline-block;
+	color: #fff;
+	border: none;
+	padding: 1rem 5rem;
+	border-radius: 2rem;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.container .main .details .contain button:hover {
+	background: linear-gradient(45deg, #d012aa -18.43%, #cf0d5b 80.63%);
+	color: rgb(191, 191, 191);
+}
+
+.container .main .details .contain p {
+	font-size: 1.5rem;
+	color: rgb(216, 216, 216);
+}
+
+.container .main .details .contain p a {
+	padding-left: 0.5rem;
+	color: #ff0066;
+	text-transform: capitalize;
+	text-decoration: none;
+}
+
+.container .main .details .contain p :hover {
+	color: #ff00e6;
+} /*# sourceMappingURL=login.css.map */

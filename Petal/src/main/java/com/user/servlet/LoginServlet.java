@@ -29,17 +29,39 @@ public class LoginServlet extends HttpServlet {
 
 			String email = req.getParameter("email");
 			String password = req.getParameter("password");
-			String check = req.getParameter("check");
+			String designation=req.getParameter("option");
+			//String check = req.getParameter("check");
 			// System.out.print(email+" "+password);
 
-			if (check != null) {
 				if ("admin@gmail.com".equals(email) && "admin123".equals(password)) {
 					User us = new User();
 					session.setAttribute("userobj", us);
 					resp.sendRedirect("admin/home.jsp");
 				}
+				else if ("Seller".equals(designation)) {
+					User us = dao.login(email, password,designation);
+					if (us != null) {
+						session.setAttribute("userobj", us);
+						resp.sendRedirect("seller/home.jsp");
+					}
+					else {
+						session.setAttribute("faildMsg", "Email & Password Invalid");
+						resp.sendRedirect("login.jsp");
+					}
+				}
+				else if ("Doctor".equals(designation)) {
+					User us = dao.login(email, password,designation);
+					if (us != null) {
+						session.setAttribute("userobj", us);
+						resp.sendRedirect("doctor/home.jsp");
+					}
+					else {
+						session.setAttribute("faildMsg", "Email & Password Invalid");
+						resp.sendRedirect("login.jsp");
+					}
+				}
 				else {
-					User us = dao.login(email, password);
+					User us = dao.login(email, password,designation);
 					if (us != null) {
 						session.setAttribute("userobj", us);
 						resp.sendRedirect("user.jsp");
@@ -49,11 +71,7 @@ public class LoginServlet extends HttpServlet {
 						resp.sendRedirect("login.jsp");
 					}
 				}
-			}
-			else {
-				session.setAttribute("faildMsg", "Please check");
-				resp.sendRedirect("login.jsp");
-			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

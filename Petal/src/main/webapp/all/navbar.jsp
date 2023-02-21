@@ -4,20 +4,20 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
 	
 		<header>
-			<a class="avtive" href="#">
+			<a class="avtive" href="index.jsp">
 				<div class="appointment">
 					<h2>Book Appointment</h2>
 				</div>
-			</a> <a href="adoption.html">
+			</a> <a href="adoption.jsp">
 				<div class="adoption">
 					<h2>Adoption</h2>
 				</div>
-			</a> <a href="grocery.html">
+			</a> <a href="grocery.jsp">
 				<div class="grocery">
 					<h2>Grocery & Accessories</h2>
 				</div>
@@ -26,7 +26,7 @@
 		<div class="navbar">
 			<div class="logo_search">
 				<div class="logo">
-					<a href="index.html"><img src="./all/Img/logo.png" alt="logo"></a>
+					<a href="index.jsp"><img src="./all/Img/logo.png" alt="logo"></a>
 				</div>
 				<div class="search">
 					<input type="text" name="search" placeholder="Search">

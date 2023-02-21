@@ -3,7 +3,7 @@
             <ul>
                 <li>
                     <a href="#">
-                        <span class="icon"><img src="./all/Img/logo.png" alt=""></span>
+                        <span class="icon"><img src="../all/Img/logo.png" alt=""></span>
                         <span class="title">Petal</span>
                     </a>
                 </li>

@@ -1,0 +1,98 @@
+@charset "UTF-8";
+.maincontainer .navication {
+  position: fixed;
+  width: 18rem;
+  height: 100%;
+  background: #fe5d00;
+  border-left: 1rem solid #fe5d00;
+}
+.maincontainer .navication ul {
+  position: absolute;
+  top: 0;
+  left: 0rem;
+  width: 100%;
+}
+.maincontainer .navication ul li {
+  position: relative;
+  width: 100%;
+  list-style: none;
+  border-top-left-radius: 3rem;
+  border-bottom-left-radius: 3rem;
+}
+.maincontainer .navication ul li a {
+  position: relative;
+  display: block;
+  width: 100%;
+  display: flex;
+  text-decoration: none;
+  color: #fff;
+}
+.maincontainer .navication ul li a .icon {
+  position: relative;
+  display: block;
+  min-width: 5rem;
+  height: 5rem;
+  line-height: 5rem;
+  text-align: center;
+}
+.maincontainer .navication ul li a .icon img {
+  width: 4rem;
+}
+.maincontainer .navication ul li a .icon i {
+  font-size: 1.5rem;
+}
+.maincontainer .navication ul li a .icon ion-icon {
+  font-size: 1.5rem;
+}
+.maincontainer .navication ul li a .title {
+  position: relative;
+  display: block;
+  padding: 0 0.5rem;
+  padding-left: 1.5rem;
+  height: 4rem;
+  line-height: 4.5rem;
+  text-align: start;
+  white-space: nowrap;
+  font-size: 1.5rem;
+}
+.maincontainer .navication.active {
+  width: 7.5rem;
+}
+.maincontainer .navication ul li:hover,
+.maincontainer .navication ul li.hovered {
+  background: #fff;
+}
+.maincontainer .navication ul li:hover a,
+.maincontainer .navication ul li.hovered a {
+  color: #287bff;
+}
+.maincontainer .navication ul li:nth-child(1) {
+  margin-bottom: 4rem;
+  pointer-events: none;
+}
+.maincontainer .navication ul li:hover a::before,
+.maincontainer .navication ul li.hovered a::before {
+  content: "";
+  position: absolute;
+  right: 0;
+  top: -4.8rem;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 3.5rem 3.5rem 0 1rem #fff;
+  pointer-events: none;
+}
+.maincontainer .navication ul li:hover a::after,
+.maincontainer .navication ul li.hovered a::after {
+  content: "";
+  position: absolute;
+  right: 0;
+  bottom: -5rem;
+  width: 5rem;
+  height: 5rem;
+  background: transparent;
+  border-radius: 50%;
+  box-shadow: 3rem -3rem 0 1rem #fff;
+  pointer-events: none;
+}

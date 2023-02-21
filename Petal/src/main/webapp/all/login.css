@@ -92,7 +92,10 @@ input[type=number] {
 	background: rgb(63, 63, 63);
 	gap: 30px;
 }
-
+.maincontainer .contain a span{
+	font-size: 1.4rem;
+	color: blue;
+}
 .maincontainer .contain .logo {
 	display: flex;
 	justify-content: center;
@@ -111,6 +114,20 @@ input[type=number] {
 .maincontainer .contain h2 {
 	color: rgb(255, 255, 255);
 	font-size: 3rem;
+}
+.maincontainer .contain .upload {
+  width: 70%;
+}
+.maincontainer .contain .upload .inputbox {
+  position: relative;
+  width: 100%;
+  display: flex;
+  justify-content: left;
+  align-items: center;
+  background: rgb(86, 86, 86);
+  border-left: 3px solid #00c8ff;
+  border-right: 3px solid #00c8ff;
+  border-radius: 1rem;
 }
 .maincontainer .contain .name {
   display: flex;

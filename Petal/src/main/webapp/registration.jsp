@@ -13,7 +13,7 @@
 <body>
 	<div class="maincontainer">
 
-		<form action="register" method="post" class="contain">
+		<form action="register" method="post" class="contain" enctype="multipart/form-data">
 			<h2>SIGN UP</h2>
 			<c:if test="${not empty sucMsg }">
 					<p style="color:rgb(47, 254, 0);">${sucMsg }</p>
@@ -56,7 +56,7 @@
 					<div class="text">
 						<label for="">Choose Option</label>
 					</div>
-					<select name="option">
+					<select name="option" onchange="changeStatus()" id="option">
 					<option value="null">Select</option>
   <option value="Patient">Patient</option>
   <option value="Doctor">Doctor</option>
@@ -64,6 +64,15 @@
 					</select>
 				</div>
 			</div>
+			<div class="upload" id="uplo">
+                    <div class="inputbox">
+                        <i class="fa-solid fa-phone"></i>
+                        <div class="labinput">
+                                <div class="text"><label for="">Upload Document</label></div>
+                            <input type="file" name="file">
+                        </div>
+                    </div>
+                </div>
 			<div class="inputbox">
 				<i class="fa-solid fa-user-tag"></i>
 				<div class="labinput">
@@ -99,5 +108,16 @@
 		</div>
 
 	</div>
+	<script type="text/javascript">
+	function changeStatus(){
+	    var status=document.getElementById("option");
+	    if(status.value == "null" || status.value == "Patient"){
+	        document.getElementById("uplo").style.display="none";
+	    }
+	    else{
+	        document.getElementById("uplo").style.display="block";
+	    }
+	}
+	</script>
 </body>
 </html>

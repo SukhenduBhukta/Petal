@@ -1,3 +1,7 @@
+<%@page import="com.DB.DBconnect"%>
+<%@page import="com.DAO.UserDAOImpl"%>
+<%@page import="java.util.*"%>
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -29,6 +33,14 @@
 </c:if>
 <div class="details">
 <div class="recentorders">
+				<c:if test="${not empty sucMsg }">
+					<h3 style="color:green;">${sucMsg }</h3>
+					<c:remove var="sucMsg" scope="session"/>
+				</c:if>
+				 <c:if test="${not empty faildMsg }">
+					<h3 style="color:red;">${faildMsg }</h3>
+					<c:remove var="faildMsg" scope="session"/>
+				</c:if>
 <div class="cardheader">
                         <h2>Seller</h2>
                         <a href="#" class="btn"> View All</a>
@@ -45,30 +57,26 @@
                             </tr>
                         </thead>
                         <tbody>
-                        <tr>
-                                <td>1</td>
-                                <td>Koushik Sarkar</td>
-                                <td>9837476733</td>
-                                <td>koushiksarkar@gmail.com</td>
-                                <td>Document</td>
-                                <td> <button>Add</button><button>Reject</button></td>
+                        <%
+                        UserDAOImpl dao = new UserDAOImpl(DBconnect.getCon());
+                        List<User> list = dao.getSeller();
+                        for(User us: list){
+                        	%>
+                        	<tr>
+                                <td><%=us.getUserid() %></td>
+                                <td><%=us.getFname()+" "+us.getLname() %></td>
+                                <td><%=us.getPhone() %></td>
+                                <td><%=us.getEmail() %></td>
+                                <td><a download="../Documents/<%=us.getPhotoName() %>"
+                    href="../Documents/<%=us.getPhotoName() %>"
+                    target="_blank">Check Document</a></td>
+                                <td>  <a><button type="submit" class="add">Add</button></a> 
+                                <a href="../deleteseller?id=<%=us.getUserid() %>"><button type="submit" class="reject">Reject</button></a>
+                                </td>
                             </tr>
-                            <tr>
-                                <td>2</td>
-                                <td>Koushik Sarkar</td>
-                                <td>9837476733</td>
-                                <td>koushiksarkar@gmail.com</td>
-                                <td>Document</td>
-                                <td> <button>Add</button><button>Reject</button></td>
-                            </tr>
-                            <tr>
-                                <td>3</td>
-                                <td>Koushik Sarkar</td>
-                                <td>9837476733</td>
-                                <td>koushiksarkar@gmail.com</td>
-                                <td>Document</td>
-                                <td> <button>Add</button><button>Reject</button></td>
-                            </tr>
+                        	<%
+                        }
+                        %>
                         </tbody>
                     </table>
 </div>
