@@ -38,7 +38,7 @@ public class ForgotPswd extends HttpServlet{
 		HttpSession session=req.getSession();
 		if(email!=null || !email.equals("")) {
 			Random random=new Random();
-			otp=random.nextInt(1267058);
+			otp=random.nextInt(99999);
 			String to=email;
 			Properties props = new Properties();
 			props.put("mail.smtp.host", "smtp.gmail.com");

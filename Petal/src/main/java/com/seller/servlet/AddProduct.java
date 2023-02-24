@@ -18,6 +18,7 @@ import com.DAO.GroceryDAOImpl;
 import com.DB.DBconnect;
 import com.entity.GroceryDtls;
 
+
 @WebServlet("/add_product")
 @MultipartConfig
 public class AddProduct extends HttpServlet{
@@ -27,11 +28,16 @@ public class AddProduct extends HttpServlet{
 		try {
 			String name=req.getParameter("name");
 			String category=req.getParameter("category");
-			String price=req.getParameter("price");
+			int sprice=Integer.parseInt(req.getParameter("price"));
+			int aprice=(int)(sprice*105)/100;
+			String price=Integer.toString(aprice);
 			String status=req.getParameter("status");
 			String description=req.getParameter("description");
 			Part part=req.getPart("photo");
 			String photo=part.getSubmittedFileName();
+			
+			HttpSession session =req.getSession();
+			
 			
 			GroceryDtls g=new GroceryDtls();
 			
@@ -43,7 +49,7 @@ public class AddProduct extends HttpServlet{
 			g.setPhoto(photo);
 			
 			
-			HttpSession session =req.getSession();
+			
 			GroceryDAOImpl dao = new GroceryDAOImpl(DBconnect.getCon());
 			
 			
