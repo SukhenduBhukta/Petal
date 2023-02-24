@@ -43,10 +43,7 @@ img {
   width: 100%;
 }
 
-i {
-  font-size: 2.5rem;
-  cursor: pointer;
-}
+
 
 .maincontainer {
   min-height: 100vh;
