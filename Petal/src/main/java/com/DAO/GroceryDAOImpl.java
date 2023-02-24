@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.servlet.RequestDispatcher;
+
 import com.entity.GroceryDtls;
 
 public class GroceryDAOImpl implements GroceryDAO{
@@ -120,6 +122,87 @@ public class GroceryDAOImpl implements GroceryDAO{
 		}
 		
 		return f;
+	}
+	public List<GroceryDtls> getFood() {
+		List<GroceryDtls> list=new ArrayList<GroceryDtls>();
+		GroceryDtls g=null;
+		try {
+			String sqlString="select * from grocery where category=? and status=? order by id DESC";
+			PreparedStatement psmt=con.prepareStatement(sqlString);
+			psmt.setString(1, "Food");
+			psmt.setString(2, "Active");
+			ResultSet rSet=psmt.executeQuery();
+			int i=0;
+			while (rSet.next() && i<8) {
+				g=new GroceryDtls();
+				g.setId(rSet.getInt(1));
+				g.setName(rSet.getString(2));
+				g.setCategory(rSet.getString(3));
+				g.setPrice(rSet.getString(4));
+				g.setPhoto(rSet.getString(5));
+				g.setDescription(rSet.getString(6));
+				g.setStatus(rSet.getString(7));
+				list.add(g);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public List<GroceryDtls> getDress() {
+		List<GroceryDtls> list=new ArrayList<GroceryDtls>();
+		GroceryDtls g=null;
+		try {
+			String sqlString="select * from grocery where category=? and status=? order by id DESC";
+			PreparedStatement psmt=con.prepareStatement(sqlString);
+			psmt.setString(1, "Dress");
+			psmt.setString(2, "Active");
+			ResultSet rSet=psmt.executeQuery();
+			int i=0;
+			while (rSet.next() && i<4) {
+				g=new GroceryDtls();
+				g.setId(rSet.getInt(1));
+				g.setName(rSet.getString(2));
+				g.setCategory(rSet.getString(3));
+				g.setPrice(rSet.getString(4));
+				g.setPhoto(rSet.getString(5));
+				g.setDescription(rSet.getString(6));
+				g.setStatus(rSet.getString(7));
+				list.add(g);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public List<GroceryDtls> getToy() {
+		List<GroceryDtls> list=new ArrayList<GroceryDtls>();
+		GroceryDtls g=null;
+		try {
+			String sqlString="select * from grocery where category=? and status=? order by id DESC";
+			PreparedStatement psmt=con.prepareStatement(sqlString);
+			psmt.setString(1, "Toy");
+			psmt.setString(2, "Active");
+			ResultSet rSet=psmt.executeQuery();
+			int i=0;
+			while (rSet.next() && i<4) {
+				g=new GroceryDtls();
+				g.setId(rSet.getInt(1));
+				g.setName(rSet.getString(2));
+				g.setCategory(rSet.getString(3));
+				g.setPrice(rSet.getString(4));
+				g.setPhoto(rSet.getString(5));
+				g.setDescription(rSet.getString(6));
+				g.setStatus(rSet.getString(7));
+				list.add(g);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
 	}
 	
 	

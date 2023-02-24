@@ -10,4 +10,7 @@ public interface GroceryDAO {
 	public boolean deleteProduct(int id);
 	public GroceryDtls getProductById(int id);
 	public boolean updateEditProduct(GroceryDtls g);
+	public List<GroceryDtls> getFood();
+	public List<GroceryDtls> getDress();
+	public List<GroceryDtls> getToy();
 }

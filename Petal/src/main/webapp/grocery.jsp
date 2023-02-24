@@ -1,3 +1,7 @@
+<%@page import="com.DB.DBconnect"%>
+<%@page import="com.DAO.GroceryDAOImpl"%>
+<%@page import="com.entity.GroceryDtls"%>
+<%@page import="java.util.*"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -15,134 +19,30 @@
             <p>Summer Collection New Morden Design</p>
     
             <div class="pro-container">
-                <div class="pro"  onclick="window.location.href='sproduct.html';">
-                    <div class="img"><img src="./all/Img/Pet_food/Cat_Food-1.png" alt=""></div>
+            <%
+            GroceryDAOImpl dao=new GroceryDAOImpl(DBconnect.getCon());
+            List<GroceryDtls> list=dao.getFood();
+            for(GroceryDtls g:list){
+            	%>
+            	<div class="pro"  onclick="window.location.href='sproduct.html';">
+                    <div class="img"><img src="Documents/<%=g.getPhoto() %>" alt=""></div>
                     <div class="desc">
                         <span>Petal</span>
-                        <h5>Persian cat</h5>
+                        <h5><%=g.getName() %></h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>₹1,780</h4>
+                        <h4>₹<%=g.getPrice() %></h4>
                     </div>
                     <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
                 </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Cat_Food-2.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Ragdoll - Cat </h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,080</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_Food-1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Chihuahua - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,700</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_food-2.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Golden Retriever - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,580</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Parrot_Food-2.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Macaw - New World Parrots</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,200</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Rabbit_food-1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Rabbit - White Leporidae</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,880</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_Food-3.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Poodle - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,000</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_Food-4.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Labrador Retriever - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,778</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
+            	<%
+            }
+            %>
+
             </div>
     
         </section>
@@ -179,133 +79,31 @@
             <p>Summer & Winter Collection New Morden Design</p>
     
             <div class="pro-container">
-                <div class="pro"  onclick="window.location.href='sproduct.html';">
-                    <div class="img"><img src="./all/Img/pet_dress/dog_dress_1.png" alt=""></div>
+            
+            <%
+            GroceryDAOImpl dao2=new GroceryDAOImpl(DBconnect.getCon());
+            List<GroceryDtls> list2=dao2.getDress();
+            for(GroceryDtls g:list2){
+            	%>
+            	<div class="pro"  onclick="window.location.href='sproduct.html';">
+                    <div class="img"><img src="Documents/<%=g.getPhoto() %>" alt=""></div>
                     <div class="desc">
                         <span>Petal</span>
-                        <h5>Persian cat</h5>
+                        <h5><%=g.getName() %></h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>₹1,780</h4>
+                        <h4>₹<%=g.getPrice() %></h4>
                     </div>
                     <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
                 </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/pet_dress/cat_dress_1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Ragdoll - Cat </h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,080</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/pet_dress/rabbit_dress_1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Chihuahua - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,700</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/pet_dress/dog_dress_2.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Golden Retriever - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,580</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <!-- <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Parrot_Food-2.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Macaw - New World Parrots</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,200</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Rabbit_food-1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Rabbit - White Leporidae</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,880</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_Food-3.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Poodle - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,000</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_Food-4.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Labrador Retriever - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,778</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div> -->
+            	<%
+            }
+            %>
+            
     
             </div>
     
@@ -323,133 +121,34 @@
             <p>Summer & Winter Collection New Morden Design</p>
     
             <div class="pro-container">
-                <div class="pro"  onclick="window.location.href='sproduct.html';">
-                    <div class="img"><img src="./all/Img/pet_toy/dog_toy-_1.png" alt=""></div>
+            <%
+            GroceryDAOImpl dao3=new GroceryDAOImpl(DBconnect.getCon());
+            List<GroceryDtls> list3=dao3.getToy();
+            for(GroceryDtls g:list3){
+            	%>
+            	<div class="pro"  onclick="window.location.href='sproduct.html';">
+                    <div class="img"><img src="Documents/<%=g.getPhoto() %>" alt=""></div>
                     <div class="desc">
                         <span>Petal</span>
-                        <h5>Persian cat</h5>
+                        <h5><%=g.getName() %></h5>
                         <div class="star">
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                             <i class="fas fa-star"></i>
                         </div>
-                        <h4>₹1,780</h4>
+                        <h4>₹<%=g.getPrice() %></h4>
                     </div>
                     <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
                 </div>
+            	
+            	<%
+            }
+            
+            %>
+                
     
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/pet_toy/cat_toy_1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Ragdoll - Cat </h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,080</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/pet_toy/rabbit_toy_1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Chihuahua - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,700</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/pet_toy/dog_toy_2.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Golden Retriever - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,580</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <!-- <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Parrot_Food-2.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Macaw - New World Parrots</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,200</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Rabbit_food-1.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Rabbit - White Leporidae</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,880</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_Food-3.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Poodle - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,000</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div>
-    
-                <div class="pro">
-                    <div class="img"><img src="./all/Img/Pet_food/Dog_Food-4.png" alt=""></div>
-                    <div class="desc">
-                        <span>Petal</span>
-                        <h5>Labrador Retriever - Dog</h5>
-                        <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                        </div>
-                        <h4>₹1,778</h4>
-                    </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
-                </div> -->
+                
     
             </div>
     
