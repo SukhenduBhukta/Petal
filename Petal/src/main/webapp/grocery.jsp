@@ -24,7 +24,7 @@
             List<GroceryDtls> list=dao.getFood();
             for(GroceryDtls g:list){
             	%>
-            	<div class="pro"  onclick="window.location.href='sproduct.html';">
+            	<div class="pro"  onclick="window.location.href='view.jsp?pid=<%=g.getId() %>&&type=<%=g.getCategory() %>';">
                     <div class="img"><img src="Documents/<%=g.getPhoto() %>" alt=""></div>
                     <div class="desc">
                         <span>Petal</span>
@@ -85,7 +85,7 @@
             List<GroceryDtls> list2=dao2.getDress();
             for(GroceryDtls g:list2){
             	%>
-            	<div class="pro"  onclick="window.location.href='sproduct.html';">
+            	<div class="pro"  onclick="window.location.href='view.jsp?pid=<%=g.getId() %>&&type=<%=g.getCategory() %>';">
                     <div class="img"><img src="Documents/<%=g.getPhoto() %>" alt=""></div>
                     <div class="desc">
                         <span>Petal</span>
@@ -126,7 +126,7 @@
             List<GroceryDtls> list3=dao3.getToy();
             for(GroceryDtls g:list3){
             	%>
-            	<div class="pro"  onclick="window.location.href='sproduct.html';">
+            	<div class="pro"  onclick="window.location.href='view.jsp?pid=<%=g.getId() %>&&type=<%=g.getCategory() %>';">
                     <div class="img"><img src="Documents/<%=g.getPhoto() %>" alt=""></div>
                     <div class="desc">
                         <span>Petal</span>

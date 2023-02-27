@@ -13,4 +13,5 @@ public interface GroceryDAO {
 	public List<GroceryDtls> getFood();
 	public List<GroceryDtls> getDress();
 	public List<GroceryDtls> getToy();
+	public List<GroceryDtls> getProductByType(String type);
 }

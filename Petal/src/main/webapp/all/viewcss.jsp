@@ -2,7 +2,6 @@
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
 	rel="stylesheet">
-<link rel="stylesheet" href="all/style2.css" />
 <link rel="stylesheet" href="all/view.css" />
 <link rel="stylesheet" href="all/footer.css" />
 <link rel="stylesheet"

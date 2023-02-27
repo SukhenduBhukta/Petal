@@ -1,0 +1,214 @@
+@charset "UTF-8";
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+input,
+select {
+  border: none;
+  outline: none;
+}
+
+select {
+  cursor: pointer;
+}
+
+input {
+  padding: 0.8rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.maincontainer #prodetails {
+  display: flex;
+  margin-top: 20px;
+}
+.maincontainer #prodetails .single-pro-img {
+  width: 40%;
+  height: 35%;
+  margin-left: 1rem;
+  margin-right: 5rem;
+  border: 0.1rem solid #d9cce7;
+  border-radius: 1rem;
+  box-shadow: 5rem 5rem 5rem rgba(0, 0, 0, 0.02);
+}
+.maincontainer #prodetails .single-pro-img img {
+  width: 100%;
+  height: 100%;
+  margin-right: 5rem;
+  border-radius: 1rem;
+}
+.maincontainer #prodetails .single-pro-img .small-img-group {
+  display: flex;
+  justify-content: space-between;
+  padding: 1rem;
+}
+.maincontainer #prodetails .single-pro-img .small-img-group .small-img-col {
+  flex-basis: 24%;
+  cursor: pointer;
+  padding: 0.1rem;
+  border: 0.1rem solid #d9cce7;
+  border-radius: 1.5rem;
+  box-shadow: 5rem 5rem 5rem rgba(0, 0, 0, 0.02);
+}
+.maincontainer #prodetails .single-pro-img .small-img-group .small-img-col img {
+  width: 100%;
+}
+.maincontainer #prodetails .single-pro-details {
+  width: 50%;
+  padding-top: 3rem;
+}
+.maincontainer #prodetails .single-pro-details h3 {
+  font-size: 3.5rem;
+}
+.maincontainer #prodetails .single-pro-details h4 {
+  font-size: 2rem;
+  padding: 2rem 0 2rem 0;
+}
+.maincontainer #prodetails .single-pro-details h2 {
+  font-size: 2.6rem;
+  padding: 2rem 0 2rem 0;
+}
+.maincontainer #prodetails .single-pro-details select {
+  display: block;
+  border: 0.1rem solid #d9cce7;
+  border-radius: 1.5rem;
+  box-shadow: 5rem 5rem 5rem rgba(0, 0, 0, 0.02);
+  padding: 0.5rem 1rem;
+  margin-bottom: 1rem;
+}
+.maincontainer #prodetails .single-pro-details input {
+  width: 5rem;
+  height: 4.7rem;
+  padding-left: 1rem;
+  font-size: 1.6rem;
+  margin-right: 1rem;
+  border: 0.1rem solid #d9cce7;
+  border-radius: 1.5rem;
+  box-shadow: 5rem 5rem 5rem rgba(0, 0, 0, 0.02);
+}
+.maincontainer #prodetails .single-pro-details button {
+  background: #088178;
+  color: #fff;
+  border: 0.1rem solid #d9cce7;
+  padding: 1rem;
+  border-radius: 1.5rem;
+  box-shadow: 5rem 5rem 5rem rgba(0, 0, 0, 0.02);
+}
+.maincontainer #prodetails .single-pro-details .star {
+  padding-top: 2rem;
+}
+.maincontainer #prodetails .single-pro-details .star i {
+  font-size: 2rem;
+  color: rgb(243, 181, 25);
+}
+.maincontainer #prodetails .single-pro-details span {
+  line-height: 2.6rem;
+  font-size: 1.6rem;
+}
+.maincontainer #product1 {
+  margin-top: 2rem;
+  text-align: center;
+  margin-left: 5rem;
+  margin-right: 5rem;
+}
+.maincontainer #product1 h2 {
+  font-size: 5rem;
+}
+.maincontainer #product1 p {
+  font-size: 1.5rem;
+}
+.maincontainer #product1 .pro-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: 2rem;
+  flex-wrap: wrap;
+}
+.maincontainer #product1 .pro {
+  display: flex;
+  flex-direction: column;
+  width: 21%;
+  min-width: 15rem;
+  height: 40rem;
+  padding: 1.2rem 1rem;
+  border: 0.1rem solid #d9cce7;
+  border-radius: 1.5rem;
+  cursor: pointer;
+  box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.02);
+  margin: 1.5rem 0;
+  transition: 0.3s ease;
+  position: relative;
+}
+.maincontainer #product1 .pro .img {
+  width: 100%;
+  height: 80%;
+}
+.maincontainer #product1 .pro .img img {
+  border-radius: 2rem;
+}
+.maincontainer #product1 .pro .desc {
+  text-align: start;
+  padding: 1rem 0;
+}
+.maincontainer #product1 .pro .desc span {
+  color: #606063;
+  font-size: 1.2rem;
+}
+.maincontainer #product1 .pro .desc h5 {
+  padding-top: 0.7rem;
+  color: #1a1a1a;
+  font-size: 1.4rem;
+}
+.maincontainer #product1 .pro .desc i {
+  font-size: 1.2rem;
+  color: rgb(243, 181, 25);
+}
+.maincontainer #product1 .pro .desc h4 {
+  padding-top: 0.7rem;
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: #088178;
+}
+.maincontainer #product1 .pro .cart {
+  width: 4rem;
+  height: 4rem;
+  line-height: 4rem;
+  border-radius: 5rem;
+  background-color: #e8f6ea;
+  font-weight: 500;
+  color: #088178;
+  border: 0.1rem solid #cce7d0;
+  position: absolute;
+  bottom: 2rem;
+  right: 1rem;
+}
+.maincontainer #product1 .pro:hover {
+  box-shadow: 2rem 2rem 3rem rgba(0, 0, 0, 0.08);
+}

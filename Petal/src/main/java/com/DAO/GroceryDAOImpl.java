@@ -100,6 +100,9 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setPhoto(rs.getString(5));
 				g.setDescription(rs.getString(6));
 				g.setStatus(rs.getString(7));
+				g.setSeller(rs.getString(8));
+				g.setSemail(rs.getString(9));
+				g.setSid(rs.getInt(10));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -148,6 +151,9 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setPhoto(rSet.getString(5));
 				g.setDescription(rSet.getString(6));
 				g.setStatus(rSet.getString(7));
+				g.setSeller(rSet.getString(8));
+				g.setSemail(rSet.getString(9));
+				g.setSid(rSet.getInt(10));
 				list.add(g);
 				i++;
 			}
@@ -175,6 +181,9 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setPhoto(rSet.getString(5));
 				g.setDescription(rSet.getString(6));
 				g.setStatus(rSet.getString(7));
+				g.setSeller(rSet.getString(8));
+				g.setSemail(rSet.getString(9));
+				g.setSid(rSet.getInt(10));
 				list.add(g);
 				i++;
 			}
@@ -202,6 +211,39 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setPhoto(rSet.getString(5));
 				g.setDescription(rSet.getString(6));
 				g.setStatus(rSet.getString(7));
+				g.setSeller(rSet.getString(8));
+				g.setSemail(rSet.getString(9));
+				g.setSid(rSet.getInt(10));
+				list.add(g);
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public List<GroceryDtls> getProductByType(String type) {
+		List<GroceryDtls> list=new ArrayList<GroceryDtls>();
+		GroceryDtls g=null;
+		try {
+			String sqlString="select * from grocery where category=? and status=? order by id DESC";
+			PreparedStatement psmt=con.prepareStatement(sqlString);
+			psmt.setString(1, type);
+			psmt.setString(2, "Active");
+			ResultSet rSet=psmt.executeQuery();
+			int i=0;
+			while (rSet.next() && i<4) {
+				g=new GroceryDtls();
+				g.setId(rSet.getInt(1));
+				g.setName(rSet.getString(2));
+				g.setCategory(rSet.getString(3));
+				g.setPrice(rSet.getString(4));
+				g.setPhoto(rSet.getString(5));
+				g.setDescription(rSet.getString(6));
+				g.setStatus(rSet.getString(7));
+				g.setSeller(rSet.getString(8));
+				g.setSemail(rSet.getString(9));
+				g.setSid(rSet.getInt(10));
 				list.add(g);
 				i++;
 			}
