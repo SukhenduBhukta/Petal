@@ -19,7 +19,7 @@ public class GroceryDAOImpl implements GroceryDAO{
 	public boolean addProduct(GroceryDtls p) {
 		boolean f=false;
 		try {
-			String sql = "insert into grocery(name,category,price,description,status,photo) values(?,?,?,?,?,?)";
+			String sql = "insert into grocery(name,category,price,description,status,photo,seller,email,sid) values(?,?,?,?,?,?,?,?,?)";
 			PreparedStatement psmt=con.prepareStatement(sql);
 			psmt.setString(1, p.getName());
 			psmt.setString(2, p.getCategory());
@@ -27,6 +27,9 @@ public class GroceryDAOImpl implements GroceryDAO{
 			psmt.setString(4, p.getDescription());
 			psmt.setString(5, p.getStatus());
 			psmt.setString(6, p.getPhoto());
+			psmt.setString(7, p.getSeller());
+			psmt.setString(8, p.getSemail());
+			psmt.setInt(9,p.getSid());
 			int i=psmt.executeUpdate();
 			if(i==1) {
 				f=true;
@@ -36,13 +39,14 @@ public class GroceryDAOImpl implements GroceryDAO{
 		}
 		return f;
 	}
-	public List<GroceryDtls> getAllProduct() {
+	public List<GroceryDtls> getAllProducById(int id) {
 		GroceryDtls g=null;
 		List<GroceryDtls> list=new ArrayList<GroceryDtls>();
 		
 		try {
-			String sql="select * from grocery";
+			String sql="select * from grocery where sid=?";
 			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setInt(1, id);
 			ResultSet rs=psmt.executeQuery();
 			while(rs.next()) {
 				g=new GroceryDtls();
@@ -53,7 +57,9 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setPhoto(rs.getString(5));
 				g.setDescription(rs.getString(6));
 				g.setStatus(rs.getString(7));
-				
+				g.setSeller(rs.getString(8));
+				g.setSemail(rs.getString(9));
+				g.setSid(rs.getInt(10));
 				
 				list.add(g);
 			}

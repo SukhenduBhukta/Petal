@@ -1,3 +1,9 @@
+<%-- <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page isELIgnored="false" %>
+<%@page import="com.entity.User"%>
+<%
+User us=(User)session.getAttribute("userobj");
+%> --%>
 
 	
 		<div class="topbar">

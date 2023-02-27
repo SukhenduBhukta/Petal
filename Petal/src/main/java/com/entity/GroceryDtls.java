@@ -10,16 +10,18 @@ public class GroceryDtls {
 	private String description;
 	private String status;
 	private String seller;
-	private String semailString;
+	private String semail;
+	private int sid;
 	public GroceryDtls() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
-
-
+	
+	
+	
 	public GroceryDtls(int id, String name, String category, String price, String photo, String description,
-			String status, String seller, String semailString) {
+			String status, String seller, String semail, int sid) {
 		super();
 		this.id = id;
 		this.name = name;
@@ -29,30 +31,16 @@ public class GroceryDtls {
 		this.description = description;
 		this.status = status;
 		this.seller = seller;
-		this.semailString = semailString;
+		this.semail = semail;
+		this.sid = sid;
 	}
+
 
 
 
 	public int getId() {
 		return id;
 	}
-	public String getSeller() {
-		return seller;
-	}
-
-	public void setSeller(String seller) {
-		this.seller = seller;
-	}
-
-	public String getSemailString() {
-		return semailString;
-	}
-
-	public void setSemailString(String semailString) {
-		this.semailString = semailString;
-	}
-
 	public void setId(int id) {
 		this.id = id;
 	}
@@ -86,20 +74,50 @@ public class GroceryDtls {
 	public void setDescription(String description) {
 		this.description = description;
 	}
-	
 	public String getStatus() {
 		return status;
 	}
 	public void setStatus(String status) {
 		this.status = status;
 	}
-
+	public String getSeller() {
+		return seller;
+	}
+	public void setSeller(String seller) {
+		this.seller = seller;
+	}
+	public String getSemail() {
+		return semail;
+	}
+	public void setSemail(String semail) {
+		this.semail = semail;
+	}
+	public int getSid() {
+		return sid;
+	}
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
 	@Override
 	public String toString() {
 		return "GroceryDtls [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", photo="
-				+ photo + ", description=" + description + ", status=" + status + ", seller=" + seller
-				+ ", semailString=" + semailString + "]";
+				+ photo + ", description=" + description + ", status=" + status + ", seller=" + seller + ", semail="
+				+ semail + ", sid=" + sid + "]";
 	}
+	
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 	
 	

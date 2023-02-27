@@ -1,3 +1,6 @@
+<%@page import="com.entity.User"%>
+<%@page import="com.DB.DBconnect"%>
+<%@page import="com.DAO.UserDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -10,6 +13,9 @@
 <%@include file="allCSS.jsp"%>
 </head>
 <body>
+<%
+User us=(User)session.getAttribute("userobj");
+%>
 <div class="container">
 <%@include file="sidebar.jsp"%>
 
@@ -28,6 +34,7 @@
 <c:if test="${empty userobj }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
+
 <div class="details">
                 <form action="../add_product" method="post" class="contain" enctype="multipart/form-data">
 			<h2>ADD PRODUCT</h2>
@@ -39,7 +46,9 @@
 					<p style="color:red;">${faildMsg }</p>
 					<c:remove var="faildMsg" scope="session"/>
 				</c:if>
-			
+			<input type="hidden" name="id" value="<%=us.getUserid() %>">
+			<input type="hidden" name="sname" value="<%=us.getFname() %>">
+			<input type="hidden" name="email" value="<%=us.getEmail() %>">
 			<div class="inputbox">
 				<i class="fa-solid fa-phone"></i>
 				<div class="labinput">

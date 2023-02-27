@@ -70,7 +70,7 @@
                                 <td><a download="../Documents/<%=us.getPhotoName() %>"
                     href="../Documents/<%=us.getPhotoName() %>"
                     target="_blank">Check Document</a></td>
-                                <td> <a><button type="submit" class="add">Add</button></a> 
+                                <td> 
                                 <a href="../delete?id=<%=us.getUserid() %>"><button type="submit" class="reject">Reject</button></a>
                                 </td>
                             </tr>

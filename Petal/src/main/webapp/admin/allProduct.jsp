@@ -64,8 +64,9 @@ User us=(User)session.getAttribute("userobj");
                         </thead>
                         <tbody>
                         <%
+                        int id=Integer.parseInt(request.getParameter("id"));
                         GroceryDAOImpl dao=new GroceryDAOImpl(DBconnect.getCon());
-                       List<GroceryDtls> list =dao.getAllProducById(us.getUserid());
+                       List<GroceryDtls> list =dao.getAllProducById(id);
                        for(GroceryDtls g : list){
                     	   %>
                     	   <tr>
@@ -76,8 +77,8 @@ User us=(User)session.getAttribute("userobj");
                                 <td><%=g.getPrice() %></td>
                                 <td><%=g.getDescription() %></td>
                                 <td><%=g.getStatus() %></td>
-                                <td> <a href="editproduct.jsp?id=<%=g.getId() %>"><button type="submit" class="add">Edit</button></a> 
-                                <a href="../DeleteProduct?id=<%=g.getId() %>"><button type="submit" class="reject">Delete</button></a>
+                                <td>  
+                                <a href="../DeleteProduct2?id=<%=g.getId() %>"><button type="submit" class="reject">Delete</button></a>
                                 </td>
                             </tr>
                     	   <%

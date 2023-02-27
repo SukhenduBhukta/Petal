@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.security.cert.TrustAnchor;
 import java.sql.Connection;
 
+import javax.print.attribute.standard.RequestingUserName;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.MultipartConfig;
 import javax.servlet.annotation.WebServlet;
@@ -29,12 +30,15 @@ public class AddProduct extends HttpServlet{
 			String name=req.getParameter("name");
 			String category=req.getParameter("category");
 			int sprice=Integer.parseInt(req.getParameter("price"));
-			int aprice=(int)(sprice*105)/100;
+			int aprice=(int)(sprice*102)/100;
 			String price=Integer.toString(aprice);
 			String status=req.getParameter("status");
 			String description=req.getParameter("description");
 			Part part=req.getPart("photo");
 			String photo=part.getSubmittedFileName();
+			int id=Integer.parseInt(req.getParameter("id"));
+			String sname=req.getParameter("sname");
+			String email=req.getParameter("email");
 			
 			HttpSession session =req.getSession();
 			
@@ -47,6 +51,9 @@ public class AddProduct extends HttpServlet{
 			g.setStatus(status);
 			g.setDescription(description);
 			g.setPhoto(photo);
+			g.setSid(id);
+			g.setSeller(sname);
+			g.setSemail(email);
 			
 			
 			
