@@ -1,5 +1,8 @@
+<%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -9,9 +12,12 @@
 
 </head>
 <body>
-
+<%
+User u=(User)session.getAttribute("userobj");
+%>
 	<div class="maincontainer">
 		<%@include file="all/navbar.jsp"%>
+		
 		<section class="home">
             <div class="entry_view">
                 <img src="./all/Img/interesting-cat-facts 1.png" alt="interesting-cat-facts">
@@ -32,7 +38,7 @@
                         <img src="./all/Img/Public_Opinion.png" alt="">
                     </div>
                 </div>
-                <a href="apoinment.html">
+                <a href="appointment.jsp">
                     <div class="app_btn">
                         <button type="submit" method="post">Make an Appointment</button>
                     </div>
@@ -97,7 +103,7 @@
                     <div class="swiper-slide">
                         <div class="card_1" id="card_1">
                             <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Prriti Agarwal.png" alt="XXXX">
+                                <img src="./all/Img/user.png" alt="XXXX">
                             </div>
                             <div class="doc_details">
                                 <div class="doc_name">
@@ -327,16 +333,25 @@
         <section class="advisement">
             <div class="advisement_main">
                 <div class="let_Add">
-
+                    <a href="adoption.jsp"><img src="./all/Img/Addv/add-pet.png" alt=""></a>
                 </div>
                 <div class="right_Add">
-
+                    <a href="grocery.jsp"><img src="./all/Img/Addv/add-food.jpg" alt=""></a>
                 </div>
             </div>
 
         </section>
 		<%@include file="all/footer.jsp"%>
 	</div>
+	<script type="text/javascript">
+        let popup = document.getElementById("popup");
+        function openPopup() {
+            popup.classList.add("open-popup");
+        }
+        function closePopup() {
+            popup.classList.remove("open-popup");
+        }
+        </script>
 	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 	<script src="./all/js/main.js"></script>
 </body>

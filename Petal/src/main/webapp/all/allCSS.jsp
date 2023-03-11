@@ -3,6 +3,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap"
 	rel="stylesheet">
 <link rel="stylesheet" href="all/style.css" />
+<!-- <link rel="stylesheet" href="all/popup.css" /> -->
 <link rel="stylesheet" href="all/footer.css" />
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />

@@ -228,6 +228,79 @@ i {
   background: linear-gradient(45deg, #210640 -18.43%, #075696 96.63%);
   border-radius: 1.6rem;
 }
+.maincontainer .navbar .right_2nd_nav ul li .profile {
+  height: 5rem;
+  width: 5rem;
+}
+.maincontainer .navbar .right_2nd_nav ul li .profile img {
+  border-radius: 50%;
+  cursor: pointer;
+}
+.maincontainer .navbar .sub-menu-wrap {
+  position: absolute;
+  top: 100%;
+  right: 2%;
+  width: 32rem;
+  max-height: 0rem;
+  overflow: hidden;
+  transition: max-height 0.5s;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu {
+  background: #fff;
+  border-radius: 1rem;
+  padding: 2rem;
+  margin: 1rem;
+  box-shadow: 0px 4px 5px rgba(0, 0, 0, 0.5);
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .user-info {
+  display: flex;
+  align-items: center;
+  height: 5rem;
+  width: 5rem;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .user-info img {
+  border-radius: 50%;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .user-info h3 {
+  font-size: 2rem;
+  font-weight: 700;
+  padding-left: 1.5rem;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu hr {
+  height: 1px;
+  width: 100%;
+  margin: 1.5rem 0 1rem;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .sub-menu-link {
+  display: flex;
+  align-items: center;
+  text-decoration: none;
+  color: #525252;
+  margin: 1.5rem 0;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .sub-menu-link p {
+  font-size: 1.5rem;
+  font-weight: 520;
+  width: 100%;
+  transition: transform 0.5s;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .sub-menu-link span {
+  font-size: 1.5rem;
+  transition: transform 0.5s;
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .sub-menu-link span:hover {
+  transform: translateX(5px);
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .sub-menu-link:hover span {
+  transform: translateX(5px);
+}
+.maincontainer .navbar .sub-menu-wrap .sub-menu .sub-menu-link:hover p {
+  transform: translateX(3px);
+  font-weight: 550;
+}
+.maincontainer .navbar .open-menu {
+  max-height: 40rem;
+}
 .maincontainer #feature {
   display: flex;
   align-items: center;
