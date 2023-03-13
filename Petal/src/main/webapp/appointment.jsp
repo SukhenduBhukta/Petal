@@ -12,6 +12,9 @@
 <body>
 	<div class="maincontainer">
 	<%@include file="all/navbar.jsp"%>
+	<c:if test="${empty userobj }">
+<c:redirect url="login.jsp"></c:redirect>
+</c:if>
 	<form action="post">
             <div class="form_all">
                 <ul class="form-section">
