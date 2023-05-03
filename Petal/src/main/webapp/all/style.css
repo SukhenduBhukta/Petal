@@ -680,22 +680,13 @@ i {
   display: flex;
   align-items: center;
   justify-content: center;
-  background: rgb(245, 232, 232);
+  
   height: 40rem;
 }
-.maincontainer .advisement .advisement_main .let_Add {
-  position: relative;
-  width: 50%;
-  border-radius: 2rem;
-  margin: 1rem;
-}
-.maincontainer .advisement .advisement_main .let_Add a img {
-  border-radius: 2rem;
-  width: 100%;
-}
+
 .maincontainer .advisement .advisement_main .right_Add {
   position: relative;
-  width: 50%;
+  width: 100%;
   border-radius: 2rem;
   margin: 1rem;
 }

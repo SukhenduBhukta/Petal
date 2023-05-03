@@ -332,9 +332,7 @@ User u=(User)session.getAttribute("userobj");
 
         <section class="advisement">
             <div class="advisement_main">
-                <div class="let_Add">
-                    <a href="adoption.jsp"><img src="./all/Img/Addv/add-pet.png" alt=""></a>
-                </div>
+                
                 <div class="right_Add">
                     <a href="grocery.jsp"><img src="./all/Img/Addv/add-food.jpg" alt=""></a>
                 </div>

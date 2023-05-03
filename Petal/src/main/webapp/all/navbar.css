@@ -76,7 +76,7 @@ input[type=number] {
 	align-items: center;
 	justify-content: center;
 	height: 5rem;
-	width: 50rem;
+	width: 75rem;
 	background: linear-gradient(45deg, #7d0f6b, #6d0d0d);
 	border-radius: 0px 20px 20px 0px;
 }
@@ -96,37 +96,14 @@ input[type=number] {
 	border-radius: 0px 20px 20px 0px;
 }
 
-.maincontainer header .adoption {
-	display: flex;
-	align-items: center;
-	justify-content: center;
-	height: 5rem;
-	width: 50rem;
-	background: linear-gradient(45.84deg, #7a5d9a -18.54%, #9f5e99 109.96%);
-	border-radius: 20px;
-}
 
-.maincontainer header .adoption h2 {
-	font-family: "Inter";
-	font-style: normal;
-	font-weight: 600;
-	font-size: 2.5rem;
-	line-height: 4rem;
-	color: #FFFFFF;
-	text-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
-}
-
-.maincontainer header .adoption:hover {
-	background: linear-gradient(45.84deg, #480742 18.54%, #310c58 109.96%);
-	border-radius: 20px;
-}
 
 .maincontainer header .grocery {
 	display: flex;
 	align-items: center;
 	justify-content: center;
 	height: 5rem;
-	width: 50rem;
+	width: 75rem;
 	background: linear-gradient(271.76deg, #6f9a5b -18.43%, #5c9999 96.63%);
 	border-radius: 20px 0px 0px 20px;
 }

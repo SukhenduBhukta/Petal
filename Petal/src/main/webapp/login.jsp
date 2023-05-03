@@ -17,7 +17,7 @@
 			<div class="logologin">
 				<!-- <a href="index.html "><img src="./all/Img/features/cat.png" alt="logo" class="cat"></a> -->
 
-				<a href="index.html "><img src="./all/Img/features/pedegee.png"
+				<a href="index.jsp "><img src="./all/Img/features/pedegee.png"
 					alt="logo" class="pedegee"></a> <a href="index.html"><img
 					src="./all/Img/features/dog.png" alt="logo" class="dog"></a>
 			</div>

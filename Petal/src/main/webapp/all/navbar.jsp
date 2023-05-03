@@ -15,10 +15,7 @@
 				<div class="appointment">
 					<h2>Book Appointment</h2>
 				</div>
-			</a> <a href="adoption.jsp">
-				<div class="adoption">
-					<h2>Adoption</h2>
-				</div>
+			
 			</a> <a href="grocery.jsp">
 				<div class="grocery">
 					<h2>Grocery & Accessories</h2>
