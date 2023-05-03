@@ -101,6 +101,8 @@ User us=(User)session.getAttribute("userobj");
         function closePopup() {
             popup.classList.remove("open-popup");
         }
+        
+      
         </script>
 </body>
 </html>

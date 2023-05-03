@@ -8,3 +8,6 @@
 <script src="https://kit.fontawesome.com/4a1f61a443.js"
 	crossorigin="anonymous"></script>
 	
+<script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+    <script src="alljs.js"></script>

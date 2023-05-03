@@ -144,6 +144,8 @@ GroceryDtls g=dao.getProductById(id);
         function closePopup() {
             popup.classList.remove("open-popup");
         }
+        
+        
         </script>
 </body>
 </html>

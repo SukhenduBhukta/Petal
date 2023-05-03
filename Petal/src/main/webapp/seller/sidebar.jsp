@@ -1,49 +1,46 @@
-
-<div class="navication">
+<div class="navigation">
+            <div class="menuToggle">
+                <img src="../all/Img/logo.png" alt="">
+                <p>Petal</p>
+            </div>
             <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon"><img src="../all/Img/logo.png" alt=""></span>
-                        <span class="title">Petal</span>
+                <li class="list">
+                    <a href="home.jsp" style="--clr:#f44336;">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text">Home</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="home.jsp">
-                        <span class="icon"><i class="fa-solid fa-house"></i></span>
-                        <span class="title">Dashbord</span>
+                <li class="list active">
+                    <a href="addproduct.jsp" style="--clr:#ffa117;">
+                    <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                    <span class="text">Add Product</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="addproduct.jsp">
-                        <span class="icon"><i class="fa-regular fa-comments"></i></span>
-                        <span class="title">Add Product</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="allProduct.jsp">
-                        <span class="icon"><i class="fa-solid fa-stethoscope"></i></span>
-                        <span class="title">All Product</span>
-                    </a>
-                </li>
-
                 
-
-                <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Setting</span>
+                <li class="list">
+                    <a href="allProduct.jsp" style="--clr:#2196f3;">
+                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                    <span class="text">All Product</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
-                        <span class="title"><button type="submit" onclick="openPopup()">Sign Out</button></span>
+                <li class="list">
+                    <a href="#" style="--clr:#b145e9;">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="text"><button type="submit" onclick="openPopup()">Sign Out</button></span>
                     </a>
                 </li>
-
             </ul>
         </div>
+        
+           <script type="text/javascript">
+        
+        
+        let list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item)=>
+        item.addEventListener('click',activeLink))
+        </script>

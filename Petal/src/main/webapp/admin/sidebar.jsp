@@ -1,61 +1,52 @@
 
-<div class="navication">
+<div class="navigation">
+            <div class="menuToggle">
+                <img src="../all/Img/logo.png" alt="">
+                <p>Petal</p>
+            </div>
             <ul>
-                <li>
-                    <a href="#">
-                        <span class="icon"><img src="../all/Img/logo.png" alt=""></span>
-                        <span class="title">Petal</span>
+                <li class="list">
+                    <a href="home.jsp" style="--clr:#f44336;">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text">Dashbord</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="home.jsp">
-                        <span class="icon"><i class="fa-solid fa-house"></i></span>
-                        <span class="title">Dashbord</span>
+                <li class="list active">
+                    <a href="doctor.jsp" style="--clr:#ffa117;">
+                    <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
+                    <span class="text">Doctor</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fa-regular fa-comments"></i></span>
-                        <span class="title">Chat</span>
+                
+                <li class="list">
+                    <a href="seller.jsp" style="--clr:#2196f3;">
+                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                    <span class="text">Seller</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="doctor.jsp">
-                        <span class="icon"><i class="fa-solid fa-stethoscope"></i></span>
-                        <span class="title">Doctor</span>
+                <li class="list">
+                    <a href="#" style="--clr:#0fc70f;">
+                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                    <span class="text">Patient</span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="seller.jsp">
-                        <span class="icon"><i class="fa-solid fa-hand-pointer"></i></span>
-                        <span class="title">Seller</span>
+                <li class="list">
+                    <a href="#" style="--clr:#b145e9;">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="text"><button type="submit" onclick="openPopup()">Sign Out</button></span>
                     </a>
                 </li>
-
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fa-solid fa-bed"></i></span>
-                        <span class="title">Patient</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
-                        <span class="title">Setting</span>
-                    </a>
-                </li>
-
-                <li>
-                    <a href="#">
-                        <span class="icon"><i class="fa-solid fa-arrow-right-from-bracket"></i></span>
-                        <span class="title"><button type="submit" onclick="openPopup()">Sign Out</button></span>
-                    </a>
-                </li>
-
             </ul>
         </div>
+        <script type="text/javascript">
+        
+        
+        let list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item)=>
+        item.addEventListener('click',activeLink))
+        </script>

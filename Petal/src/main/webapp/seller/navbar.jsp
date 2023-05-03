@@ -7,9 +7,7 @@ User us=(User)session.getAttribute("userobj");
 
 	
 		<div class="topbar">
-                <div class="toggle">
-                    <ion-icon name="menu-outline"></ion-icon>
-                </div>
+                
                 <div class="search">
                     <label for="">
                         <input type="text" placeholder="Search Here">
