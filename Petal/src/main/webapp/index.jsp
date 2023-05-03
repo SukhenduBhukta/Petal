@@ -327,7 +327,7 @@ User u=(User)session.getAttribute("userobj");
                 <div class="swiper-button-prev"></div>
                 <div class="swiper-pagination"></div>
             </div>
-            <h3>100+ Doctor Available All The Time To Help You</h3>
+            
         </section>
 
         <section class="advisement">
