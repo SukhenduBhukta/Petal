@@ -14,7 +14,13 @@
                 <li class="list active">
                     <a href="doctor.jsp" style="--clr:#ffa117;">
                     <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
-                    <span class="text">Doctor</span>
+                    <span class="text">Register Doctors</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="validDoctors.jsp" style="--clr:#2196f3;">
+                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
+                    <span class="text">Valid Doctors</span>
                     </a>
                 </li>
                 

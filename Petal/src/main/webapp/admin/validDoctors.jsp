@@ -1,3 +1,5 @@
+<%@page import="com.entity.Doctor"%>
+<%@page import="com.DAO.DoctorDAOImpl"%>
 <%@page import="com.DB.DBconnect"%>
 <%@page import="com.DAO.UserDAOImpl"%>
 <%@page import="java.util.*"%>
@@ -58,21 +60,20 @@
                         </thead>
                         <tbody>
                         <%
-                        UserDAOImpl dao = new UserDAOImpl(DBconnect.getCon());
-                        List<User> list = dao.getDoctorbyId();
-                        for(User us: list){
+                        DoctorDAOImpl dao = new DoctorDAOImpl(DBconnect.getCon());
+                        List<Doctor> list = dao.getDoctorbyId();
+                        for(Doctor us: list){
                         	%>
                         	<tr>
-                                <td><%=us.getUserid() %></td>
-                                <td><%=us.getFname()+" "+us.getLname() %></td>
+                                <td><%=us.getDid() %></td>
+                                <td><%=us.getDfname()+" "+us.getLfname() %></td>
                                 <td><%=us.getPhone() %></td>
-                                <td><%=us.getEmail() %></td>
-                                <td><a download="../Documents/<%=us.getPhotoName() %>"
-                    href="../Documents/<%=us.getPhotoName() %>"
+                                <td><%=us.getEmial() %></td>
+                                <td><a download="../Documents/<%=us.getDpic() %>"
+                    href="../Documents/<%=us.getDpic() %>"
                     target="_blank">Check Document</a></td>
                                 <td> 
-                                <a href="../delete?id=<%=us.getUserid() %>"><button type="submit" class="reject">Reject</button></a>
-                                <a href="../addDoctor?id=<%=us.getUserid() %>"><button type="submit" class="reject">Add</button></a>
+                                <a href="../delete?id=<%=us.getDid() %>"><button type="submit" class="reject">Reject</button></a>
                                 </td>
                             </tr>
                         	<%

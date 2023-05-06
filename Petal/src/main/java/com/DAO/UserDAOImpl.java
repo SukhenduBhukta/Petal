@@ -96,6 +96,32 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return list;
 	}
+	
+	
+
+	public User getDoctorbyId(int id) {
+		User us=null;
+		try {
+			String sql="select * from user where userid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setInt(1, id);
+			ResultSet rs = psmt.executeQuery();
+			while(rs.next()) {
+				us=new User();
+				us.setUserid(rs.getInt(1));
+				us.setFname(rs.getString(2));
+				us.setLname(rs.getString(3));
+				us.setPhone(rs.getString(4));
+				us.setEmail(rs.getString(5));
+				us.setPassword(rs.getString(6));
+				us.setOption(rs.getString(7));
+				us.setPhotoName(rs.getString(8));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return us;
+	}
 
 	public List<User> getSeller() {
 		List<User> list = new ArrayList<User>();
