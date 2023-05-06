@@ -1,5 +1,7 @@
 package com.entity;
 
+import javax.print.attribute.standard.RequestingUserName;
+
 public class Doctor {
 	private int did;
 	private String dfname;
@@ -8,11 +10,15 @@ public class Doctor {
 	private String emial;
 	private String password;
 	private String dpic;
+	private String pimg;
+	private String designation;
 	public Doctor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Doctor(int did, String dfname, String lfname, String phone, String emial, String password, String dpic) {
+	
+	public Doctor(int did, String dfname, String lfname, String phone, String emial, String password, String dpic,
+			String pimg, String designation) {
 		super();
 		this.did = did;
 		this.dfname = dfname;
@@ -21,7 +27,10 @@ public class Doctor {
 		this.emial = emial;
 		this.password = password;
 		this.dpic = dpic;
+		this.pimg = pimg;
+		this.designation = designation;
 	}
+
 	public int getDid() {
 		return did;
 	}
@@ -64,11 +73,30 @@ public class Doctor {
 	public void setDpic(String dpic) {
 		this.dpic = dpic;
 	}
+
+	public String getPimg() {
+		return pimg;
+	}
+
+	public void setPimg(String pimg) {
+		this.pimg = pimg;
+	}
+
+	public String getDesignation() {
+		return designation;
+	}
+
+	public void setDesignation(String designation) {
+		this.designation = designation;
+	}
+
 	@Override
 	public String toString() {
 		return "Doctor [did=" + did + ", dfname=" + dfname + ", lfname=" + lfname + ", phone=" + phone + ", emial="
-				+ emial + ", password=" + password + ", dpic=" + dpic + "]";
+				+ emial + ", password=" + password + ", dpic=" + dpic + ", pimg=" + pimg + ", designation="
+				+ designation + "]";
 	}
+	
 	
 	
 }

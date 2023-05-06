@@ -62,6 +62,7 @@ public class UserDAOImpl implements UserDAO {
 				us.setPassword(rs.getString(6));
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
+				us.setPimg(rs.getString(9));
 				
 			}
 		}catch(Exception e) {
@@ -89,6 +90,7 @@ public class UserDAOImpl implements UserDAO {
 				us.setPassword(rs.getString(6));
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
+				us.setPimg(rs.getString(9));
 				list.add(us);
 			}
 		} catch (Exception e) {
@@ -116,6 +118,7 @@ public class UserDAOImpl implements UserDAO {
 				us.setPassword(rs.getString(6));
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
+				us.setPimg(rs.getString(9));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -141,6 +144,7 @@ public class UserDAOImpl implements UserDAO {
 				us.setPassword(rs.getString(6));
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
+				us.setPimg(rs.getString(9));
 				list.add(us);
 			}
 		} catch (Exception e) {

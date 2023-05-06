@@ -241,6 +241,22 @@ input[type=number] {
 	background: linear-gradient(45deg, #210640 -18.43%, #075696 96.63%);
 	border-radius: 1.6rem;
 }
+.maincontainer .navbar .right_2nd_nav ul li .cart {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 12rem;
+	height: 4rem;
+	border-radius: 1.6rem;
+	background: linear-gradient(45deg, #8e3e67 29.43%, #a04886 70.63%);
+	font-size: 2rem;
+	margin-right: 0.3rem;
+	color: #fff;
+}
+.maincontainer .navbar .right_2nd_nav ul li .cart:hover {
+	background: linear-gradient(45deg, #750654 29.43%, #440224 70.63%);
+	border-radius: 1.6rem;
+}
 .maincontainer .navbar .right_2nd_nav ul li .profile {
   height: 5rem;
   width: 5rem;

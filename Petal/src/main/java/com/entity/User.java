@@ -9,7 +9,7 @@ public class User {
 	private String option;
 	private String password;
 	private String photoName;
-	
+	private String pimg;
 	
 
 	public User() {
@@ -17,9 +17,12 @@ public class User {
 		// TODO Auto-generated constructor stub
 	}
 	
-	public User(String fname, String lname, String phone, String email, String option, String password,
-			String photoName) {
+	
+
+	public User(int userid, String fname, String lname, String phone, String email, String option, String password,
+			String photoName, String pimg) {
 		super();
+		this.userid = userid;
 		this.fname = fname;
 		this.lname = lname;
 		this.phone = phone;
@@ -27,7 +30,10 @@ public class User {
 		this.option = option;
 		this.password = password;
 		this.photoName = photoName;
+		this.pimg = pimg;
 	}
+
+
 
 	public int getUserid() {
 		return userid;
@@ -78,11 +84,29 @@ public class User {
 	public void setPhotoName(String photoName) {
 		this.photoName = photoName;
 	}
+	
+	public String getPimg() {
+		return pimg;
+	}
+
+
+
+	public void setPimg(String pimg) {
+		this.pimg = pimg;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "User [userid=" + userid + ", fname=" + fname + ", lname=" + lname + ", phone=" + phone + ", email="
-				+ email + ", option=" + option + ", password=" + password + ", photoName=" + photoName + "]";
+				+ email + ", option=" + option + ", password=" + password + ", photoName=" + photoName + ", pimg="
+				+ pimg + "]";
 	}
+
+
+
+	
 	
 	
 

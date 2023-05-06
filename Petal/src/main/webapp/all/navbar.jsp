@@ -39,18 +39,33 @@
 			
 			
 			<ul>
-					
 					<li>
-                            <div class="profile" >
+					<a href="cart.jsp"> <div class="cart"> <i class="fa-solid fa-cart-shopping"></i>
+						Cart</div></a></li>
+					<li>
+					<c:if test="${not empty userobj.pimg }">
+					<div class="profile" >
+                                <img src="Documents/${userobj.pimg }" onclick="toggleMenu()">
+                            </div>
+					</c:if>
+					<c:if test="${empty userobj.pimg }">
+					<div class="profile" >
                                 <img src="./all/Img/user.png" onclick="toggleMenu()">
                             </div>
+					</c:if>
+                            
                         </li>
 				</ul>
 				</div>
 				<div class="sub-menu-wrap" id="subMenu">
                 <div class="sub-menu">
                     <div class="user-info">
-                        <img src="./all/Img/user.png" alt="">
+                        <c:if test="${not empty userobj.pimg }">
+                    	<img src="Documents/${userobj.pimg }" alt="">
+                    	</c:if>
+                    	<c:if test="${empty userobj.pimg }">
+                    	<img src="./all/Img/user.png" alt="">
+                    	</c:if>
                         <h3>${userobj.fname }</h3>
                     </div>
                     <hr>

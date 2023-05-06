@@ -128,6 +128,7 @@
         function closePopup() {
             popup.classList.remove("open-popup");
         }
+        
         let list = document.querySelectorAll('.list');
         function activeLink(){
             list.forEach((item) =>

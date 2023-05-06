@@ -136,16 +136,6 @@ GroceryDtls g=dao.getProductById(id);
 </div>
 </div>
 
-<script type="text/javascript">
-        let popup = document.getElementById("popup");
-        function openPopup() {
-            popup.classList.add("open-popup");
-        }
-        function closePopup() {
-            popup.classList.remove("open-popup");
-        }
-        
-        
-        </script>
+
 </body>
 </html>

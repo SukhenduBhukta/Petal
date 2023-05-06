@@ -1,3 +1,7 @@
+<%@page import="com.DB.DBconnect"%>
+<%@page import="com.DAO.DoctorDAOImpl"%>
+<%@page import="java.util.List"%>
+<%@page import="com.entity.Doctor"%>
 <%@page import="com.entity.User"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
@@ -100,14 +104,31 @@ User u=(User)session.getAttribute("userobj");
             <div class="swiper mySwiper container">
 
                 <div class="swiper-wrapper all_card">
+                   
+					<%
+                        DoctorDAOImpl dao = new DoctorDAOImpl(DBconnect.getCon());
+                        List<Doctor> list = dao.getDoctorbyId();
+                        for(Doctor us: list){
+                        	%>
+
                     <div class="swiper-slide">
-                        <div class="card_1" id="card_1">
+                        <div class="card_1 swiper-slide" id="card_4">
                             <div class="doc_img_box">
+                            <%
+                            if(us.getPimg()!=null){
+                            %>
+                                <img src="Documents/<%=us.getPimg() %>" alt="XXXX">
+                                <%
+                            }else{
+                                %>
                                 <img src="./all/Img/user.png" alt="XXXX">
+                                <%
+                                }
+                            	%>
                             </div>
                             <div class="doc_details">
                                 <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
+                                    <h2>Dr. <%=us.getDfname()+" "+us.getLfname() %> <br> <span>Specialist in <%=us.getDesignation() %> </span> </h2>
                                     <div class="doc_cotact">
                                         <button>Connect With Me</button>
                                     </div>
@@ -115,212 +136,9 @@ User u=(User)session.getAttribute("userobj");
                             </div>
                         </div>
                     </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1" id="card_2">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Kapil K Guho.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_3">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Smriti Guho.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_4">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Prriti Agarwal.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card_1" id="card_1">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Prriti Agarwal.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1" id="card_2">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Kapil K Guho.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_3">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Smriti Guho.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_4">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Prriti Agarwal.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="swiper-slide">
-                        <div class="card_1" id="card_1">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Prriti Agarwal.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1" id="card_2">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Kapil K Guho.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_3">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Smriti Guho.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_4">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Prriti Agarwal.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_3">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Smriti Guho.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-
-                    <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_4">
-                            <div class="doc_img_box">
-                                <img src="./all/Img/Dr.Prriti Agarwal.png" alt="XXXX">
-                            </div>
-                            <div class="doc_details">
-                                <div class="doc_name">
-                                    <h2>Dr.Prriti Agarwal <br> <span>Specialist in BVSC</span> </h2>
-                                    <div class="doc_cotact">
-                                        <button>Connect With Me</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
+                    <%
+                    }
+                    %>
                     
                 </div>
                 <div class="swiper-button-next"></div>

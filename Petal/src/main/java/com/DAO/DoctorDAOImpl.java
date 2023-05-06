@@ -71,6 +71,8 @@ public class DoctorDAOImpl implements DoctorDAO{
 				doct.setEmial(rs.getString(5));
 				doct.setPassword(rs.getString(6));
 				doct.setDpic(rs.getString(7));
+				doct.setPimg(rs.getString(8));
+				doct.setDesignation(rs.getString(9));
 				list.add(doct);
 			}
 		} catch (Exception e) {
