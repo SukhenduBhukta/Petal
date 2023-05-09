@@ -128,7 +128,11 @@ User u=(User)session.getAttribute("userobj");
                             </div>
                             <div class="doc_details">
                                 <div class="doc_name">
-                                    <h2>Dr. <%=us.getDfname()+" "+us.getLfname() %> <br> <span>Specialist in <%=us.getDesignation() %> </span> </h2>
+                                    <h2>Dr. <%=us.getDfname()+" "+us.getLfname() %> <br> <%if(us.getDesignation()==null){ %>
+                                    <span> </span>
+                                    <%}else{ %>
+                                    <span>Specialist in <%=us.getDesignation() %> </span>
+                                    <%} %> </h2>
                                     <div class="doc_cotact">
                                         <button>Connect With Me</button>
                                     </div>

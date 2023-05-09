@@ -10,17 +10,20 @@ public class User {
 	private String password;
 	private String photoName;
 	private String pimg;
+	private String house;
+	private String landmark;
+	private String city;
+	private String state;
+	private String pin;
 	
 
 	public User() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	
-	
 
 	public User(int userid, String fname, String lname, String phone, String email, String option, String password,
-			String photoName, String pimg) {
+			String photoName, String pimg, String house, String landmark, String city, String state, String pin) {
 		super();
 		this.userid = userid;
 		this.fname = fname;
@@ -31,9 +34,12 @@ public class User {
 		this.password = password;
 		this.photoName = photoName;
 		this.pimg = pimg;
+		this.house = house;
+		this.landmark = landmark;
+		this.city = city;
+		this.state = state;
+		this.pin = pin;
 	}
-
-
 
 	public int getUserid() {
 		return userid;
@@ -89,11 +95,54 @@ public class User {
 		return pimg;
 	}
 
-
-
 	public void setPimg(String pimg) {
 		this.pimg = pimg;
 	}
+
+	public String getHouse() {
+		return house;
+	}
+
+	public void setHouse(String house) {
+		this.house = house;
+	}
+
+
+	public String getLandmark() {
+		return landmark;
+	}
+	public void setLandmark(String landmark) {
+		this.landmark = landmark;
+	}
+	public String getCity() {
+		return city;
+	}
+
+	public void setCity(String city) {
+		this.city = city;
+	}
+
+
+	public String getState() {
+		return state;
+	}
+
+
+	public void setState(String state) {
+		this.state = state;
+	}
+
+	public String getPin() {
+		return pin;
+	}
+
+	public void setPin(String pin) {
+		this.pin = pin;
+	}
+
+
+
+
 
 
 
@@ -101,14 +150,10 @@ public class User {
 	public String toString() {
 		return "User [userid=" + userid + ", fname=" + fname + ", lname=" + lname + ", phone=" + phone + ", email="
 				+ email + ", option=" + option + ", password=" + password + ", photoName=" + photoName + ", pimg="
-				+ pimg + "]";
+				+ pimg + ", house=" + house + ", landmark=" + landmark + ", city=" + city + ", state=" + state
+				+ ", pin=" + pin + "]";
 	}
 
-
-
-	
-	
-	
 
 	
 }

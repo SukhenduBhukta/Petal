@@ -184,6 +184,23 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return f;
 	}
+
+	public boolean addAddress(int uid) {
+		boolean f=false;
+		try {
+			String sql="update user set house=?,landmark=?,city=?,state=?,pincode=? where userid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setString(1, sql);
+			psmt.setString(2, sql);
+			psmt.setString(3, sql);
+			psmt.setString(4, sql);
+			psmt.setString(5, sql);
+			psmt.setInt(6, uid);
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
 	
 	
 	

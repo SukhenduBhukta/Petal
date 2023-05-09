@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="java.util.List"%>
 <%@page import="com.entity.GroceryDtls"%>
 <%@page import="com.DB.DBconnect"%>
@@ -14,6 +15,9 @@
 <body>
 	<div class="maincontainer">
 		<%@include file="all/navbar.jsp"%>
+		<%
+User u=(User)session.getAttribute("userobj");
+%>
 		<%
 		int id = Integer.parseInt(request.getParameter("pid"));
 		GroceryDAOImpl dao = new GroceryDAOImpl(DBconnect.getCon());
@@ -32,8 +36,8 @@
 				<h4><%=g.getName() %></h4>
 				<h2>₹<%=g.getPrice() %></h2>
 
-				<input type="number" value="1">
-				<button class="normal">Add To Cart</button>
+				
+				<a href="cartServlet?pid=<%=g.getId() %>&&uid=<%=u.getUserid() %>"><button class="normal">Add To Cart</button></a>
 				<div class="star">
 					<i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
 						class="fas fa-star"></i> <i class="fas fa-star"></i>
@@ -69,7 +73,7 @@
 				</div>
 				<h4>₹<%=g2.getPrice() %></h4>
 			</div>
-			<a href="#" class="cart"> <i class="bi bi-cart3"></i>
+			<a href="cartServlet?pid=<%=g.getId() %>&&uid=<%=u.getUserid() %>" class="cart"> <i class="bi bi-cart3"></i>
 			</a>
 		</div>
 		<%

@@ -9,4 +9,5 @@ public interface DoctorDAO {
 	public boolean addDoctor(Doctor doct,int id);
 	public boolean deleteDoctor(int id);
 	public List<Doctor> getDoctorbyId();
+	public Doctor login(String email,String password);
 }

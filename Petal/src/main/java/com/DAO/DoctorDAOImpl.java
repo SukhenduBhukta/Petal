@@ -17,6 +17,38 @@ public class DoctorDAOImpl implements DoctorDAO{
 		this.con = con;
 	}
 
+	
+	
+	public Doctor login(String email, String password) {
+		Doctor us=null;
+		try {
+			String sql="select * from doctor where email=? and password=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setString(1, email);
+			psmt.setString(2, password);
+			ResultSet rs=psmt.executeQuery();
+			while(rs.next()) {
+				us=new Doctor();
+				us.setDid(rs.getInt(1));
+				us.setDfname(rs.getString(2));
+				us.setLfname(rs.getString(3));
+				us.setPhone(rs.getString(4));
+				us.setEmial(rs.getString(5));
+				us.setPassword(rs.getString(6));
+				us.setDpic(rs.getString(7));
+				us.setPimg(rs.getString(8));
+				us.setDesignation(rs.getString(9));
+				
+			}
+		}catch(Exception e) {
+			e.printStackTrace();
+		}
+		
+		return us;
+	}
+
+
+
 	public boolean addDoctor(Doctor doct,int id) {
 		boolean f=false;
 		try {

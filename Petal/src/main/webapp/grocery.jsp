@@ -1,3 +1,4 @@
+<%@page import="com.entity.User"%>
 <%@page import="com.DB.DBconnect"%>
 <%@page import="com.DAO.GroceryDAOImpl"%>
 <%@page import="com.entity.GroceryDtls"%>
@@ -14,6 +15,10 @@
 <body>
 <div class="maincontainer">
 <%@include file="all/navbar.jsp"%>
+<%
+User u=(User)session.getAttribute("userobj");
+%>
+
 <section id="product1" class="section-p1">
             <h2>Featured Products</h2>
             <p>Summer Collection New Morden Design</p>
@@ -30,14 +35,13 @@
                         <span>Petal</span>
                         <h5><%=g.getName() %></h5>
                         <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        <h3>3.5<i class="fas fa-star"></i></h3>
+                            
+                            
                         </div>
                         <h4>₹<%=g.getPrice() %></h4>
                     </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
+                    <a href="cartServlet?pid=<%=g.getId() %>&&uid=<%=u.getUserid() %>" class="cart"> <i class="fa-solid fa-cart-shopping"></i> </a>
                 </div>
             	<%
             }
@@ -91,14 +95,12 @@
                         <span>Petal</span>
                         <h5><%=g.getName() %></h5>
                         <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        	<h3>3.5<i class="fas fa-star"></i></h3>
+                            
                         </div>
                         <h4>₹<%=g.getPrice() %></h4>
                     </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
+                    <a href="cartServlet?pid=<%=g.getId() %>&&uid=<%=u.getUserid() %>" class="cart"> <i class="fa-solid fa-cart-shopping"></i> </a>
                 </div>
             	<%
             }
@@ -132,14 +134,12 @@
                         <span>Petal</span>
                         <h5><%=g.getName() %></h5>
                         <div class="star">
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
-                            <i class="fas fa-star"></i>
+                        <h3>3.5<i class="fas fa-star"></i></h3>
+                            
                         </div>
                         <h4>₹<%=g.getPrice() %></h4>
                     </div>
-                    <a href="#" class="cart"> <i class="bi bi-cart3"></i> </a>
+                    <a href="cartServlet?pid=<%=g.getId() %>&&uid=<%=u.getUserid() %>" class="cart"> <i class="fa-solid fa-cart-shopping"></i></i> </a>
                 </div>
             	
             	<%

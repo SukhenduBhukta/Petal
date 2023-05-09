@@ -12,4 +12,5 @@ public interface UserDAO {
 	public List<User> getSeller();
 	public boolean deleteDoctor(int id);
 	public boolean deleteSeller(int id);
+	public boolean addAddress(int uid);
 }

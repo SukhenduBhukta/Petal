@@ -9,8 +9,10 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
+import com.DAO.DoctorDAOImpl;
 import com.DAO.UserDAOImpl;
 import com.DB.DBconnect;
+import com.entity.Doctor;
 import com.entity.User;
 
 @WebServlet("/login")
@@ -25,6 +27,7 @@ public class LoginServlet extends HttpServlet {
 	protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
 		try {
 			UserDAOImpl dao = new UserDAOImpl(DBconnect.getCon());
+			DoctorDAOImpl dao2=new DoctorDAOImpl(DBconnect.getCon());
 			HttpSession session = req.getSession();
 
 			String email = req.getParameter("email");
@@ -50,7 +53,7 @@ public class LoginServlet extends HttpServlet {
 					}
 				}
 				else if ("Doctor".equals(designation)) {
-					User us = dao.login(email, password,designation);
+					Doctor us = dao2.login(email, password);
 					if (us != null) {
 						session.setAttribute("userobj", us);
 						resp.sendRedirect("doctor/home.jsp");
