@@ -3,7 +3,8 @@ package com.entity;
 public class GroceryDtls {
 	private int id;
 	private String name;
-	
+	private String cname;
+	private String expdate;
 	private String category;
 	private String price;
 	private String photo;
@@ -17,14 +18,16 @@ public class GroceryDtls {
 		// TODO Auto-generated constructor stub
 	}
 	
-	
-	
-	
-	public GroceryDtls(int id, String name, String category, String price, String photo, String description,
-			String status, String seller, String semail, int sid) {
+
+
+
+	public GroceryDtls(int id, String name, String cname, String expdate, String category, String price, String photo,
+			String description, String status, String seller, String semail, int sid) {
 		super();
 		this.id = id;
 		this.name = name;
+		this.cname = cname;
+		this.expdate = expdate;
 		this.category = category;
 		this.price = price;
 		this.photo = photo;
@@ -98,12 +101,29 @@ public class GroceryDtls {
 	public void setSid(int sid) {
 		this.sid = sid;
 	}
+	public String getCname() {
+		return cname;
+	}
+	public void setCname(String cname) {
+		this.cname = cname;
+	}
+	public String getExpdate() {
+		return expdate;
+	}
+	public void setExpdate(String expdate) {
+		this.expdate = expdate;
+	}
+
 	@Override
 	public String toString() {
-		return "GroceryDtls [id=" + id + ", name=" + name + ", category=" + category + ", price=" + price + ", photo="
-				+ photo + ", description=" + description + ", status=" + status + ", seller=" + seller + ", semail="
-				+ semail + ", sid=" + sid + "]";
+		return "GroceryDtls [id=" + id + ", name=" + name + ", cname=" + cname + ", expdate=" + expdate + ", category="
+				+ category + ", price=" + price + ", photo=" + photo + ", description=" + description + ", status="
+				+ status + ", seller=" + seller + ", semail=" + semail + ", sid=" + sid + "]";
 	}
+
+
+
+
 	
 
 

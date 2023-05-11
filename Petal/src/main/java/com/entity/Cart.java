@@ -4,6 +4,7 @@ public class Cart {
 	private int cid;
 	private int uid;
 	private int pid;
+	private int sid;
 	private String pname;
 	private String cname;
 	private int pcount;
@@ -13,17 +14,21 @@ public class Cart {
 		super();
 		// TODO Auto-generated constructor stub
 	}
-	public Cart(int cid, int uid, int pid, String pname, String cname, int pcount, double price, double tprice) {
+	
+	public Cart(int cid, int uid, int pid, int sid, String pname, String cname, int pcount, double price,
+			double tprice) {
 		super();
 		this.cid = cid;
 		this.uid = uid;
 		this.pid = pid;
+		this.sid = sid;
 		this.pname = pname;
 		this.cname = cname;
 		this.pcount = pcount;
 		this.price = price;
 		this.tprice = tprice;
 	}
+
 	public int getCid() {
 		return cid;
 	}
@@ -72,10 +77,21 @@ public class Cart {
 	public void setTprice(double tprice) {
 		this.tprice = tprice;
 	}
+	
+	public int getSid() {
+		return sid;
+	}
+
+	public void setSid(int sid) {
+		this.sid = sid;
+	}
+
 	@Override
 	public String toString() {
-		return "Cart [cid=" + cid + ", uid=" + uid + ", pid=" + pid + ", pname=" + pname + ", cname=" + cname
-				+ ", pcount=" + pcount + ", price=" + price + ", tprice=" + tprice + "]";
+		return "Cart [cid=" + cid + ", uid=" + uid + ", pid=" + pid + ", sid=" + sid + ", pname=" + pname + ", cname="
+				+ cname + ", pcount=" + pcount + ", price=" + price + ", tprice=" + tprice + "]";
 	}
+
+	
 	
 }

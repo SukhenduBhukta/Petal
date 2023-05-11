@@ -38,7 +38,7 @@ public class CartDAOImpl implements CartDAO{
 					f=true;
 				}
 			}else {
-				String sql3="insert into cart(uid, pid, pname, cname, pcount, price, tprice) values(?,?,?,?,?,?,?)";
+				String sql3="insert into cart(uid, pid, pname, cname, pcount, price, tprice, sid) values(?,?,?,?,?,?,?,?)";
 				PreparedStatement psmt3=con.prepareStatement(sql3);
 				psmt3.setInt(1, c.getUid());
 				psmt3.setInt(2, c.getPid());
@@ -47,6 +47,7 @@ public class CartDAOImpl implements CartDAO{
 				psmt3.setInt(5, 1);
 				psmt3.setDouble(6, c.getPrice());
 				psmt3.setDouble(7, c.getPrice());
+				psmt3.setInt(8, c.getSid());
 				int i=psmt3.executeUpdate();
 				if(i==1) {
 					f=true;
@@ -78,6 +79,7 @@ public class CartDAOImpl implements CartDAO{
 				c.setPcount(rs.getInt(6));
 				c.setPrice(rs.getDouble(7));
 				c.setTprice(rs.getDouble(8));
+				c.setSid(rs.getInt(9));
 				list.add(c);
 			}
 		} catch (Exception e) {
@@ -125,6 +127,49 @@ public class CartDAOImpl implements CartDAO{
 			e.printStackTrace();
 		}
 		return f;
+	}
+
+	public boolean deleteAllCart(int uid) {
+		boolean f=false;
+		try {
+			String sql="delete from cart where uid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setInt(1, uid);
+			int i=psmt.executeUpdate();
+			if(i==1) {
+				f=true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	public Cart getCartbyId(int uid, int pid) {
+		Cart c=null;
+		try {
+			String sql="select * from cart where uid=? and pid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setInt(1, uid);
+			psmt.setInt(2, pid);
+			ResultSet rs=psmt.executeQuery();
+			while (rs.next()) {
+				c=new Cart();
+				c.setCid(rs.getInt(1));
+				c.setUid(rs.getInt(2));
+				c.setPid(rs.getInt(3));
+				c.setPname(rs.getString(4));
+				c.setCname(rs.getString(5));
+				c.setPcount(rs.getInt(6));
+				c.setPrice(rs.getDouble(7));
+				c.setTprice(rs.getDouble(8));
+				c.setSid(rs.getInt(9));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		
+		return c;
 	}
 
 	

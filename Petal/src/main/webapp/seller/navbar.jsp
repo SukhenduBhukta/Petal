@@ -15,7 +15,7 @@ User us=(User)session.getAttribute("userobj");
                     </label>
                 </div>
                 <div class="user">
-                    <h2>Seller</h2>
+                    <h2>${userobj.fname }</h2>
                 </div>
             </div>
 

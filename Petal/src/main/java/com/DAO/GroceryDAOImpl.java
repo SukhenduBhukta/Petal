@@ -19,17 +19,20 @@ public class GroceryDAOImpl implements GroceryDAO{
 	public boolean addProduct(GroceryDtls p) {
 		boolean f=false;
 		try {
-			String sql = "insert into grocery(name,category,price,description,status,photo,seller,email,sid) values(?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into grocery(name, category, price, photo, description, status, seller, email, sid, cname, expdate) values(?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement psmt=con.prepareStatement(sql);
 			psmt.setString(1, p.getName());
 			psmt.setString(2, p.getCategory());
 			psmt.setString(3, p.getPrice());
-			psmt.setString(4, p.getDescription());
-			psmt.setString(5, p.getStatus());
-			psmt.setString(6, p.getPhoto());
+			psmt.setString(4, p.getPhoto());
+			psmt.setString(5, p.getDescription());
+			psmt.setString(6, p.getStatus());
+			
 			psmt.setString(7, p.getSeller());
 			psmt.setString(8, p.getSemail());
 			psmt.setInt(9,p.getSid());
+			psmt.setString(10, p.getCname());
+			psmt.setString(11, p.getExpdate());
 			int i=psmt.executeUpdate();
 			if(i==1) {
 				f=true;
@@ -60,6 +63,8 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setSeller(rs.getString(8));
 				g.setSemail(rs.getString(9));
 				g.setSid(rs.getInt(10));
+				g.setCname(rs.getString(11));
+				g.setExpdate(rs.getString(12));
 				
 				list.add(g);
 			}
@@ -103,6 +108,8 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setSeller(rs.getString(8));
 				g.setSemail(rs.getString(9));
 				g.setSid(rs.getInt(10));
+				g.setCname(rs.getString(11));
+				g.setExpdate(rs.getString(12));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -113,14 +120,15 @@ public class GroceryDAOImpl implements GroceryDAO{
 	public boolean updateEditProduct(GroceryDtls g) {
 		boolean f=false;
 		try {
-			String sqlString="update grocery set name=?,category=?,price=?,description=?, status=? where id=?";
+			String sqlString="update grocery set name=?,category=?,price=?,description=?, status=?, expdate=? where id=?";
 			PreparedStatement psmt=con.prepareStatement(sqlString);
 			psmt.setString(1, g.getName());
 			psmt.setString(2, g.getCategory());
 			psmt.setString(3, g.getPrice());
 			psmt.setString(4, g.getDescription());
 			psmt.setString(5, g.getStatus());
-			psmt.setInt(6, g.getId());
+			psmt.setString(6, g.getExpdate());
+			psmt.setInt(7, g.getId());
 			int i=psmt.executeUpdate();
 			if(i==1) {
 				f=true;
@@ -154,6 +162,8 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setSeller(rSet.getString(8));
 				g.setSemail(rSet.getString(9));
 				g.setSid(rSet.getInt(10));
+				g.setCname(rSet.getString(11));
+				g.setExpdate(rSet.getString(12));
 				list.add(g);
 				i++;
 			}
@@ -184,6 +194,8 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setSeller(rSet.getString(8));
 				g.setSemail(rSet.getString(9));
 				g.setSid(rSet.getInt(10));
+				g.setCname(rSet.getString(11));
+				g.setExpdate(rSet.getString(12));
 				list.add(g);
 				i++;
 			}
@@ -214,6 +226,8 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setSeller(rSet.getString(8));
 				g.setSemail(rSet.getString(9));
 				g.setSid(rSet.getInt(10));
+				g.setCname(rSet.getString(11));
+				g.setExpdate(rSet.getString(12));
 				list.add(g);
 				i++;
 			}
@@ -244,6 +258,8 @@ public class GroceryDAOImpl implements GroceryDAO{
 				g.setSeller(rSet.getString(8));
 				g.setSemail(rSet.getString(9));
 				g.setSid(rSet.getInt(10));
+				g.setCname(rSet.getString(11));
+				g.setExpdate(rSet.getString(12));
 				list.add(g);
 				i++;
 			}

@@ -58,7 +58,7 @@ public class ForgotPswd extends HttpServlet{
 				message.setSubject("OTP");
 				message.setText("Your otp is: "+otp);
 				Transport.send(message);
-				System.out.println("message sent successfully");
+				//System.out.println("message sent successfully");
 			} catch (MessagingException e) {
 				throw new RuntimeException(e);
 			}

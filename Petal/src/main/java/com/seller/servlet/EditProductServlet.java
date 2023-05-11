@@ -28,7 +28,7 @@ public class EditProductServlet extends HttpServlet{
 			String price=req.getParameter("price");
 			String status=req.getParameter("status");
 			String description=req.getParameter("description");
-			
+			String expdate= req.getParameter("expdate");
 			
 			GroceryDtls g=new GroceryDtls();
 			g.setId(id);
@@ -37,6 +37,7 @@ public class EditProductServlet extends HttpServlet{
 			g.setPrice(price);
 			g.setStatus(status);
 			g.setDescription(description);
+			g.setExpdate(expdate);
 			
 			HttpSession session=req.getSession();
 			GroceryDAOImpl dao=new GroceryDAOImpl(DBconnect.getCon());

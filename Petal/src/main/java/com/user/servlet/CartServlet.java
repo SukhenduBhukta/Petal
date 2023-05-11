@@ -37,6 +37,8 @@ public class CartServlet extends HttpServlet{
 			c.setUid(uid);
 			c.setPname(g.getName());
 			c.setPrice(Double.parseDouble(g.getPrice()));
+			c.setCname(g.getCname());
+			c.setSid(g.getSid());
 			
 			
 			CartDAOImpl dao2=new CartDAOImpl(DBconnect.getCon());

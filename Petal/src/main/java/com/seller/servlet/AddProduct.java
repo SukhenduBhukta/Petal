@@ -39,6 +39,8 @@ public class AddProduct extends HttpServlet{
 			int id=Integer.parseInt(req.getParameter("id"));
 			String sname=req.getParameter("sname");
 			String email=req.getParameter("email");
+			String cname=req.getParameter("cname");
+			String expdate= req.getParameter("expdate");
 			
 			HttpSession session =req.getSession();
 			
@@ -54,6 +56,8 @@ public class AddProduct extends HttpServlet{
 			g.setSid(id);
 			g.setSeller(sname);
 			g.setSemail(email);
+			g.setCname(cname);
+			g.setExpdate(expdate);
 			
 			
 			

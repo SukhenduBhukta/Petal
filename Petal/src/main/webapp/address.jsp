@@ -10,7 +10,7 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PETAL: Appointment</title>
+<title>PETAL: Address</title>
 <%@include file="all/addressCss.jsp"%>
 </head>
 <body>
@@ -23,29 +23,30 @@
             <h1>Address</h1>
         </div>
 
-        <form id="addressForm">
+        <form id="addressForm" method="POST" action="makeOrder">
+        <input name="uid" type="hidden" value="${userobj.userid }">
             <label for="street">Full Name:</label>
-            <input type="text" id="FullName" name="name" required>
+            <input type="text" id="FullName" value="${userobj.fname } ${userobj.lname }" name="name" required>
     
             <label for="street">Phone Number:</label>
-            <input type="number" id="PhoneNumber" name="Phone" required>
+            <input type="number" id="PhoneNumber" value="${userobj.phone }" name="Phone" required>
     
             <label for="street">House No/Flat No:</label>
-            <input type="text" id="street" name="street" required>
+            <input type="text" id="street" value="${userobj.house }" name="street" required>
             
             <label for="street">Land Mark:</label>
-            <input type="text" id="street" name="landmark" required>
+            <input type="text" id="street" value="${userobj.landmark }" name="landmark" required>
     
             <label for="city">Town/City:</label>
-            <input type="text" id="city" name="city" required>
+            <input type="text" id="city" value="${userobj.city }" name="city" required>
             
             <label for="state">State:</label>
-            <input type="text" id="state" name="state" required>
+            <input type="text" id="state" value="${userobj.state }" name="state" required>
             
             <label for="postalCode">PIN Code:</label>
-            <input type="text" id="postalCode" name="pincode" required>
-          
-            <button type="submit">Proceed To Checkout</button>
+            <input type="text" id="postalCode" value="${userobj.pin }" name="pincode" required>
+          	<h4 style="color: red; font-size: 2rem; margin-top: 2rem;">*Cash on Delivery available only</h4>
+            <button type="submit">Placed Order</button>
         </form>
 </div>
 

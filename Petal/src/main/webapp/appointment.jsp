@@ -61,7 +61,7 @@
                                         <div class="labinput">
                                             <div class="text"><label for=""><span style="color: red;">*</span>Owner Name
                                                     : -</label></div>
-                                            <input type="text" required="required" name="ownerName" />
+                                            <input type="text" required="required" value="${userobj.fname } ${userobj.lname }" name="ownerName" />
                                         </div>
                                         <div class="labinput">
                                             <div class="text"><label for=""><span style="color: red;">*</span>Pet Name :
@@ -87,7 +87,7 @@
                                             <div class="labinput">
                                                 <div class="text"><label for=""><span style="color: red;">*</span>Mobile
                                                         : -</label></div>
-                                                <input type="number" required="required" name="mobile" />
+                                                <input type="number" required="required" value="${userobj.phone }" name="mobile" />
                                             </div>
                                         </div>
 
@@ -97,11 +97,11 @@
                                         <div class="labinput">
                                             <div class="text"><label for=""><span style="color: red;">*</span>Address :
                                                     -</label></div>
-                                            <input type="text" required="required" name="address" />
+                                            <input type="text" required="required" value="${userobj.house }" name="address" />
                                         </div>
                                         <div class="labinput">
                                             <div class="text"><label for="">Street: -</label></div>
-                                            <input type="text" name="street" />
+                                            <input type="text" value="${userobj.phone }" name="street" />
                                         </div>
                                     </div>
 
@@ -109,24 +109,24 @@
                                         <div class="labinput">
                                             <div class="text"><label for=""><span style="color: red;">*</span>City :
                                                     -</label></div>
-                                            <input type="text" required="required" name="city" />
+                                            <input type="text" required="required" value="${userobj.city }" name="city" />
                                         </div>
                                         <div class="labinput">
                                             <div class="text"><label for=""><span style="color: red;">*</span>State :
                                                     -</label></div>
-                                            <input type="text" required="required" name="state" />
+                                            <input type="text" required="required" value="${userobj.state }" name="state" />
                                         </div>
                                         <div class="labinput">
                                             <div class="text"><label for=""><span style="color: red;">*</span>Pin Code :
                                                     -</label></div>
-                                            <input type="number" required="required" name="pinCode" />
+                                            <input type="number" required="required" value="${userobj.pin }" name="pinCode" />
                                         </div>
                                     </div>
                                     <div class="email-add">
                                         <div class="labinput">
                                             <div class="text"><label for=""><span style="color: red;">*</span>Email :
                                                     -</label></div>
-                                            <input type="email" required="required" placeholder="example@gmail.com"
+                                            <input type="email" required="required" value="${userobj.email }"
                                                 name="email" />
                                         </div>
 

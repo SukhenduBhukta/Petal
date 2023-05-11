@@ -22,11 +22,11 @@
 <c:redirect url="login.jsp"></c:redirect>
 </c:if>
 <c:if test="${not empty removeCart }">
-					<p style="color:green;">${removeCart }</p>
+					<p style="color:green; font-size: 1.6rem; display: flex; justify-content: center; align-items: center;">${removeCart }</p>
 					<c:remove var="removeCart" scope="session"/>
 				</c:if>
 <c:if test="${not empty failed }">
-					<p style="color:red;">${failed }</p>
+					<p style="color:red; font-size: 1.6rem; display: flex; justify-content: center; align-items: center;">${failed }</p>
 					<c:remove var="failed" scope="session"/>
 				</c:if>
 <section id="cart" class="section-p1">
@@ -90,7 +90,11 @@
                     </tr>
                     <tr>
                         <td>Shipping </td>
+                        <%if(total>500){ %>
                         <td>Free</td>
+                        <%}else{ %>
+                        <td>₹40.0</td>
+                        <%total+=40;} %>
                     </tr>
                     <tr>
                         <td><strong>Total</strong></td>

@@ -58,6 +58,15 @@ User us=(User)session.getAttribute("userobj");
 					<input type="text" required="required" name="name"/>
 				</div>
 			</div>
+			<div class="inputbox">
+				<i class="fa-solid fa-phone"></i>
+				<div class="labinput">
+					<div class="text">
+						<label for="">Company Name</label>
+					</div>
+					<input type="text" required="required" name="cname"/>
+				</div>
+			</div>
 			
 			<div class="inputbox">
 				<i class="fa-solid fa-filter"></i>
@@ -95,11 +104,20 @@ User us=(User)session.getAttribute("userobj");
 					<input type="number" required="required" name="price"/>
 				</div>
 			</div>
+			<div class="inputbox">
+				<i class="fa-solid fa-user-tag"></i>
+				<div class="labinput">
+					<div class="text">
+						<label for="">Expire Date</label>
+					</div>
+					<input type="date" required="required" name="expdate"/>
+				</div>
+			</div>
 			<div class="upload" id="uplo">
                     <div class="inputbox">
                         <i class="fa-solid fa-phone"></i>
                         <div class="labinput">
-                                <div class="text"><label for="">Upload Document</label></div>
+                                <div class="text"><label for="">Upload Picture</label></div>
                             <input type="file" name="photo" required="required">
                         </div>
                     </div>
@@ -111,7 +129,8 @@ User us=(User)session.getAttribute("userobj");
 					<div class="text">
 						<label for="">Description</label>
 					</div>
-					<input type="text" required="required" name="description"/>
+			
+					<textarea rows="3" required="required" name="description"></textarea>
 				</div>
 
 			</div>

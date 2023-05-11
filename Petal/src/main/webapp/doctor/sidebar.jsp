@@ -13,16 +13,11 @@
                 <li class="list">
                     <a href="addproduct.jsp" style="--clr:#ffa117;">
                     <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
-                    <span class="text">Add Product</span>
+                    <span class="text">Edit Profile</span>
                     </a>
                 </li>
                 
-                <li class="list">
-                    <a href="allProduct.jsp" style="--clr:#2196f3;">
-                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
-                    <span class="text">All Product</span>
-                    </a>
-                </li>
+                
                 <li class="list">
                     <a href="#" style="--clr:#b145e9;">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>

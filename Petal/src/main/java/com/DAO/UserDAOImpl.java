@@ -63,6 +63,11 @@ public class UserDAOImpl implements UserDAO {
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
 				us.setPimg(rs.getString(9));
+				us.setHouse(rs.getString(10));
+				us.setLandmark(rs.getString(11));
+				us.setCity(rs.getString(12));
+				us.setState(rs.getString(13));
+				us.setPin(rs.getString(14));
 				
 			}
 		}catch(Exception e) {
@@ -91,6 +96,11 @@ public class UserDAOImpl implements UserDAO {
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
 				us.setPimg(rs.getString(9));
+				us.setHouse(rs.getString(10));
+				us.setLandmark(rs.getString(11));
+				us.setCity(rs.getString(12));
+				us.setState(rs.getString(13));
+				us.setPin(rs.getString(14));
 				list.add(us);
 			}
 		} catch (Exception e) {
@@ -119,6 +129,11 @@ public class UserDAOImpl implements UserDAO {
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
 				us.setPimg(rs.getString(9));
+				us.setHouse(rs.getString(10));
+				us.setLandmark(rs.getString(11));
+				us.setCity(rs.getString(12));
+				us.setState(rs.getString(13));
+				us.setPin(rs.getString(14));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -145,6 +160,11 @@ public class UserDAOImpl implements UserDAO {
 				us.setOption(rs.getString(7));
 				us.setPhotoName(rs.getString(8));
 				us.setPimg(rs.getString(9));
+				us.setHouse(rs.getString(10));
+				us.setLandmark(rs.getString(11));
+				us.setCity(rs.getString(12));
+				us.setState(rs.getString(13));
+				us.setPin(rs.getString(14));
 				list.add(us);
 			}
 		} catch (Exception e) {
@@ -185,17 +205,31 @@ public class UserDAOImpl implements UserDAO {
 		return f;
 	}
 
-	public boolean addAddress(int uid) {
+	public boolean addAddress(int uid, String home, String land, String city, String state, String pin) {
 		boolean f=false;
 		try {
-			String sql="update user set house=?,landmark=?,city=?,state=?,pincode=? where userid=?";
-			PreparedStatement psmt=con.prepareStatement(sql);
-			psmt.setString(1, sql);
-			psmt.setString(2, sql);
-			psmt.setString(3, sql);
-			psmt.setString(4, sql);
-			psmt.setString(5, sql);
-			psmt.setInt(6, uid);
+			String sql1="select city from user where userid=?";
+			PreparedStatement psmt1=con.prepareStatement(sql1);
+			psmt1.setInt(1, uid);
+			ResultSet rs1=psmt1.executeQuery();
+			if(rs1.next()) {
+				if(rs1.getString("city")==null) {
+					String sql="update user set house=?,landmark=?,city=?,state=?,pincode=? where userid=?";
+					PreparedStatement psmt=con.prepareStatement(sql);
+					psmt.setString(1, home);
+					psmt.setString(2, land);
+					psmt.setString(3, city);
+					psmt.setString(4, state);
+					psmt.setString(5, pin);
+					psmt.setInt(6, uid);
+					int i=psmt.executeUpdate();
+					if(i==1) {
+						f=true;
+					}
+				}
+			}
+			
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

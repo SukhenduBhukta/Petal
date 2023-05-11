@@ -119,12 +119,23 @@ GroceryDtls g=dao.getProductById(id);
 			</div>
 			
 			<div class="inputbox">
+				<i class="fa-solid fa-user-tag"></i>
+				<div class="labinput">
+					<div class="text">
+						<label for="">Expire Date</label>
+					</div>
+					<input type="date" required="required" value="<%=g.getExpdate() %>" name="expdate"/>
+				</div>
+			</div>
+			
+			<div class="inputbox">
 				<i class="fa-solid fa-key"></i>
 				<div class="labinput">
 					<div class="text">
 						<label for="">Description</label>
 					</div>
-					<input type="text" required="required" value="<%=g.getDescription() %>" name="description"/>
+					
+					<textarea rows="3" required="required" name="description" value="<%=g.getDescription() %>"></textarea>
 				</div>
 
 			</div>

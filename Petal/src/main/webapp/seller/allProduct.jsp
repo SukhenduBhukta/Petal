@@ -55,8 +55,10 @@ User us=(User)session.getAttribute("userobj");
                                 <td>Id</td>
                                 <td>Photo</td>
                                 <td>Name</td>
+                                <td>C_Name</td>
                                 <td>Category</td>
                                 <td>Price</td>
+                                <td>Exp_Date</td>
                                 <td>Description</td>
                                 <td>Status</td>
                                 <td>Action</td>
@@ -72,8 +74,10 @@ User us=(User)session.getAttribute("userobj");
                                 <td><%=g.getId() %></td>
                                 <td><img src="../Documents/<%=g.getPhoto() %>" style="width: 60px; height: 60px"></td>
                                 <td><%=g.getName() %></td>
+                                <td><%=g.getCname() %></td>
                                 <td><%=g.getCategory() %></td>
                                 <td><%=g.getPrice() %></td>
+                                <td><%=g.getExpdate() %></td>
                                 <td><%=g.getDescription() %></td>
                                 <td><%=g.getStatus() %></td>
                                 <td> <a href="editproduct.jsp?id=<%=g.getId() %>"><button type="submit" class="add">Edit</button></a> 

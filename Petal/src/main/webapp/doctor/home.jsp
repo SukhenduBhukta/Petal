@@ -46,6 +46,22 @@
                     <table>
                         <thead>
                             <tr>
+                            	<td>Appointment Id</td>
+                                <td>Owner Name</td>
+                                <td>Pet Name</td>
+                                <td>Address</td>
+                                <td>Gender</td>
+                                <td>Mobile</td>
+                                <td>Email</td>
+                                <td>Age</td>
+                                <td>Date</td>
+                                <td>Status</td>
+                                <td>Action</td>
+                            </tr>
+                        </thead>
+
+                        <tbody>
+                       	<tr>
                             	<td>Order Id</td>
                                 <td>Name</td>
                                 <td>Address</td>
@@ -57,34 +73,6 @@
                                 <td>Status</td>
                                 <td>Action</td>
                             </tr>
-                        </thead>
-
-                        <tbody>
-                        <%
-                        User u=(User)session.getAttribute("userobj");
-                        OrderDAOImpl dao=new OrderDAOImpl(DBconnect.getCon());
-                        List<Order> list=dao.getOrderBySId(u.getUserid());
-                        for(Order o:list){
-                        	GroceryDAOImpl dao1=new GroceryDAOImpl(DBconnect.getCon());
-                        	GroceryDtls g=dao1.getProductById(o.getPid());
-                        	CartDAOImpl dao3=new CartDAOImpl(DBconnect.getCon());
-                        	Cart c=dao3.getCartbyId(o.getUid(), o.getPid());
-                        %>
-                            <tr>
-                            	<td><%=o.getOid() %></td>
-                                <td><%=o.getName() %></td>
-                                <td><%=o.getHouse() %>, <%=o.getLandmark() %>, <%=o.getCity() %>, <%=o.getState() %>, <%=o.getPin() %></td>
-                                <td><%=g.getName() %></td>
-                                <td><%=g.getCname() %></td>
-                                <td><%=c.getPcount() %></td>
-                                <td>₹<%=c.getTprice() %></td>
-                                <td>COD</td>
-                                <td> <span class="status delivered"><%=o.getStatus() %></span></td>
-                                <td><button class="add">Process</button><button class="reject">Cancel</button></td>
-                            </tr>
-						<%
-                        }
-						%>
                            
                         </tbody>
 
@@ -115,4 +103,5 @@
         item.addEventListener('click',activeLink))
         </script>
 </body>
+</html>
 </html>

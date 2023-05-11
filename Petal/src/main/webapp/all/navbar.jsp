@@ -66,7 +66,7 @@
                     	<c:if test="${empty userobj.pimg }">
                     	<img src="./all/Img/user.png" alt="">
                     	</c:if>
-                        <h3>${userobj.fname }</h3>
+                        <h3>${userobj.fname } ${userobj.lname }</h3>
                     </div>
                     <hr>
                     

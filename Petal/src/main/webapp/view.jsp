@@ -39,8 +39,7 @@ User u=(User)session.getAttribute("userobj");
 				
 				<a href="cartServlet?pid=<%=g.getId() %>&&uid=<%=u.getUserid() %>"><button class="normal">Add To Cart</button></a>
 				<div class="star">
-					<i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-						class="fas fa-star"></i> <i class="fas fa-star"></i>
+					<h4>3.5<i class="fas fa-star"></i></h4>
 				</div>
 				<h4>Product Details</h4>
 				<span> <%=g.getDescription() %> </span>
@@ -68,8 +67,7 @@ User u=(User)session.getAttribute("userobj");
 				<span><%=g2.getSeller() %></span>
 				<h5><%=g2.getName() %></h5>
 				<div class="star">
-					<i class="fas fa-star"></i> <i class="fas fa-star"></i> <i
-						class="fas fa-star"></i> <i class="fas fa-star"></i>
+					<h3>3.5<i class="fas fa-star"></i></h3>
 				</div>
 				<h4>₹<%=g2.getPrice() %></h4>
 			</div>
