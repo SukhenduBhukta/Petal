@@ -165,11 +165,11 @@
 
                                             
                                         
-
+									
                                     
 
                                     <div class="for-submit">
-                                        <button type="submit">SUBMIT</button>
+                                        <button type="submit">proceed to Payment</button>
                                     </div>
 
 
@@ -179,5 +179,7 @@
                         </form>
         <%@include file="all/footer.jsp"%>
 		</div>
+		
+		
 </body>
 </html>

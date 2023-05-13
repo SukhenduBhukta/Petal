@@ -17,13 +17,18 @@ public class Appointment {
 	private String date;
 	private int doctorid;
 	private String status;
+	
+	private String time;
+	private String link;
+	private String report;
 	public Appointment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
+	
 	public Appointment(int id, int userid, String ownerName, String petName, String gender, String mob, String adrs,
 			String street, String city, String state, String pinCode, String email, String age, String date,
-			int doctorid, String status) {
+			int doctorid, String status, String time, String link, String report) {
 		super();
 		this.id = id;
 		this.userid = userid;
@@ -41,7 +46,11 @@ public class Appointment {
 		this.date = date;
 		this.doctorid = doctorid;
 		this.status = status;
+		this.time = time;
+		this.link = link;
+		this.report = report;
 	}
+
 	public int getId() {
 		return id;
 	}
@@ -138,13 +147,41 @@ public class Appointment {
 	public void setStatus(String status) {
 		this.status = status;
 	}
+	
+	public String getTime() {
+		return time;
+	}
+
+	public void setTime(String time) {
+		this.time = time;
+	}
+
+	public String getLink() {
+		return link;
+	}
+
+	public void setLink(String link) {
+		this.link = link;
+	}
+
+	public String getReport() {
+		return report;
+	}
+
+	public void setReport(String report) {
+		this.report = report;
+	}
+
 	@Override
 	public String toString() {
 		return "Appointment [id=" + id + ", userid=" + userid + ", ownerName=" + ownerName + ", petName=" + petName
 				+ ", Gender=" + Gender + ", mob=" + mob + ", adrs=" + adrs + ", street=" + street + ", city=" + city
 				+ ", state=" + state + ", pinCode=" + pinCode + ", email=" + email + ", age=" + age + ", date=" + date
-				+ ", doctorid=" + doctorid + ", status=" + status + "]";
+				+ ", doctorid=" + doctorid + ", status=" + status + ", time=" + time + ", link=" + link + ", report="
+				+ report + "]";
 	}
+
+	
 	
 	
 }

@@ -32,3 +32,5 @@ document.querySelectorAll(".navList").forEach(n => n.addEventListener("click", (
     navMenu.classList.remove("active");
 }))
 
+
+

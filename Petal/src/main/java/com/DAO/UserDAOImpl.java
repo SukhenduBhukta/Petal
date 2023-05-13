@@ -10,19 +10,18 @@ import com.entity.User;
 
 public class UserDAOImpl implements UserDAO {
 
-	
 	private Connection con;
-	
+
 	public UserDAOImpl(Connection con) {
 		super();
 		this.con = con;
 	}
 
 	public boolean userRegister(User us) {
-		boolean f=false;
+		boolean f = false;
 		try {
-			String sql="insert into user(fname,lname,phone,email,password,designation,photo) values(?,?,?,?,?,?,?)";
-			PreparedStatement psmt=con.prepareStatement(sql);
+			String sql = "insert into user(fname,lname,phone,email,password,designation,photo) values(?,?,?,?,?,?,?)";
+			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setString(1, us.getFname());
 			psmt.setString(2, us.getLname());
 			psmt.setString(3, us.getPhone());
@@ -30,30 +29,30 @@ public class UserDAOImpl implements UserDAO {
 			psmt.setString(5, us.getPassword());
 			psmt.setString(6, us.getOption());
 			psmt.setString(7, us.getPhotoName());
-			
-			int i=psmt.executeUpdate();
+
+			int i = psmt.executeUpdate();
 			con.close();
-			if(i==1) {
-				f=true;
+			if (i == 1) {
+				f = true;
 			}
-			
-		}catch(Exception e) {
+
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return f;
 	}
 
 	public User login(String email, String password, String designation) {
-		User us=null;
+		User us = null;
 		try {
-			String sql="select * from user where email=? and password=? and designation=?";
-			PreparedStatement psmt=con.prepareStatement(sql);
+			String sql = "select * from user where email=? and password=? and designation=?";
+			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setString(1, email);
 			psmt.setString(2, password);
 			psmt.setString(3, designation);
-			ResultSet rs=psmt.executeQuery();
-			while(rs.next()) {
-				us=new User();
+			ResultSet rs = psmt.executeQuery();
+			while (rs.next()) {
+				us = new User();
 				us.setUserid(rs.getInt(1));
 				us.setFname(rs.getString(2));
 				us.setLname(rs.getString(3));
@@ -68,25 +67,25 @@ public class UserDAOImpl implements UserDAO {
 				us.setCity(rs.getString(12));
 				us.setState(rs.getString(13));
 				us.setPin(rs.getString(14));
-				
+
 			}
-		}catch(Exception e) {
+		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
+
 		return us;
 	}
 
 	public List<User> getDoctorbyId() {
 		List<User> list = new ArrayList<User>();
-		User us=null;
+		User us = null;
 		try {
-			String sql="select * from user where designation=?";
-			PreparedStatement psmt=con.prepareStatement(sql);
+			String sql = "select * from user where designation=?";
+			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setString(1, "Doctor");
 			ResultSet rs = psmt.executeQuery();
-			while(rs.next()) {
-				us=new User();
+			while (rs.next()) {
+				us = new User();
 				us.setUserid(rs.getInt(1));
 				us.setFname(rs.getString(2));
 				us.setLname(rs.getString(3));
@@ -108,18 +107,16 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return list;
 	}
-	
-	
 
 	public User getDoctorbyId(int id) {
-		User us=null;
+		User us = null;
 		try {
-			String sql="select * from user where userid=?";
-			PreparedStatement psmt=con.prepareStatement(sql);
+			String sql = "select * from user where userid=?";
+			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setInt(1, id);
 			ResultSet rs = psmt.executeQuery();
-			while(rs.next()) {
-				us=new User();
+			while (rs.next()) {
+				us = new User();
 				us.setUserid(rs.getInt(1));
 				us.setFname(rs.getString(2));
 				us.setLname(rs.getString(3));
@@ -143,14 +140,14 @@ public class UserDAOImpl implements UserDAO {
 
 	public List<User> getSeller() {
 		List<User> list = new ArrayList<User>();
-		User us=null;
+		User us = null;
 		try {
-			String sql="select * from user where designation=?";
-			PreparedStatement psmt=con.prepareStatement(sql);
+			String sql = "select * from user where designation=?";
+			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setString(1, "Seller");
 			ResultSet rs = psmt.executeQuery();
-			while(rs.next()) {
-				us=new User();
+			while (rs.next()) {
+				us = new User();
 				us.setUserid(rs.getInt(1));
 				us.setFname(rs.getString(2));
 				us.setLname(rs.getString(3));
@@ -174,14 +171,14 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public boolean deleteDoctor(int id) {
-		boolean f=false;
+		boolean f = false;
 		try {
-			String sql="delete from user where userid=?";
-			PreparedStatement psmt=con.prepareStatement(sql);
+			String sql = "delete from user where userid=?";
+			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setInt(1, id);
-			int i=psmt.executeUpdate();
-			if(i==1) {
-				f=true;
+			int i = psmt.executeUpdate();
+			if (i == 1) {
+				f = true;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -190,14 +187,14 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public boolean deleteSeller(int id) {
-		boolean f=false;
+		boolean f = false;
 		try {
-			String sql="delete from user where userid=?";
-			PreparedStatement psmt=con.prepareStatement(sql);
+			String sql = "delete from user where userid=?";
+			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setInt(1, id);
-			int i=psmt.executeUpdate();
-			if(i==1) {
-				f=true;
+			int i = psmt.executeUpdate();
+			if (i == 1) {
+				f = true;
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -206,37 +203,33 @@ public class UserDAOImpl implements UserDAO {
 	}
 
 	public boolean addAddress(int uid, String home, String land, String city, String state, String pin) {
-		boolean f=false;
+		boolean f = false;
 		try {
-			String sql1="select city from user where userid=?";
-			PreparedStatement psmt1=con.prepareStatement(sql1);
+			String sql1 = "select city from user where userid=?";
+			PreparedStatement psmt1 = con.prepareStatement(sql1);
 			psmt1.setInt(1, uid);
-			ResultSet rs1=psmt1.executeQuery();
-			if(rs1.next()) {
-				if(rs1.getString("city")==null) {
-					String sql="update user set house=?,landmark=?,city=?,state=?,pincode=? where userid=?";
-					PreparedStatement psmt=con.prepareStatement(sql);
+			ResultSet rs1 = psmt1.executeQuery();
+			if (rs1.next()) {
+				if (rs1.getString("city") == null) {
+					String sql = "update user set house=?,landmark=?,city=?,state=?,pincode=? where userid=?";
+					PreparedStatement psmt = con.prepareStatement(sql);
 					psmt.setString(1, home);
 					psmt.setString(2, land);
 					psmt.setString(3, city);
 					psmt.setString(4, state);
 					psmt.setString(5, pin);
 					psmt.setInt(6, uid);
-					int i=psmt.executeUpdate();
-					if(i==1) {
-						f=true;
+					int i = psmt.executeUpdate();
+					if (i == 1) {
+						f = true;
 					}
 				}
 			}
-			
-			
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return f;
 	}
-	
-	
-	
 
 }

@@ -50,7 +50,7 @@ public class CartServlet extends HttpServlet{
 			}
 			else {
 				session.setAttribute("failed", "Something wrong on server");
-				resp.sendRedirect("grocery.jsp");
+				resp.sendRedirect("cart.jsp");
 			}
 			
 			

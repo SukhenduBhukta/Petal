@@ -172,6 +172,22 @@ public class CartDAOImpl implements CartDAO{
 		return c;
 	}
 
+	public int getnoCart(int uid) {
+		int i=0;
+		try {
+			String sql="select * from cart where uid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setInt(1, uid);
+			ResultSet rs=psmt.executeQuery();
+			while(rs.next()) {
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return i;
+	}
+
 	
 	
 }

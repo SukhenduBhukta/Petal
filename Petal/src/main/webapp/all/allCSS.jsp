@@ -7,6 +7,12 @@
 <!-- <link rel="stylesheet" href="all/popup.css" /> -->
 <link rel="stylesheet" href="all/footer.css" />
 <link rel="stylesheet"
-	href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
+	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.1/swiper-bundle.css"
+	integrity="sha512-LZuATklLAriQzj14UjkY1lvEvVJNOQLjuQ34tn7+/RU/mv0bgmkEyMROrbOoAIAAK80JE1rcm35kpHjaBvLNoA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer" />
 <script src="https://kit.fontawesome.com/4a1f61a443.js"
 	crossorigin="anonymous"></script>
+<script
+	src="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.1/swiper-bundle.min.js"
+	integrity="sha512-c2sIYWk6Ikmd58ksT9Zuhn9A7vXm7g9mioknpzLY9bmXXqd/m+79em0QLOEo2w5Qz9MwpwinPCqjqbwJchyUyA=="
+	crossorigin="anonymous" referrerpolicy="no-referrer"></script>

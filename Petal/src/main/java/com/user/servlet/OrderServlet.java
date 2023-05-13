@@ -75,8 +75,11 @@ public class OrderServlet extends HttpServlet{
 				if(f1) {
 					session.setAttribute("succMsg", "Address save Successfully...");
 				}
-				session.setAttribute("succMsg", "Order Successfully...");
-				resp.sendRedirect("thankyou.jsp");
+				boolean f3=dao1.deleteAllCart(uid);
+				if(f3) {
+					session.setAttribute("succMsg", "Order Successfully...");
+					resp.sendRedirect("thankyou.jsp");
+				}
 			}else {
 				session.setAttribute("succMsg", "Order Successfully...");
 				resp.sendRedirect("cart.jsp");

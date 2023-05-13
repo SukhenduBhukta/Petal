@@ -172,7 +172,6 @@ User u=(User)session.getAttribute("userobj");
             popup.classList.remove("open-popup");
         }
         </script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
 	<script src="./all/js/main.js"></script>
 </body>
 </html>

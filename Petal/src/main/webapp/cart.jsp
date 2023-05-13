@@ -90,8 +90,12 @@
                     </tr>
                     <tr>
                         <td>Shipping </td>
-                        <%if(total>500){ %>
+                        <%
+                        int i=dao.getnoCart(us.getUserid());
+                        if(total>500){ %>
                         <td>Free</td>
+                        <%}else if(i==0){ %>
+                        <td>₹0.0</td>
                         <%}else{ %>
                         <td>₹40.0</td>
                         <%total+=40;} %>
@@ -101,7 +105,14 @@
                         <td><strong>₹<%=total %></strong></td>
                     </tr>
                 </table>
+                <%
+                	
+                	if(i==0){
+                %>
+                <a href=""><button class="normal">Proceed to Checkout</button></a>
+                <%}else{ %>
                 <a href="address.jsp"><button class="normal">Proceed to Checkout</button></a>
+                <%} %>
             </div>
         </section>
         <%@include file="all/footer.jsp"%>

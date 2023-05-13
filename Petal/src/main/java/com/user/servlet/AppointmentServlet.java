@@ -57,7 +57,7 @@ public class AppointmentServlet extends HttpServlet{
 			boolean f=dao.addAppointment(ap);
 			if(f) {
 				session.setAttribute("succMsg", "Appointment request submitted successfully");
-				resp.sendRedirect("appointment.jsp");
+				resp.sendRedirect("payment.jsp");
 			}else{
 				session.setAttribute("errorMsg", "Something went wrong");
 				resp.sendRedirect("appointment.jsp");

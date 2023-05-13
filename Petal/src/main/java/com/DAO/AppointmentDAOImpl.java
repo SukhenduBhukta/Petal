@@ -2,6 +2,7 @@ package com.DAO;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
 import com.entity.Appointment;
 
@@ -47,5 +48,26 @@ public class AppointmentDAOImpl implements AppointmentDAO{
 		
 		return f;
 	}
+	public int appiontmentgetidbyuid(int uid) {
+		int i=0;
+		try {
+			String sql="select id from appointment where user_id=? order by id DESC";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setInt(1, uid);
+			ResultSet rs=psmt.executeQuery();
+			if(rs.next()) {
+				i=rs.getInt("id");
+			}
+			
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return i;
+	}
+	
+	
+	
+	
+	
 
 }
