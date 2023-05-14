@@ -20,7 +20,7 @@
 User u=(User)session.getAttribute("userobj");
 %>
 	<div class="maincontainer">
-		<%@include file="all/navbar.jsp"%>
+		<%@include file="all/apNavbar.jsp"%>
 		
 		<section class="home">
             <div class="entry_view">
@@ -134,7 +134,8 @@ User u=(User)session.getAttribute("userobj");
                                     <span>Specialist in <%=us.getDesignation() %> </span>
                                     <%} %> </h2>
                                     <div class="doc_cotact">
-                                        <button>Connect With Me</button>
+                                    <a href="appointdoctor.jsp?did=<%=us.getDid() %>"><button>Connect With Me</button></a>
+                                        
                                     </div>
                                 </div>
                             </div>

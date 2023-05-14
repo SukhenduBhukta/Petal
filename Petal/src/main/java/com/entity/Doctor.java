@@ -12,13 +12,16 @@ public class Doctor {
 	private String dpic;
 	private String pimg;
 	private String designation;
+	private String status;
 	public Doctor() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+
 	public Doctor(int did, String dfname, String lfname, String phone, String emial, String password, String dpic,
-			String pimg, String designation) {
+			String pimg, String designation, String status) {
 		super();
 		this.did = did;
 		this.dfname = dfname;
@@ -29,7 +32,10 @@ public class Doctor {
 		this.dpic = dpic;
 		this.pimg = pimg;
 		this.designation = designation;
+		this.status = status;
 	}
+
+
 
 	public int getDid() {
 		return did;
@@ -90,13 +96,24 @@ public class Doctor {
 		this.designation = designation;
 	}
 
+	public String getStatus() {
+		return status;
+	}
+
+
+
+	public void setStatus(String status) {
+		this.status = status;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Doctor [did=" + did + ", dfname=" + dfname + ", lfname=" + lfname + ", phone=" + phone + ", emial="
 				+ emial + ", password=" + password + ", dpic=" + dpic + ", pimg=" + pimg + ", designation="
-				+ designation + "]";
+				+ designation + ", status=" + status + "]";
 	}
-	
 	
 	
 }

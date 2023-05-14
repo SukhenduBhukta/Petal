@@ -89,6 +89,7 @@ public class GroceryDAOImpl implements GroceryDAO{
 		}
 		return f;
 	}
+	
 	public GroceryDtls getProductById(int id) {
 		GroceryDtls g=null;
 		try {
@@ -114,7 +115,6 @@ public class GroceryDAOImpl implements GroceryDAO{
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
-		
 		return g;
 	}
 	public boolean updateEditProduct(GroceryDtls g) {
@@ -264,6 +264,40 @@ public class GroceryDAOImpl implements GroceryDAO{
 				i++;
 			}
 		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+	public List<GroceryDtls> getProductBySearch(String ch) {
+		List<GroceryDtls> list=new ArrayList<GroceryDtls>();
+		GroceryDtls g=null;
+		try {
+			String sqlString="select * from grocery where name like ? or category like ? or cname like ? or seller like ? and status=? order by id DESC";
+			PreparedStatement psmt=con.prepareStatement(sqlString);
+			psmt.setString(1, "%"+ch+"%");
+			psmt.setString(2, "%"+ch+"%");
+			psmt.setString(3, "%"+ch+"%");
+			psmt.setString(4, "%"+ch+"%");
+			psmt.setString(5, "Active");
+			ResultSet rSet=psmt.executeQuery();
+			int i=0;
+			while (rSet.next()) {
+				g=new GroceryDtls();
+				g.setId(rSet.getInt(1));
+				g.setName(rSet.getString(2));
+				g.setCategory(rSet.getString(3));
+				g.setPrice(rSet.getString(4));
+				g.setPhoto(rSet.getString(5));
+				g.setDescription(rSet.getString(6));
+				g.setStatus(rSet.getString(7));
+				g.setSeller(rSet.getString(8));
+				g.setSemail(rSet.getString(9));
+				g.setSid(rSet.getInt(10));
+				g.setCname(rSet.getString(11));
+				g.setExpdate(rSet.getString(12));
+				list.add(g);
+			}
+		}catch (Exception e) {
 			e.printStackTrace();
 		}
 		return list;
