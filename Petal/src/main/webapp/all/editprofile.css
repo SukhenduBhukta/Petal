@@ -1,0 +1,66 @@
+@charset "UTF-8";
+.maincontainer .editprofile {
+  padding: 2rem;
+}
+.maincontainer .editprofile h1 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.maincontainer .editprofile form {
+  max-width: 75rem;
+  height: 55%;
+  margin: 0 auto;
+  padding: 1rem 5rem 2rem 2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.maincontainer .editprofile form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  padding: 0.3rem;
+  font-size: 1.5rem;
+}
+.maincontainer .editprofile form input[type=text],
+.maincontainer .editprofile form input[type=email],
+.maincontainer .editprofile form input[type=number],
+.maincontainer .editprofile form input[type=password] {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+.maincontainer .editprofile form input[type=file] {
+  margin-top: 0.3rem;
+}
+.maincontainer .editprofile form .password-container {
+  position: relative;
+  font-size: 1.5rem;
+}
+.maincontainer .editprofile form .password-container .toggle-password {
+  position: absolute;
+  font-size: 2rem;
+  top: 75%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.maincontainer .editprofile form button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.maincontainer .editprofile form button:hover {
+  background-color: #45a049;
+}

@@ -1,0 +1,92 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+}
+
+html {
+  font-size: 62.5%;
+  scroll-behavior: smooth;
+}
+
+input,
+select {
+  border: none;
+  outline: none;
+}
+
+select {
+  cursor: pointer;
+}
+
+input {
+  padding: 0.8rem;
+}
+
+button {
+  border: none;
+  cursor: pointer;
+}
+
+a {
+  text-transform: none;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+}
+
+i {
+  font-size: 1.8rem;
+  cursor: pointer;
+}
+.maincontainer .view_order h1 {
+  text-align: center;
+  margin-top: 1.5rem;
+  font-size: 3rem;
+}
+.maincontainer .view_order .order-container {
+  margin-top: 2rem;
+}
+.maincontainer .view_order .order-container .order {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.maincontainer .view_order .order:last-child {
+  border-bottom: none;
+}
+.maincontainer .view_order .order .order-number {
+  font-weight: bold;
+  font-size: 2rem;
+}
+.maincontainer .view_order .order .delivery-date {
+  color: #666;
+  font-size: 2rem;
+}
+.maincontainer .view_order .order .product-details {
+  display: flex;
+  align-items: center;
+  width: 35rem;
+  font-size: 2rem;
+}
+.maincontainer .view_order .order .product-image {
+  width: 9rem;
+  height: 9rem;
+  -o-object-fit: cover;
+     object-fit: cover;
+  margin-right: 10px;
+}
+.maincontainer .view_order .order .product-name {
+  font-weight: bold;
+  padding-left: 20px;
+}
+.maincontainer .view_order .order .order-value {
+  font-size: 2rem;
+}

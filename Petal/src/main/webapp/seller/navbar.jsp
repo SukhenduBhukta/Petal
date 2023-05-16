@@ -14,7 +14,17 @@ User us=(User)session.getAttribute("userobj");
                         <ion-icon name="search-outline"></ion-icon>
                     </label>
                 </div>
+                <c:if test="${not empty userobj.pimg }">
+							<div class="profile" style="height: 6rem;width:6rem;border-radius:50%;">
+								<img src="../Documents/${userobj.pimg }" style="height: 6rem;width:6rem;border-radius:50%;">
+							</div>
+						</c:if> <c:if test="${empty userobj.pimg }">
+							<div class="profile" style="height: 6rem;width:6rem;border-radius:50%;">
+								<img src="./all/Img/user.png" style="height: 6rem;width:6rem;border-radius:50%;">
+							</div>
+						</c:if>
                 <div class="user">
+                
                     <h2>${userobj.fname }</h2>
                 </div>
             </div>

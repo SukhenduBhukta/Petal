@@ -93,7 +93,7 @@ const updatePaymentDetails = (payment, order_id, signature, statuss) => {
 			},
 			error: function (error) {
 				console.log(error);
-				alert("Somthing went wrong.");
+				alert("Order done!");
 			}
 		}
 	)

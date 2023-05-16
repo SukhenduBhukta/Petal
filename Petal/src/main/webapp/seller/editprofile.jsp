@@ -1,37 +1,51 @@
-<%@page import="com.DB.DBconnect"%>
-<%@page import="com.DAO.DoctorDAOImpl"%>
-<%@page import="java.util.List"%>
-<%@page import="com.entity.Doctor"%>
+<%@page import="com.entity.Cart"%>
+<%@page import="com.DAO.CartDAOImpl"%>
+<%@page import="com.entity.GroceryDtls"%>
+<%@page import="com.DAO.GroceryDAOImpl"%>
 <%@page import="com.entity.User"%>
+<%@page import="com.entity.Order"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DBconnect"%>
+<%@page import="com.DAO.OrderDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+    pageEncoding="UTF-8"%>
+    <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 	<%@page isELIgnored="false" %>
-	
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
-<title>PETAL: Home</title>
-<%@include file="all/editprofile.jsp"%>
-
+<title>Seller: Home</title>
+<%@include file="editcss.jsp"%>
 </head>
 <body>
-<%
-User u=(User)session.getAttribute("userobj");
-%>
-<c:if test="${empty userobj }">
-<c:redirect url="login.jsp"></c:redirect>
+<div class="container">
+<%@include file="sidebar.jsp"%>
+<div class="main">
+<div class="container2">
+            <div class="popup" id="popup">
+                <h2>Confrim Yourself</h2>
+                <p>Are you want to Logout?</p>
+                <div class="btnc">
+                    <a href="../logout"><button class="yes" type="button"  onclick="closePopup()">Yes</button></a>
+                <button class="cancel" type="button"  onclick="closePopup()">Cancel</button>
+                </div>
+            </div>
+        </div>
+        <c:if test="${empty userobj }">
+<c:redirect url="../login.jsp"></c:redirect>
 </c:if>
-	<div class="maincontainer">
-		<%@include file="all/navbar.jsp"%>
+<%@include file="navbar.jsp"%>
 		<div class="editprofile">
       <h1>Edit Profile</h1>
       <c:if test="${not empty faildMsg }">
 					<p style="color:red;">${faildMsg }</p>
 					<c:remove var="faildMsg" scope="session"/>
 				</c:if>
-  <form id="editForm" action="editprofile" method="post" enctype="multipart/form-data">
+				<%
+				User u=(User)session.getAttribute("userobj");
+				%>
+  <form id="editForm" action="../editprofile" method="post" enctype="multipart/form-data">
   <input name="uid" value="<%=u.getUserid() %>" type="hidden">
     <label for="fullName">First Name</label>
     <input type="text" id="fullName" name="fname" value="<%=u.getFname() %>" required>
@@ -56,9 +70,9 @@ User u=(User)session.getAttribute("userobj");
     <button type="submit">Save Changes</button>
   </form>
     </div>
-		<%@include file="all/footer.jsp"%>
+
 	</div>
-	<script type="text/javascript">
+<script type="text/javascript">
         let popup = document.getElementById("popup");
         function openPopup() {
             popup.classList.add("open-popup");
@@ -78,8 +92,15 @@ User u=(User)session.getAttribute("userobj");
               passwordToggle.textContent = 'Show';
             }
           }
+        
+        let list = document.querySelectorAll('.list');
+        function activeLink(){
+            list.forEach((item) =>
+            item.classList.remove('active'));
+            this.classList.add('active');
+        }
+        list.forEach((item)=>
+        item.addEventListener('click',activeLink))
         </script>
-	<script src="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.js"></script>
-	<script src="./all/js/main.js"></script>
 </body>
 </html>

@@ -31,27 +31,29 @@ User u=(User)session.getAttribute("userobj");
 					<p style="color:red;">${faildMsg }</p>
 					<c:remove var="faildMsg" scope="session"/>
 				</c:if>
-  <form id="editForm" action="editprofile" method="post" enctype="multipart/form-data">
+				<c:if test="${not empty sucMsg }">
+					<p style="color:green;">${sucMsg }</p>
+					<c:remove var="sucMsg" scope="session"/>
+				</c:if>
+  <form id="editForm" action="updateAdd" method="post">
   <input name="uid" value="<%=u.getUserid() %>" type="hidden">
-    <label for="fullName">First Name</label>
-    <input type="text" id="fullName" name="fname" value="<%=u.getFname() %>" required>
-    <label for="fullName">Last Name</label>
-    <input type="text" id="fullName" name="lname" value="<%=u.getLname() %>" required>
+    <label for="fullName">House</label>
+    <input type="text" id="fullName" name="house" value="<%=u.getHouse() %>" required>
+    <label for="fullName">Landmark</label>
+    <input type="text" id="fullName" name="land" value="<%=u.getLandmark() %>" required>
 
-    <label for="email">Email</label>
-    <input type="email" id="email" name="email" value="<%=u.getEmail() %>" required>
+    <label for="email">City</label>
+    <input type="text" id="email" name="city" value="<%=u.getCity() %>" required>
 
-    <label for="mobileNumber">Mobile Number</label>
-    <input type="number" id="mobileNumber" name="mobileNumber" value="<%=u.getPhone() %>" required>
+    <label for="mobileNumber">State</label>
+    <input type="text" id="mobileNumber" name="state" value="<%=u.getState() %>" required>
 
     <div class="password-container">
-      <label for="oldPassword">Password</label>
-      <input type="password" id="oldPassword" name="password" required>
-      <span class="toggle-password" onclick="togglePasswordVisibility('oldPassword')">&#128065;</span>
+      <label for="oldPassword">Pincode</label>
+      <input type="text" id="oldPassword" name="pincode" value="<%=u.getPin() %>" required>
     </div>
 
-    <label for="profilePic">Profile Picture</label>
-    <input type="file" id="profilePic" name="profilePic">
+    
 
     <button type="submit">Save Changes</button>
   </form>

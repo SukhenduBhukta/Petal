@@ -11,7 +11,13 @@
                     </a>
                 </li>
                 <li class="list">
-                    <a href="addproduct.jsp" style="--clr:#ffa117;">
+                    <a href="ApproveApp.jsp" style="--clr:#f44336;">
+                    <span class="icon"><ion-icon name="home-outline"></ion-icon></span>
+                    <span class="text">Approve</span>
+                    </a>
+                </li>
+                <li class="list">
+                    <a href="editprofile.jsp" style="--clr:#ffa117;">
                     <span class="icon"><ion-icon name="person-add-outline"></ion-icon></span>
                     <span class="text">Edit Profile</span>
                     </a>

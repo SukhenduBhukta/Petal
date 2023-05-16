@@ -231,5 +231,72 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return f;
 	}
+	
+	public boolean checkPassword(String ps, int id) {
+		boolean f=false;
+		try {
+			String sql="select * from user where password=? and userid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setString(1, ps);
+			psmt.setInt(2, id);
+			ResultSet rSet=psmt.executeQuery();
+			while(rSet.next()) {
+				f=true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	public boolean updateProfile(User us) {
+		boolean f=false;
+		try {
+			String sql="update user set fname=?,lname=?,email=?,phone=?,pimg=? where userid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setString(1, us.getFname());
+			psmt.setString(2, us.getLname());
+			psmt.setString(3, us.getEmail());
+			psmt.setString(4, us.getPhone());
+			psmt.setString(5, us.getPimg());
+			psmt.setInt(6, us.getUserid());
+			
+			int i=psmt.executeUpdate();
+			if(i==1) {
+				f=true;
+			}
+			
+		} catch(Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+
+	public boolean updateAddress(int uid, String home, String land, String city, String state, String pin) {
+		boolean f = false;
+		try {
+			
+					String sql = "update user set house=?,landmark=?,city=?,state=?,pincode=? where userid=?";
+					PreparedStatement psmt = con.prepareStatement(sql);
+					psmt.setString(1, home);
+					psmt.setString(2, land);
+					psmt.setString(3, city);
+					psmt.setString(4, state);
+					psmt.setString(5, pin);
+					psmt.setInt(6, uid);
+					int i = psmt.executeUpdate();
+					if (i == 1) {
+						f = true;
+					}
+				
+			
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+	
+	
 
 }

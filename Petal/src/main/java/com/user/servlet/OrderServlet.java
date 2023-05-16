@@ -62,6 +62,7 @@ public class OrderServlet extends HttpServlet{
 				o.setStatus("Ordered");
 				o.setPayment("COD");
 				o.setSid(c.getSid());
+				o.setPcount(c.getPcount());
 				i++;
 				list2.add(o);
 			}

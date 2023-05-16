@@ -52,11 +52,12 @@
                             	<td>Appointment Id</td>
                                 <td>Owner Name</td>
                                 <td>Pet Name</td>
-                                <td>Address</td>
+                                <td>Contact</td>
                                 <td>Gender</td>
-                                <td>Mobile</td>
-                                <td>Email</td>
                                 <td>Age</td>
+                                <td>Link</td>
+                                <td>Time</td>
+                                
                                 <td>Date</td>
                                 <td>Action</td>
                             </tr>
@@ -66,20 +67,21 @@
                         <%
                         //Doctor u=(Doctor)session.getAttribute("userobj");
                         AppointmentDAOImpl dao2=new AppointmentDAOImpl(DBconnect.getCon());
-                        List<Appointment> list=dao2.getAllappointByDid(u.getDid());
+                        List<Appointment> list=dao2.getAllUpdateappointByDid(u.getDid());
                         for(Appointment ap:list){
                         %>
                        	<tr>
                             	<td><%=ap.getId() %></td>
                                 <td><%=ap.getOwnerName() %></td>
                                 <td><%=ap.getPetName() %></td>
-                                <td><%=ap.getAdrs() %>, <%=ap.getCity() %>, <%=ap.getStreet() %>, <%=ap.getState() %>, <%=ap.getPinCode() %></td>
+                                <td><%=ap.getAdrs() %>, <%=ap.getCity() %>, <%=ap.getStreet() %>, <%=ap.getState() %>, <%=ap.getPinCode() %><br><%=ap.getMob() %><br><%=ap.getEmail() %></td>
                                 <td><%=ap.getGender() %></td>
-                                <td><%=ap.getMob() %></td>
-                                <td><%=ap.getEmail() %></td>
                                 <td><%=ap.getAge() %></td>
+                                <td><a href="<%=ap.getLink() %>" target="_blank"><%=ap.getLink() %></a></td>
+                                <td><%=ap.getTime() %></td>
+                                
                                 <td><%=ap.getDate() %></td>
-                                <td><a href="DoctorApproval.jsp?apid=<%=ap.getId() %>&&email=<%=ap.getEmail() %>"><button style="background: green;">Schedule</button></a></td>
+                                <td><a href="ptntReport.jsp?apid=<%=ap.getId() %>"><button style="background: green;">Report</button></a></td>
                             </tr>
                            <%
                         }
@@ -114,4 +116,4 @@
         </script>
 </body>
 </html>
-</html>
+</html>>

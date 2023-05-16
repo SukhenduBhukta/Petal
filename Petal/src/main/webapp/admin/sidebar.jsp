@@ -30,12 +30,7 @@
                     <span class="text">Seller</span>
                     </a>
                 </li>
-                <li class="list">
-                    <a href="#" style="--clr:#0fc70f;">
-                    <span class="icon"><ion-icon name="camera-outline"></ion-icon></span>
-                    <span class="text">Patient</span>
-                    </a>
-                </li>
+                
                 <li class="list">
                     <a href="#" style="--clr:#b145e9;">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>

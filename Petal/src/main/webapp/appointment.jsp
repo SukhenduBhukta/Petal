@@ -101,7 +101,7 @@
                                         </div>
                                         <div class="labinput">
                                             <div class="text"><label for="">Street: -</label></div>
-                                            <input type="text" value="${userobj.phone }" name="street" />
+                                            <input type="text" value="${userobj.landmark }" name="street" />
                                         </div>
                                     </div>
 
@@ -142,7 +142,7 @@
                                                 <div class="labinput">
                                                     <div class="text"><label for=""><span
                                                                 style="color: red;">*</span>Date: -</label></div>
-                                                    <input type="date" required="required" name="date" />
+                                                    <input type="date" id="date" required="required" name="date" />
                                                 </div>
                                                 
                                                 <div class="labinput">
@@ -179,7 +179,13 @@
                         </form>
         <%@include file="all/footer.jsp"%>
 		</div>
-		
+		<script type="text/javascript">
+            // var today=new Date();
+            // var tomorrow = new Date(today.getTime+(24*60*60*1000)).toISOString().substr(0,10);
+		var today=new Date().toISOString().substr(0,10);
+         document.getElementById("date").value=today;
+         document.getElementById("date").setAttribute("min",today);
+		</script>
 		
 </body>
 </html>

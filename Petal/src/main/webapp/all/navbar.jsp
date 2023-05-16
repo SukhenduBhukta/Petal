@@ -73,10 +73,10 @@
 					</div>
 					<hr>
 
-					<a href="" class="sub-menu-link"><i
+					<a href="viewAppoint.jsp" class="sub-menu-link"><i
 						class="fa-solid fa-bag-shopping"></i>
 					<p>Your Appointment</p>
-						<span>></span></a> <a href="viewOrder.jsp?uid=${userobj.userid }" class="sub-menu-link"><i
+						<span>></span></a> <a href="viewOrder.jsp" class="sub-menu-link"><i
 						class="fa-solid fa-bag-shopping"></i>
 					<p>Your Order</p>
 						<span>></span></a> <a href="setting.jsp" class="sub-menu-link"><i

@@ -36,7 +36,7 @@ public class OrderDAOImpl implements OrderDAO {
 		boolean f = false;
 
 		try {
-			String sql = "insert into order_table(orderid, uid, name, house, phone, pid, landmark, city, state, pincode, status, payment, sid) values(?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into order_table(orderid, uid, name, house, phone, pid, landmark, city, state, pincode, status, payment, sid, pcount) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			con.setAutoCommit(false);
 			PreparedStatement psmt = con.prepareStatement(sql);
 			for (Order o : list) {
@@ -53,6 +53,7 @@ public class OrderDAOImpl implements OrderDAO {
 				psmt.setString(11, o.getStatus());
 				psmt.setString(12, o.getPayment());
 				psmt.setInt(13, o.getSid());
+				psmt.setInt(14, o.getPcount());
 				psmt.addBatch();
 			}
 			int[] count = psmt.executeBatch();
@@ -71,7 +72,7 @@ public class OrderDAOImpl implements OrderDAO {
 		List<Order> list = new ArrayList<Order>();
 		Order o = null;
 		try {
-			String sql = "select * order_table where uid=?";
+			String sql = "select * from order_table where uid=?";
 			PreparedStatement psmt = con.prepareStatement(sql);
 			psmt.setInt(1, uid);
 			ResultSet rs = psmt.executeQuery();
@@ -90,6 +91,7 @@ public class OrderDAOImpl implements OrderDAO {
 				o.setStatus(rs.getString(11));
 				o.setPayment(rs.getString(12));
 				o.setSid(rs.getInt(13));
+				o.setPcount(rs.getInt(14));
 				list.add(o);
 
 			}
@@ -130,6 +132,7 @@ public class OrderDAOImpl implements OrderDAO {
 						o.setStatus(rs.getString(11));
 						o.setPayment(rs.getString(12));
 						o.setSid(rs.getInt(13));
+						o.setPcount(rs.getInt(14));
 						list.add(o);
 
 					}
@@ -142,6 +145,26 @@ public class OrderDAOImpl implements OrderDAO {
 
 		return list;
 	}
+	
+	
+	
+
+	public boolean cancelOrder(String oid) {
+		boolean f=false;
+		try {
+			String sql="update order_table set status=? where orderid=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setString(1, "Cancel");
+			psmt.setString(2, oid);
+			int i=psmt.executeUpdate();
+			if(i==1) {
+				f=true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
 
 	public boolean paymentadd(int cid, int amount, String status, String ordid ,int apid) {
 		boolean f=false;
@@ -153,6 +176,7 @@ public class OrderDAOImpl implements OrderDAO {
 			psmt.setString(3, ordid);
 			psmt.setInt(4, cid);
 			psmt.setInt(5, apid);
+			
 			int i=psmt.executeUpdate();
 			if(i==1) {
 				f=true;

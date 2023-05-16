@@ -11,4 +11,10 @@ public interface DoctorDAO {
 	public List<Doctor> getDoctorbyId();
 	public Doctor getDoctorSinglebyId(int did);
 	public Doctor login(String email,String password);
+	public String activeIn(int uid);
+	public boolean active(int uid);
+	public boolean inActive(int uid);
+	public boolean updateProfile(Doctor us);
+	public boolean checkPassword(String ps, int id);
+	public void sendEmail(String message, String subject, String to, String from);
 }

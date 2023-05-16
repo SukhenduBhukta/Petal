@@ -80,7 +80,7 @@
                                 <td>₹<%=c.getTprice() %></td>
                                 <td>COD</td>
                                 <td> <span class="status delivered"><%=o.getStatus() %></span></td>
-                                <td><button class="add">Process</button><button class="reject">Cancel</button></td>
+                                <td><a href=""><button class="add">Process</button></a> <a href="cancelOrder?oid=<%=o.getOid() %>"><button class="reject">Cancel</button></a></td>
                             </tr>
 						<%
                         }

@@ -18,16 +18,16 @@ public class Order {
 	private String status;
 	private String payment;
 	private int sid;
+	private int pcount;
 	public Order() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 
-	
 
 
 	public Order(String oid, int uid, String name, String email, String house, String phone, String landmark,
-			String city, String state, String pin, int pid, String status, String payment, int sid) {
+			String city, String state, String pin, int pid, String status, String payment, int sid, int pcount) {
 		super();
 		this.oid = oid;
 		this.uid = uid;
@@ -43,8 +43,8 @@ public class Order {
 		this.status = status;
 		this.payment = payment;
 		this.sid = sid;
+		this.pcount = pcount;
 	}
-
 
 
 
@@ -161,12 +161,29 @@ public class Order {
 
 
 
+	public int getPcount() {
+		return pcount;
+	}
+
+
+
+	public void setPcount(int pcount) {
+		this.pcount = pcount;
+	}
+
+
+
 	@Override
 	public String toString() {
 		return "Order [oid=" + oid + ", uid=" + uid + ", name=" + name + ", email=" + email + ", house=" + house
 				+ ", phone=" + phone + ", landmark=" + landmark + ", city=" + city + ", state=" + state + ", pin=" + pin
-				+ ", pid=" + pid + ", status=" + status + ", payment=" + payment + ", sid=" + sid + "]";
+				+ ", pid=" + pid + ", status=" + status + ", payment=" + payment + ", sid=" + sid + ", pcount=" + pcount
+				+ "]";
 	}
+
+
+
+
 
 
 

@@ -24,6 +24,12 @@
                     </a>
                 </li>
                 <li class="list">
+                    <a href="setting.jsp" style="--clr:#b145e9;">
+                    <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
+                    <span class="text">Setting</span>
+                    </a>
+                </li>
+                <li class="list">
                     <a href="#" style="--clr:#b145e9;">
                     <span class="icon"><ion-icon name="settings-outline"></ion-icon></span>
                     <span class="text"><button type="submit" onclick="openPopup()">Sign Out</button></span>

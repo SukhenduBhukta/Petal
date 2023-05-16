@@ -37,6 +37,7 @@
                     <table>
                         <thead>
                             <tr>
+                            	<td>Img</td>
                                 <td>Name</td>
                                 <td>Price</td>
                                 <td>Payment</td>
@@ -46,6 +47,7 @@
 
                         <tbody>
                             <tr>
+                            <td><img scr=""></td>
                                 <td>Persian cat</td>
                                 <td>₹1,780</td>
                                 <td>Paid</td>
@@ -53,6 +55,7 @@
                             </tr>
 
                             <tr>
+                            <td><img scr=""></td>
                                 <td>Persian cat</td>
                                 <td>₹1,780</td>
                                 <td>Paid</td>
@@ -60,6 +63,7 @@
                             </tr>
 
                             <tr>
+                            <td><img scr=""></td>
                                 <td>Persian cat</td>
                                 <td>₹1,780</td>
                                 <td>Paid</td>
@@ -67,6 +71,7 @@
                             </tr>
 
                             <tr>
+                            <td><img scr=""></td>
                                 <td>Persian cat</td>
                                 <td>₹1,780</td>
                                 <td>Paid</td>
@@ -74,6 +79,7 @@
                             </tr>
 
                             <tr>
+                            <td><img scr=""></td>
                                 <td>Persian cat</td>
                                 <td>₹1,780</td>
                                 <td>Paid</td>

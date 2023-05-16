@@ -72,8 +72,8 @@
                     </div>
                     <hr>
                     
-                    <a href="" class="sub-menu-link"><i class="fa-solid fa-bag-shopping"></i><p>Your Appointment</p><span>></span></a>
-                    <a href="viewOrder.jsp?uid=${userobj.userid }" class="sub-menu-link"><i class="fa-solid fa-bag-shopping"></i><p>Your Order</p><span>></span></a>
+                    <a href="viewAppoint.jsp" class="sub-menu-link"><i class="fa-solid fa-bag-shopping"></i><p>Your Appointment</p><span>></span></a>
+                    <a href="viewOrder.jsp" class="sub-menu-link"><i class="fa-solid fa-bag-shopping"></i><p>Your Order</p><span>></span></a>
                     <a href="setting.jsp" class="sub-menu-link"><i class="fa-solid fa-gear"></i><p>Setting</p><span>></span></a>
                     <a href="support.jsp" class="sub-menu-link"><i class="fa-solid fa-circle-info"></i><p>Help & Support</p><span>></span></a>
                     <a href="logout" class="sub-menu-link" onclick="openPopup()"><i class="fa-solid fa-right-from-bracket"></i><p>Logout</p><span>></span></a>

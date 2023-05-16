@@ -27,10 +27,10 @@
 				<img src="./all/Img/logo.png" alt="">
 			</div>
 			<h2>SIGN IN</h2>
-			<%-- <c:if test="${not empty sucMsg }">
+			<c:if test="${not empty sucMsg }">
 					<p style="color:green;">${sucMsg }</p>
-					<c:remove var="sucMsg" scope="session2"/>
-				</c:if> --%>
+					<c:remove var="sucMsg" scope="session"/>
+				</c:if>
 			<c:if test="${not empty faildMsg }">
 					<p style="color:red;">${faildMsg }</p>
 					<c:remove var="faildMsg" scope="session"/>

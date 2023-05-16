@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="all/navbar.css" />
 <!-- <link rel="stylesheet" href="all/popup.css" /> -->
 <link rel="stylesheet" href="all/footer.css" />
-<link rel="stylesheet" href="all/setting.css" />
+<link rel="stylesheet" href="all/editprofile.css" />
 <link rel="stylesheet"
 	href="https://cdnjs.cloudflare.com/ajax/libs/Swiper/9.3.1/swiper-bundle.css"
 	integrity="sha512-LZuATklLAriQzj14UjkY1lvEvVJNOQLjuQ34tn7+/RU/mv0bgmkEyMROrbOoAIAAK80JE1rcm35kpHjaBvLNoA=="

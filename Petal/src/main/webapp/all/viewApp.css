@@ -1,0 +1,34 @@
+@charset "UTF-8";
+.maincontainer .appointment_status h1 {
+  display: flex;
+  justify-content: center;
+  margin: 1rem;
+  font-size: 3rem;
+}
+.maincontainer .appointment_status table {
+  border-collapse: collapse;
+  width: 50%;
+  border: 1px solid #666;
+  margin: 1rem 0 2rem 5rem;
+}
+.maincontainer .appointment_status table th, .maincontainer .appointment_status table td {
+  font-size: 2rem;
+  text-align: center;
+  padding: 1rem;
+}
+.maincontainer .appointment_status table th {
+	width:30%;
+  background-color: #f2f2f2;
+}
+.maincontainer .appointment_status table tr:nth-child(even) {
+  background-color: #f9f9f9;
+}
+.maincontainer .appointment_status table .completed {
+  color: green;
+}
+.maincontainer .appointment_status table .pending {
+  color: orange;
+}
+.maincontainer .appointment_status table .cancelled {
+  color: red;
+}
