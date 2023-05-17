@@ -17,6 +17,110 @@
 <meta charset="UTF-8">
 <title>Seller: Home</title>
 <%@include file="editcss.jsp"%>
+<style type="text/css">
+@charset "UTF-8";
+.container .main .settings_option h1 {
+  display: flex;
+  justify-content: center;
+  font-size: 3rem;
+  margin: 3rem;
+}
+.container .main .settings_option .another_thins {
+  display: flex;
+  width: 100%;
+  height: 35rem;
+  background-color: #e6e3e3;
+  margin-bottom: 5rem;
+  border-radius: 2px;
+  padding: 1rem;
+}
+.container .main .settings_option .another_thins .edit_profile {
+  margin-left: 10%;
+  margin-bottom: 2rem;
+  width: 20rem;
+  background-color: #eeb147;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.container .main .settings_option .another_thins .edit_profile a {
+  font-size: 3rem;
+  color: #000;
+}
+.container .main .settings_option .another_thins .edit_profile a:hover {
+  color: #440224;
+}
+.container .main .settings_option .another_thins .edit_profile i {
+  font-size: 4rem;
+  padding: 0 1rem 0 0;
+  color: #440224;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem 0 0;
+  margin: 1rem;
+}
+.container .main .settings_option .another_thins .password_reset {
+  margin-left: 20%;
+  margin-bottom: 2rem;
+  width: 20rem;
+  background-color: #eeb147;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+.container .main .settings_option .another_thins .password_reset a {
+  font-size: 3rem;
+  color: #000;
+}
+.container .main .settings_option .another_thins .password_reset a:hover {
+  color: #3b6e97;
+}
+.container .main .settings_option .another_thins .password_reset i {
+  padding: 0 1rem 0 0;
+  font-size: 4rem;
+  color: #3b6e97;
+  display: flex;
+  justify-content: center;
+  padding: 0 1rem 0 0;
+  margin: 1rem;
+}
+.container .main .settings_option .another_thins .address_updation {
+  margin-left: 20%;
+  margin-bottom: 2rem;
+  width: 20rem;
+  background-color: #eeb147;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  overflow: hidden;
+  padding: 2rem;
+  border-radius: 1rem;
+}
+
+.container .main .settings_option .another_thins .address_updation a {
+  font-size: 3rem;
+  color: #000;
+}
+ 
+.container .main .settings_option .another_thins .address_updation a:hover {
+  color: #310c58;
+}
+
+.container .main .settings_option .another_thins .address_updation i {
+  color: #310c58;
+  font-size: 4rem;
+  padding: 0 1rem 0 0;
+  margin: 1rem;
+  display: flex;
+  justify-content: center;
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -32,16 +136,11 @@
                 </div>
             </div>
         </div>
-        <c:if test="${empty userobj }">
+        <c:if test="${empty userobj3 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 <%@include file="navbar.jsp"%>
-		<div class="editprofile">
-      <h1>Edit Profile</h1>
-      <c:if test="${not empty faildMsg }">
-					<p style="color:red;">${faildMsg }</p>
-					<c:remove var="faildMsg" scope="session"/>
-				</c:if>
+		
 <div class="settings_option">
             <h1>Setting</h1>
             <div class="another_thins">
@@ -51,7 +150,7 @@
                 </div>
                 <div class="password_reset">
                     <i class="fa-solid fa-key"></i>
-                    <a href="#">Reset Your Password -></a>
+                    <a href="../forgotpswd.jsp">Reset Your Password -></a>
                 </div>
                 
             </div>

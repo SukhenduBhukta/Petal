@@ -1,11 +1,11 @@
 @charset "UTF-8";
-.container .container2 .settings_option h1 {
+.container .main .settings_option h1 {
   display: flex;
   justify-content: center;
   font-size: 3rem;
   margin: 3rem;
 }
-.container .container2 .settings_option .another_thins {
+.container .main .settings_option .another_thins {
   display: flex;
   width: 100%;
   height: 35rem;
@@ -14,7 +14,7 @@
   border-radius: 2px;
   padding: 1rem;
 }
-.container .container2 .settings_option .another_thins .edit_profile {
+.container .main .settings_option .another_thins .edit_profile {
   margin-left: 10%;
   margin-bottom: 2rem;
   width: 20rem;
@@ -26,14 +26,14 @@
   padding: 2rem;
   border-radius: 1rem;
 }
-.container .container2 .settings_option .another_thins .edit_profile a {
+.container .main .settings_option .another_thins .edit_profile a {
   font-size: 3rem;
   color: #000;
 }
-.container .container2 .settings_option .another_thins .edit_profile a:hover {
+.container .main .settings_option .another_thins .edit_profile a:hover {
   color: #440224;
 }
-.container .container2 .settings_option .another_thins .edit_profile i {
+.container .main .settings_option .another_thins .edit_profile i {
   font-size: 4rem;
   padding: 0 1rem 0 0;
   color: #440224;
@@ -42,7 +42,7 @@
   padding: 0 1rem 0 0;
   margin: 1rem;
 }
-.container .container2 .settings_option .another_thins .password_reset {
+.container .main .settings_option .another_thins .password_reset {
   margin-left: 20%;
   margin-bottom: 2rem;
   width: 20rem;
@@ -54,14 +54,14 @@
   padding: 2rem;
   border-radius: 1rem;
 }
-.container .container2 .settings_option .another_thins .password_reset a {
+.container .main .settings_option .another_thins .password_reset a {
   font-size: 3rem;
   color: #000;
 }
-.container .container2 .settings_option .another_thins .password_reset a:hover {
+.container .main .settings_option .another_thins .password_reset a:hover {
   color: #3b6e97;
 }
-.container .container2 .settings_option .another_thins .password_reset i {
+.container .main .settings_option .another_thins .password_reset i {
   padding: 0 1rem 0 0;
   font-size: 4rem;
   color: #3b6e97;
@@ -70,7 +70,7 @@
   padding: 0 1rem 0 0;
   margin: 1rem;
 }
-.container .container2 .settings_option .another_thins .address_updation {
+.container .main .settings_option .another_thins .address_updation {
   margin-left: 20%;
   margin-bottom: 2rem;
   width: 20rem;
@@ -82,14 +82,14 @@
   padding: 2rem;
   border-radius: 1rem;
 }
-.container .container2 .settings_option .another_thins .address_updation a {
+.container .main .settings_option .another_thins .address_updation a {
   font-size: 3rem;
   color: #000;
 }
- .container .container2 .settings_option .another_thins .address_updation a:hover {
+ .container .main .settings_option .another_thins .address_updation a:hover {
   color: #310c58;
 }
-.container .container2 .settings_option .another_thins .address_updation i {
+.container .main .settings_option .another_thins .address_updation i {
   color: #310c58;
   font-size: 4rem;
   padding: 0 1rem 0 0;

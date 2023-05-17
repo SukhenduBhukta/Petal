@@ -18,7 +18,7 @@ User us=(User)session.getAttribute("userobj");
                     </label>
                 </div>
                 <%
-                Doctor u=(Doctor)session.getAttribute("userobj");
+                Doctor u=(Doctor)session.getAttribute("userobj2");
                 DoctorDAOImpl dao=new DoctorDAOImpl(DBconnect.getCon());
                 String s=dao.activeIn(u.getDid());
                 if(s.equals("active")){
@@ -27,16 +27,16 @@ User us=(User)session.getAttribute("userobj");
                 <%}else{ %>
                 <a href="../inactive?did=<%=u.getDid() %>"><button style="padding: 5px 10px; background: green; color:#fff; border-radius: 30px;">Active</button></a>
                 <%} %>
-                <c:if test="${not empty userobj.pimg }">
+                <c:if test="${not empty userobj2.pimg }">
 							<div class="profile" style="height: 6rem;width:6rem;border-radius:50%;">
-								<img src="../Documents/${userobj.pimg }" style="height: 6rem;width:6rem;border-radius:50%;">
+								<img src="../Documents/${userobj2.pimg }" style="height: 6rem;width:6rem;border-radius:50%;">
 							</div>
-						</c:if> <c:if test="${empty userobj.pimg }">
+						</c:if> <c:if test="${empty userobj2.pimg }">
 							<div class="profile" style="height: 6rem;width:6rem;border-radius:50%;">
 								<img src="./all/Img/user.png" style="height: 6rem;width:6rem;border-radius:50%;">
 							</div>
 						</c:if>
-						<h2 style="margin: 0 3rem 0 0;">${userobj.dfname }</h2>
+						<h2 style="margin: 0 3rem 0 0;">${userobj2.dfname }</h2>
                 <div class="user">
                 
                     

@@ -14,7 +14,7 @@
 </head>
 <body>
 <%
-User us=(User)session.getAttribute("userobj");
+User us=(User)session.getAttribute("userobj3");
 %>
 <div class="container">
 <%@include file="sidebar.jsp"%>
@@ -31,7 +31,7 @@ User us=(User)session.getAttribute("userobj");
             </div>
         </div>
 <%@include file="navbar.jsp"%>
-<c:if test="${empty userobj }">
+<c:if test="${empty userobj3 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 

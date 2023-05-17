@@ -11,6 +11,7 @@ import javax.print.attribute.standard.RequestingUserName;
 import org.apache.taglibs.standard.tag.common.xml.IfTag;
 
 import com.entity.Appointment;
+import com.entity.Payment;
 
 public class AppointmentDAOImpl implements AppointmentDAO {
 	private Connection con;
@@ -132,7 +133,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 				ResultSet rs = psmt.executeQuery();
 				if (rs.next()) {
 					if (rs.getString("status").equals("paid")) {
-						System.out.println(rs.getString("status"));
+						//System.out.println(rs.getString("status"));
 						int apiid = rs.getInt("apid");
 						String sql2 = "select * from appointment where user_id=? and id=?";
 						PreparedStatement psmt2 = con.prepareStatement(sql2);
@@ -194,7 +195,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 				if (rs.next()) {
 					// System.out.println(rs.getString("status")+" ");
 					if (rs.getString("status").equals("paid")) {
-						int apiid = rs.getInt("apid");
+						Integer apiid = rs.getInt("apid");
 						String sql2 = "select * from appointment where did=? and status=? and id=?";
 						PreparedStatement psmt2 = con.prepareStatement(sql2);
 						psmt2.setInt(1, did);
@@ -342,5 +343,86 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 
 		return f;
 	}
+
+	public List<Appointment> getAllappoint() {
+		List<Appointment> list = new ArrayList<Appointment>();
+		Appointment ap = null;
+		try {
+			String sql = "select * from appointment";
+			PreparedStatement psmt2 = con.prepareStatement(sql);
+			ResultSet rs2 = psmt2.executeQuery();
+			while (rs2.next()) {
+				ap = new Appointment();
+				ap.setId(rs2.getInt(1));
+				ap.setUserid(rs2.getInt(2));
+				ap.setOwnerName(rs2.getString(3));
+				ap.setPetName(rs2.getString(4));
+				ap.setGender(rs2.getString(5));
+				ap.setMob(rs2.getString(6));
+				ap.setAdrs(rs2.getString(7));
+				ap.setStreet(rs2.getString(8));
+				ap.setCity(rs2.getString(9));
+				ap.setState(rs2.getString(10));
+				ap.setPinCode(rs2.getString(11));
+				ap.setEmail(rs2.getString(12));
+				ap.setAge(rs2.getString(13));
+				ap.setDate(rs2.getString(14));
+				ap.setDoctorid(rs2.getInt(15));
+				ap.setStatus(rs2.getString(16));
+				ap.setTime(rs2.getString(17));
+				ap.setLink(rs2.getString(18));
+				ap.setReport(rs2.getString(19));
+				list.add(ap);
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return list;
+	}
+
+	public Payment getPayByapid(int id) {
+		Payment p=null;
+		try {
+			String sql = "select * from payments where apid=?";
+			PreparedStatement psmt2 = con.prepareStatement(sql);
+			psmt2.setInt(1, id);
+			ResultSet rs2 = psmt2.executeQuery();
+			while (rs2.next()) {
+				p=new Payment();
+				p.setPayid(rs2.getInt(1));
+				p.setAmount(rs2.getInt(2));
+				p.setStatus(rs2.getString(3));
+				p.setRazorpay_payment_id(rs2.getString(4));
+				p.setRazorpay_order_id(rs2.getString(5));
+				p.setRazorpay_signature(rs2.getString(6));
+				p.setCid(rs2.getInt(7));
+				p.setApid(rs2.getInt(8));
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return p;
+	}
+
+	public boolean giveRatingDoctor(int r, int uid, int did, String des) {
+		boolean f=false;
+		try {
+			String sql = "insert into doctor_rating(did, uid, rcount, comment) values(?,?,?,?)";
+			PreparedStatement psmt2 = con.prepareStatement(sql);
+			psmt2.setInt(1, did);
+			psmt2.setInt(2, uid);
+			psmt2.setInt(3, r);
+			psmt2.setString(4, des);
+			int i=psmt2.executeUpdate();
+			if(i==1) {
+				f=true;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return f;
+	}
+	
+	
 
 }

@@ -277,6 +277,23 @@ public class DoctorDAOImpl implements DoctorDAO{
 				}
 			
 			}
+
+
+
+		public int Doctorcount() {
+			int i=0;
+			try {
+				String sql = "select * from doctor";
+				PreparedStatement psmt = con.prepareStatement(sql);
+				ResultSet rs = psmt.executeQuery();
+				while (rs.next()) {
+					i++;
+				}
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return i;
+		}
 	
 		
 		

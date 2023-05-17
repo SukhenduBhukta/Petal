@@ -32,7 +32,7 @@ User u=(User)session.getAttribute("userobj");
                 </div>
                 <div class="password_reset">
                     <i class="fa-solid fa-key"></i>
-                    <a href="#">Reset Your Password -></a>
+                    <a href="forgotpswd.jsp">Reset Your Password -></a>
                 </div>
                 <div class="address_updation">
                     <i class="fa-solid fa-location-dot"></i>

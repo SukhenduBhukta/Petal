@@ -4,7 +4,7 @@
 	rel="stylesheet">
 <link rel="stylesheet" href="style.css" />
 <link rel="stylesheet" href="editprofile.css" />
-<link rel="stylesheet" href="setting.css" />
+
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/npm/swiper/swiper-bundle.min.css" />
 <script src="https://kit.fontawesome.com/4a1f61a443.js"

@@ -90,6 +90,11 @@
                     href="Documents/<%=ap.getReport() %>"
                     target="_blank"><button style="padding: 5px 10px; background: #333; color:#fff; border-radius:4px;">Download</button></a></td>
         </tr>
+        <tr>
+            <th>Give Doctor Rating</th>
+           
+            <td><a href="rating.jsp?did=<%=ap.getDoctorid() %>"><button style="padding: 5px 10px; background: red; color:#fff; border-radius:4px;">Rate Me</button></a></td>
+        </tr>
         <%} %>
         <tr>
             <th>Status</th>

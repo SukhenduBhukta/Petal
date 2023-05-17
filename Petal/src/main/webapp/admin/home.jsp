@@ -1,3 +1,10 @@
+<%@page import="com.entity.Payment"%>
+<%@page import="com.entity.Doctor"%>
+<%@page import="com.DAO.DoctorDAOImpl"%>
+<%@page import="com.entity.Appointment"%>
+<%@page import="java.util.List"%>
+<%@page import="com.DB.DBconnect"%>
+<%@page import="com.DAO.AppointmentDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
     <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
@@ -25,7 +32,7 @@
             </div>
         </div>
 <%@include file="navbar.jsp"%>
-<c:if test="${empty userobj }">
+<c:if test="${empty userobj1 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 <div class="details">
@@ -37,54 +44,49 @@
                     <table>
                         <thead>
                             <tr>
-                            	<td>Img</td>
-                                <td>Name</td>
-                                <td>Price</td>
-                                <td>Payment</td>
+                            	
+                                <td>Owner Name</td>
+                                <td>Pet Name</td>
+                                <td>Email</td>
+                                <td>Mobile</td>
+                                <td>Doctor Name</td>
+                                <td>Doctor Id</td>
                                 <td>Status</td>
+                                <td>Payment Id</td>
                             </tr>
                         </thead>
 
                         <tbody>
+                            <%
+                            	AppointmentDAOImpl dao3=new AppointmentDAOImpl(DBconnect.getCon());
+                            	List<Appointment> list=dao3.getAllappoint();
+                            	for(Appointment ap:list){
+                            		
+                            		Doctor d1=dao2.getDoctorSinglebyId(ap.getDoctorid());
+                            		Payment p=dao3.getPayByapid(ap.getId());
+                            %>
                             <tr>
-                            <td><img scr=""></td>
-                                <td>Persian cat</td>
-                                <td>₹1,780</td>
-                                <td>Paid</td>
-                                <td> <span class="status delivered">Delivered</span></td>
+                            
+                                <td><%=ap.getOwnerName() %></td>
+                                <td><%=ap.getPetName() %></td>
+                                <td><%=ap.getEmail() %></td>
+                                <td><%=ap.getMob() %></td>
+                                <td><%=ap.getDoctorid() %></td>
+                                <td><%=d1.getDfname() %> <%=d1.getLfname() %></td>
+                                <%if(ap.getStatus().equals("under process")){ %>
+                                <td> <span class="status pending">Under Process</span></td>
+                                <%}else if(ap.getStatus().equals("schedule")){ %>
+                                 <td> <span class="status inprogress">Schedule</span></td>
+                                <%}else{ %>
+                                 <td> <span class="status delivered">Done</span></td>
+                                <%} %>
+                                <%if(p==null){ %>
+                                <td></td>
+                                <%}else{ %>
+                                <td><%=p.getRazorpay_payment_id() %></td>
+                                <%} %>
                             </tr>
-
-                            <tr>
-                            <td><img scr=""></td>
-                                <td>Persian cat</td>
-                                <td>₹1,780</td>
-                                <td>Paid</td>
-                                <td> <span class="status pending">Pending</span></td>
-                            </tr>
-
-                            <tr>
-                            <td><img scr=""></td>
-                                <td>Persian cat</td>
-                                <td>₹1,780</td>
-                                <td>Paid</td>
-                                <td> <span class="status return">Return</span></td>
-                            </tr>
-
-                            <tr>
-                            <td><img scr=""></td>
-                                <td>Persian cat</td>
-                                <td>₹1,780</td>
-                                <td>Paid</td>
-                                <td> <span class="status inprogress">Inprogress</span></td>
-                            </tr>
-
-                            <tr>
-                            <td><img scr=""></td>
-                                <td>Persian cat</td>
-                                <td>₹1,780</td>
-                                <td>Paid</td>
-                                <td> <span class="status delivered">Delivered</span></td>
-                            </tr>
+                            <%} %>
 
                            
 
@@ -93,36 +95,7 @@
                     </table>
                 </div>
 
-                <div class="active_doctor">
-                    <div class="doctor">
-                        <h2>Active Doctors</h2>
-                    </div>
-                    <table>
-                        <tr>
-                            <td width="5rem"><div class="imgbox"><img src="./all/Img/Dr.Kapil K Guho.png" alt=""></div></td>
-                            <td><h4>Dr.Kapil K Guho <br><span>Kolkata</span></h4></td>
-                        </tr>
-                        <tr>
-                            <td width="5rem"><div class="imgbox"><img src="./all/Img/Dr.Kapil K Guho.png" alt=""></div></td>
-                            <td><h4>Dr.Kapil K Guho <br><span>Kolkata</span></h4></td>
-                        </tr>
-
-                        <tr>
-                            <td width="5rem"><div class="imgbox"><img src="./all/Img/Dr.Kapil K Guho.png" alt=""></div></td>
-                            <td><h4>Dr.Kapil K Guho<br><span>Kolkata</span></h4></td>
-                        </tr>
-
-                        <tr>
-                            <td width="5rem"><div class="imgbox"><img src="./all/Img/Dr.Kapil K Guho.png" alt=""></div></td>
-                            <td><h4>Dr.Kapil K Guho<br><span>Kolkata</span></h4></td>
-                        </tr>
-
-                        <tr>
-                            <td width="5rem"><div class="imgbox"><img src="./all/Img/Dr.Kapil K Guho.png" alt=""></div></td>
-                            <td><h4>Dr.Kapil K Guho<br><span>Kolkata</span></h4></td>
-                        </tr>
-                    </table>
-                </div>
+                
 
             </div>
 </div>

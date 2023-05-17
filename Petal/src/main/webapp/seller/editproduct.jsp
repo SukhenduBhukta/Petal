@@ -28,7 +28,7 @@
             </div>
         </div>
 <%@include file="navbar.jsp"%>
-<c:if test="${empty userobj }">
+<c:if test="${empty userobj3 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 <div class="details">

@@ -29,11 +29,11 @@
             </div>
         </div>
 <%@include file="navbar.jsp"%>
-<c:if test="${empty userobj }">
+<c:if test="${empty userobj1 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 <%
-User us=(User)session.getAttribute("userobj");
+User us=(User)session.getAttribute("userobj1");
 %>
 <div class="details">
 <div class="recentorders">
@@ -65,8 +65,8 @@ User us=(User)session.getAttribute("userobj");
                         <tbody>
                         <%
                         int id=Integer.parseInt(request.getParameter("id"));
-                        GroceryDAOImpl dao=new GroceryDAOImpl(DBconnect.getCon());
-                       List<GroceryDtls> list =dao.getAllProducById(id);
+                        GroceryDAOImpl dao3=new GroceryDAOImpl(DBconnect.getCon());
+                       List<GroceryDtls> list =dao3.getAllProducById(id);
                        for(GroceryDtls g : list){
                     	   %>
                     	   <tr>

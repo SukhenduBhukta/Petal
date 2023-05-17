@@ -6,6 +6,8 @@ import java.sql.ResultSet;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.print.attribute.standard.RequestingUserName;
+
 import com.entity.Order;
 
 public class OrderDAOImpl implements OrderDAO {
@@ -107,15 +109,21 @@ public class OrderDAOImpl implements OrderDAO {
 		List<Order> list = new ArrayList<Order>();
 		Order o = null;
 		try {
-			String sql1 = "select status from order_table where sid=?";
+			String sql1 = "select orderid from order_table where sid=? and status=?";
 			PreparedStatement psmt1 = con.prepareStatement(sql1);
 			psmt1.setInt(1, sid);
+			psmt1.setString(2, "Ordered");
 			ResultSet rs1 = psmt1.executeQuery();
-			if (rs1.next()) {
-				if (!rs1.getString("status").equals("Cancel")) {
-					String sql = "select * from order_table where sid=? order by status DESC";
+			List<String> slist=new ArrayList<String>();
+			while(rs1.next()) {
+				slist.add(rs1.getString("orderid"));
+			}
+			for(int i=0;i<slist.size();i++) {
+				String s=slist.get(i);
+					String sql = "select * from order_table where sid=? and orderid=? order by status DESC";
 					PreparedStatement psmt = con.prepareStatement(sql);
 					psmt.setInt(1, sid);
+					psmt.setString(2, s);
 					ResultSet rs = psmt.executeQuery();
 					while (rs.next()) {
 						o = new Order();
@@ -137,7 +145,7 @@ public class OrderDAOImpl implements OrderDAO {
 
 					}
 				}
-			}
+			
 
 		} catch (Exception e) {
 			e.printStackTrace();

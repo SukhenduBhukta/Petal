@@ -19,4 +19,5 @@ public interface UserDAO {
 	public boolean checkPassword(String ps, int id);
 	public boolean updateProfile(User us);
 	public boolean updateAddress(int uid, String home, String land, String city, String state, String pin);
+	public int Sellercount();
 }

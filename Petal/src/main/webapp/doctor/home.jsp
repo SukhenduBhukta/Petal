@@ -35,7 +35,7 @@
                 </div>
             </div>
         </div>
-        <c:if test="${empty userobj }">
+        <c:if test="${empty userobj2 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 <%@include file="navbar.jsp"%>
@@ -67,7 +67,10 @@
                         //Doctor u=(Doctor)session.getAttribute("userobj");
                         AppointmentDAOImpl dao2=new AppointmentDAOImpl(DBconnect.getCon());
                         List<Appointment> list=dao2.getAllappointByDid(u.getDid());
+                        System.out.println(u.getDid());
+                        System.out.println(list.size());
                         for(Appointment ap:list){
+                        	System.out.println(ap);
                         %>
                        	<tr>
                             	<td><%=ap.getId() %></td>

@@ -38,13 +38,13 @@ public class LoginServlet extends HttpServlet {
 
 				if ("admin@gmail.com".equals(email) && "admin123".equals(password)) {
 					User us = new User();
-					session.setAttribute("userobj", us);
+					session.setAttribute("userobj1", us);
 					resp.sendRedirect("admin/home.jsp");
 				}
 				else if ("Seller".equals(designation)) {
 					User us = dao.login(email, password,designation);
 					if (us != null) {
-						session.setAttribute("userobj", us);
+						session.setAttribute("userobj3", us);
 						resp.sendRedirect("seller/home.jsp");
 					}
 					else {
@@ -55,7 +55,7 @@ public class LoginServlet extends HttpServlet {
 				else if ("Doctor".equals(designation)) {
 					Doctor us = dao2.login(email, password);
 					if (us != null) {
-						session.setAttribute("userobj", us);
+						session.setAttribute("userobj2", us);
 						resp.sendRedirect("doctor/home.jsp");
 					}
 					else {

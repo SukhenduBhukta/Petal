@@ -296,7 +296,21 @@ public class UserDAOImpl implements UserDAO {
 		}
 		return f;
 	}
-	
+	public int Sellercount() {
+		int i=0;
+		try {
+			String sql = "select * from user where designation=?";
+			PreparedStatement psmt = con.prepareStatement(sql);
+			psmt.setString(1, "Seller");
+			ResultSet rs = psmt.executeQuery();
+			while (rs.next()) {
+				i++;
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return i;
+	}
 	
 
 }

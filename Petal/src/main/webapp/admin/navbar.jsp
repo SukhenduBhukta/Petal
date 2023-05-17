@@ -1,12 +1,12 @@
 
 	
-		<div class="topbar">
+		<%@page import="com.DAO.UserDAOImpl"%>
+<%@page import="com.DB.DBconnect"%>
+<%@page import="com.DAO.DoctorDAOImpl"%>
+<div class="topbar">
                 
                 <div class="search">
-                    <label for="">
-                        <input type="text" placeholder="Search Here">
-                        <ion-icon name="search-outline"></ion-icon>
-                    </label>
+                    
                 </div>
                 <div class="user">
                     <h2>Admin</h2>
@@ -14,39 +14,16 @@
             </div>
 
             <div class="cardbox">
-                <div class="card">
-                    <div>
-                        <div class="numbers">1,504</div>
-                        <div class="cardname">Daily Views</div>
-                    </div>
-                    <div class="iconbx">
-                        <i class="fa-solid fa-eye"></i>
-                    </div>
-                </div>
+                <%
+                UserDAOImpl dao=new UserDAOImpl(DBconnect.getCon());
+                int s=dao.Sellercount();
+                DoctorDAOImpl dao2=new DoctorDAOImpl(DBconnect.getCon());
+        		int d=dao2.Doctorcount();
+                %>
 
                 <div class="card">
                     <div>
-                        <div class="numbers">80</div>
-                        <div class="cardname">Sales</div>
-                    </div>
-                    <div class="iconbx">
-                        <i class="fa-solid fa-scale-unbalanced-flip"></i>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">284</div>
-                        <div class="cardname">Comments</div>
-                    </div>
-                    <div class="iconbx">
-                        <i class="fa-solid fa-comment"></i>
-                    </div>
-                </div>
-
-                <div class="card">
-                    <div>
-                        <div class="numbers">15</div>
+                        <div class="numbers"><%=d %></div>
                         <div class="cardname">Doctor</div>
                     </div>
                     <div class="iconbx">
@@ -56,7 +33,7 @@
 
                 <div class="card">
                     <div>
-                        <div class="numbers">10</div>
+                        <div class="numbers"><%=s %></div>
                         <div class="cardname">Seller</div>
                     </div>
                     <div class="iconbx">

@@ -29,7 +29,7 @@
 				</div>
 			</div>
 			<%@include file="navbar.jsp"%>
-			<c:if test="${empty userobj }">
+			<c:if test="${empty userobj1 }">
 				<c:redirect url="../login.jsp"></c:redirect>
 			</c:if>
 			<div class="details">
@@ -59,7 +59,7 @@
 						</thead>
 						<tbody>
 							<%
-							UserDAOImpl dao = new UserDAOImpl(DBconnect.getCon());
+							
 							List<User> list = dao.getSeller();
 							for (User us : list) {
 							%>

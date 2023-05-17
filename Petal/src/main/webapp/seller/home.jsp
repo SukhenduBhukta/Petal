@@ -32,7 +32,7 @@
                 </div>
             </div>
         </div>
-        <c:if test="${empty userobj }">
+        <c:if test="${empty userobj3 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 <%@include file="navbar.jsp"%>
@@ -61,14 +61,18 @@
 
                         <tbody>
                         <%
-                        User u=(User)session.getAttribute("userobj");
+                        User u=(User)session.getAttribute("userobj3");
                         OrderDAOImpl dao=new OrderDAOImpl(DBconnect.getCon());
                         List<Order> list=dao.getOrderBySId(u.getUserid());
+                        System.out.println(u.getUserid());
+                        System.out.println(list.size());
                         for(Order o:list){
+                        	
                         	GroceryDAOImpl dao1=new GroceryDAOImpl(DBconnect.getCon());
                         	GroceryDtls g=dao1.getProductById(o.getPid());
-                        	CartDAOImpl dao3=new CartDAOImpl(DBconnect.getCon());
-                        	Cart c=dao3.getCartbyId(o.getUid(), o.getPid());
+                        	int p=Integer.parseInt(g.getPrice());
+                       		int total=o.getPcount()*p;
+          
                         %>
                             <tr>
                             	<td><%=o.getOid() %></td>
@@ -76,8 +80,8 @@
                                 <td><%=o.getHouse() %>, <%=o.getLandmark() %>, <%=o.getCity() %>, <%=o.getState() %>, <%=o.getPin() %></td>
                                 <td><%=g.getName() %></td>
                                 <td><%=g.getCname() %></td>
-                                <td><%=c.getPcount() %></td>
-                                <td>₹<%=c.getTprice() %></td>
+                                <td><%=o.getPcount() %></td>
+                                <td>₹<%=total %></td>
                                 <td>COD</td>
                                 <td> <span class="status delivered"><%=o.getStatus() %></span></td>
                                 <td><a href=""><button class="add">Process</button></a> <a href="cancelOrder?oid=<%=o.getOid() %>"><button class="reject">Cancel</button></a></td>

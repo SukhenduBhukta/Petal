@@ -3,6 +3,7 @@ package com.DAO;
 import java.util.List;
 
 import com.entity.Appointment;
+import com.entity.Payment;
 
 public interface AppointmentDAO {
 	public boolean addAppointment(Appointment ap);
@@ -15,5 +16,7 @@ public interface AppointmentDAO {
 	public boolean updateAppointment1(String report, int apid);
 	public List<Appointment> getAllUpdateappointByDid(int did);
 	public boolean updateAppointment(String time, String link, int apid);
-	
+	public List<Appointment> getAllappoint();
+	public Payment getPayByapid(int id);
+	public boolean giveRatingDoctor(int r, int uid, int did, String des);
 }

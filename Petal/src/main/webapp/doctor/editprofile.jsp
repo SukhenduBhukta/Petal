@@ -15,8 +15,76 @@
 <html>
 <head>
 <meta charset="UTF-8">
-<title>Seller: Home</title>
+<title>Doctor: Home</title>
 <%@include file="editcss.jsp"%>
+<style type="text/css">
+@charset "UTF-8";
+.container .main .editprofile {
+  padding: 2rem;
+}
+.container .main .editprofile h1 {
+  text-align: center;
+  margin-top: 2rem;
+  font-size: 3rem;
+  margin-bottom: 2rem;
+}
+.container .main .editprofile form {
+  max-width: 75rem;
+  height: 55%;
+  margin: 0 auto;
+  padding: 1rem 5rem 2rem 2rem;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.1);
+}
+.container .main .editprofile form label {
+  display: block;
+  margin-bottom: 10px;
+  font-weight: bold;
+  padding: 0.3rem;
+  font-size: 1.5rem;
+}
+.container .main .editprofile form input[type=text],
+.container .main .editprofile form input[type=email],
+.container .main .editprofile form input[type=number],
+.container .main .editprofile form input[type=password] {
+  width: 100%;
+  padding: 1rem;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+  font-size: 1.5rem;
+}
+.container .main .editprofile form input[type=file] {
+  margin-top: 0.3rem;
+}
+.container .main .editprofile form .password-container {
+  position: relative;
+  font-size: 1.5rem;
+}
+.container .main .editprofile form .password-container .toggle-password {
+  position: absolute;
+  font-size: 2rem;
+  top: 75%;
+  right: 1rem;
+  transform: translateY(-50%);
+  cursor: pointer;
+}
+.container .main .editprofile form button {
+  display: block;
+  width: 100%;
+  padding: 1rem;
+  margin-top: 1rem;
+  background-color: #4CAF50;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.container .main .editprofile form button:hover {
+  background-color: #45a049;
+}
+</style>
 </head>
 <body>
 <div class="container">
@@ -32,7 +100,7 @@
                 </div>
             </div>
         </div>
-        <c:if test="${empty userobj }">
+        <c:if test="${empty userobj2 }">
 <c:redirect url="../login.jsp"></c:redirect>
 </c:if>
 <%@include file="navbar.jsp"%>
