@@ -12,4 +12,5 @@ public interface OrderDAO {
 	public boolean cancelOrder(String oid);
 	public boolean paymentadd(int cid,int amount, String status, String ordid, int apid);
 	public boolean paymentUpdate( String status, String ordid, String payId, String sign);
+	public int getapid(String ord);
 }

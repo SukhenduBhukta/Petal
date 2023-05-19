@@ -110,7 +110,7 @@ User u=(User)session.getAttribute("userobj");
             </div>
     
         </section>
-        <section id="dress_banner">
+        <section id="dress_banner" style="display:none;">
             <a href="#">
                 <div class="banner_add">
                 </div>

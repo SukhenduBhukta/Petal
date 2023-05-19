@@ -32,6 +32,7 @@ public class AppointmentServlet extends HttpServlet{
 			String email=req.getParameter("email");
 			String age=req.getParameter("age");
 			String date=req.getParameter("date");
+			String dis=req.getParameter("dis");
 			int  doctor_id=Integer.parseInt(req.getParameter("option1"));
 			
 			Appointment ap=new Appointment();
@@ -49,6 +50,7 @@ public class AppointmentServlet extends HttpServlet{
 			ap.setAge(age);
 			ap.setDate(date);
 			ap.setDoctorid(doctor_id);
+			ap.setDis(dis);
 			ap.setStatus("under process");
 			AppointmentDAOImpl dao=new AppointmentDAOImpl(DBconnect.getCon());
 			

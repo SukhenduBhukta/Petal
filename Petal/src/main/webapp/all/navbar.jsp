@@ -21,7 +21,7 @@
 		</a> <a href="grocery.jsp">
 			<div class="grocery"
 				style="background: linear-gradient(271.76deg, #086060 -18.43%, #2a7009 96.63%); border-radius: 20px 0px 0px 20px;">
-				<h2>Grocery & Accessories</h2>
+				<h2>Food & Accessories</h2>
 			</div>
 		</a>
 	</header>

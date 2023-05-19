@@ -136,10 +136,8 @@
                                             <input type="number" required="required" name="age" />
                                         </div>
                                     </div>
-
-                                   
-                                            <div class="appontment-section">
-                                                <div class="labinput">
+                                    <div class="email-add">
+                                        <div class="labinput">
                                                     <div class="text"><label for=""><span
                                                                 style="color: red;">*</span>Date: -</label></div>
                                                     <input type="date" id="date" required="required" name="date" />
@@ -155,11 +153,25 @@
                                             for(Doctor us: list){
                                                 %>
                                                 <option value="<%=us.getDid() %>">Dr. <%=us.getDfname()+" "+us.getLfname() %></option>
+                                                
                                                 <%
                                                 }
                                             %>
                                                 </select>
                                             </div>
+                                    </div>
+										<div class="email-add">
+                                        <div class="labinput">
+                                            <div class="text"><label for=""><span style="color: red;">*</span>Disease :
+                                                    -</label></div>
+                                            <textarea rows="2" cols="" name="dis" style="width:99%"></textarea>
+                                        </div>
+
+                                        
+                                    </div>
+                                   
+                                            <div class="appontment-section">
+                                                
                                             </div>
 
 

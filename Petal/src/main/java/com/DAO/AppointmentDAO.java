@@ -2,6 +2,8 @@ package com.DAO;
 
 import java.util.List;
 
+import javax.print.attribute.standard.RequestingUserName;
+
 import com.entity.Appointment;
 import com.entity.Payment;
 
@@ -19,4 +21,5 @@ public interface AppointmentDAO {
 	public List<Appointment> getAllappoint();
 	public Payment getPayByapid(int id);
 	public boolean giveRatingDoctor(int r, int uid, int did, String des);
+	public String getEmailByapid(int id);
 }

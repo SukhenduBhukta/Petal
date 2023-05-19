@@ -59,7 +59,7 @@ i {
   padding: 5rem 0;
 }
 .maincontainer form .form_all .form-section {
-  min-height: 95rem;
+  min-height: 105rem;
   margin: 0 20%;
   border: 1rem solid #ffffff;
   background: #fff;
@@ -311,7 +311,9 @@ i {
   font-weight: 500;
   color: #000;
 }
-.maincontainer form .form_all .form-section .email-add .labinput input {
+.maincontainer form .form_all .form-section .email-add .labinput input,
+.maincontainer form .form_all .form-section .email-add .labinput textarea,
+.maincontainer form .form_all .form-section .email-add .labinput select {
   width: 90%;
   padding: 1rem 1rem;
   border: none;

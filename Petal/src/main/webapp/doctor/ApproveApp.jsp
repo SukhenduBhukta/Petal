@@ -55,6 +55,7 @@
                                 <td>Contact</td>
                                 <td>Gender</td>
                                 <td>Age</td>
+                                <td>Disease</td>
                                 <td>Link</td>
                                 <td>Time</td>
                                 
@@ -77,6 +78,7 @@
                                 <td><%=ap.getAdrs() %>, <%=ap.getCity() %>, <%=ap.getStreet() %>, <%=ap.getState() %>, <%=ap.getPinCode() %><br><%=ap.getMob() %><br><%=ap.getEmail() %></td>
                                 <td><%=ap.getGender() %></td>
                                 <td><%=ap.getAge() %></td>
+                                <td><%=ap.getDis() %></td>
                                 <td><a href="<%=ap.getLink() %>" target="_blank"><%=ap.getLink() %></a></td>
                                 <td><%=ap.getTime() %></td>
                                 

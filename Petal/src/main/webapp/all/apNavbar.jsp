@@ -18,7 +18,7 @@
 			
 			</a> <a href="grocery.jsp">
 				<div class="grocery">
-					<h2>Grocery & Accessories</h2>
+					<h2>Food & Accessories</h2>
 				</div>
 			</a>
 		</header>

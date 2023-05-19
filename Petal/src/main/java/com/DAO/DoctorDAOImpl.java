@@ -294,6 +294,28 @@ public class DoctorDAOImpl implements DoctorDAO{
 			}
 			return i;
 		}
+
+
+
+		public double DoctorStar(int did) {
+			double i=0.0f;
+			try {
+				int r=0;
+				double j=0.0f;
+				String sql="Select rcount from doctor_rating where did=?";
+				PreparedStatement psmt=con.prepareStatement(sql);
+				psmt.setInt(1, did);
+				ResultSet rSet=psmt.executeQuery();
+				while(rSet.next()) {
+					r+=rSet.getInt("rcount");
+					j++;
+				}
+				i=r/j;
+			} catch (Exception e) {
+				e.printStackTrace();
+			}
+			return i;
+		}
 	
 		
 		

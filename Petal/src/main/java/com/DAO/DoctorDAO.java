@@ -18,4 +18,5 @@ public interface DoctorDAO {
 	public boolean checkPassword(String ps, int id);
 	public void sendEmail(String message, String subject, String to, String from);
 	public int Doctorcount();
+	public double DoctorStar(int did);
 }

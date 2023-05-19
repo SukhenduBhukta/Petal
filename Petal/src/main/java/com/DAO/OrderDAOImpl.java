@@ -213,6 +213,22 @@ public class OrderDAOImpl implements OrderDAO {
 		}
 		return f;
 	}
+
+	public int getapid(String ord) {
+		int i=0;
+		try {
+			String sql="select apid from payments where razorpay_order_id=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setString(1, ord);
+			ResultSet rSet=psmt.executeQuery();
+			if(rSet.next()) {
+				i=rSet.getInt("apid");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return i;
+	}
 	
 	
 	

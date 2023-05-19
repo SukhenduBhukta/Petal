@@ -54,8 +54,7 @@
                                 <td>Pet Name</td>
                                 <td>Address</td>
                                 <td>Gender</td>
-                                <td>Mobile</td>
-                                <td>Email</td>
+                                <td>Disease</td>
                                 <td>Age</td>
                                 <td>Date</td>
                                 <td>Action</td>
@@ -76,10 +75,9 @@
                             	<td><%=ap.getId() %></td>
                                 <td><%=ap.getOwnerName() %></td>
                                 <td><%=ap.getPetName() %></td>
-                                <td><%=ap.getAdrs() %>, <%=ap.getCity() %>, <%=ap.getStreet() %>, <%=ap.getState() %>, <%=ap.getPinCode() %></td>
+                                <td><%=ap.getAdrs() %>, <%=ap.getCity() %>, <%=ap.getStreet() %><br> <%=ap.getState() %>, <%=ap.getPinCode() %> <br><%=ap.getEmail() %><br><%=ap.getMob() %></td>
                                 <td><%=ap.getGender() %></td>
-                                <td><%=ap.getMob() %></td>
-                                <td><%=ap.getEmail() %></td>
+                                <td><%=ap.getDis() %></td>
                                 <td><%=ap.getAge() %></td>
                                 <td><%=ap.getDate() %></td>
                                 <td><a href="DoctorApproval.jsp?apid=<%=ap.getId() %>&&email=<%=ap.getEmail() %>"><button style="background: green;">Schedule</button></a></td>

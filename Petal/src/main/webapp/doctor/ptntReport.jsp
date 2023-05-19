@@ -42,8 +42,17 @@
 
 
 		<form action="../patientreport" method="post" enctype="multipart/form-data">
-			<div class="form_all">
-				<ul class="form-section">
+			<div class="form_all" style="height: 50%;
+  width: 100%;
+  
+  padding: 5rem 0;">
+				<ul class="form-section" style=" min-height: 40rem;
+  margin: 0 20%;
+  border: 1rem solid #ffffff;
+  background: #f3f3fe;
+  border-radius: 2rem;
+  list-style: none;
+  padding: 1rem;">
 
 
 					<%
@@ -53,19 +62,48 @@
 
 
 
-					<div class="address-pet">
-						<div class="labinput">
-							<div class="text">
-								<label for="">Upload patient medical report :-</label>
+					<div class="address-pet" style="  top: 5rem;
+  position: relative;
+  width: 100%;
+  align-items: center;">
+						<div class="labinput" style="width: 100%;">
+							<div class="text" style="padding: 1rem 0;
+  border-radius: 1rem;">
+								<label for="" style=" padding-left: 1rem;
+  font-size: 1.5rem;
+  font-weight: 500;
+  color: #000;">Upload patient medical report :-</label>
 							</div>
-							<input type="file" required="required" name="report" />
+							<input type="file" required="required" name="report" style=" width: 99%;
+  padding: 1rem 1rem;
+  border: none;
+  background: transparent;
+  outline: none;
+  color: rgb(0, 0, 0);
+  font-size: 1.5rem;
+  transition: 0.5s;
+  border-left: 0.1rem solid #000;
+  border-bottom: 0.1rem solid #000;
+  border-right: 0.1rem solid #000;
+  border-top: 0.1rem solid #000;
+  border-radius: 0.5rem;"/>
 						</div>
 					</div>
 
 
 
-					<div class="for-submit">
-						<button type="submit">SUBMIT</button>
+					<div class="for-submit" style="display: flex;
+  justify-content: center;">
+						<button type="submit" style="cursor: pointer;
+  background: linear-gradient(45deg, #cf0d5b -18.43%, #d012aa 80.63%);
+  position: relative;
+  bottom: -8rem;
+  color: #fff;
+  border: none;
+  padding: 1rem 5rem;
+  border-radius: 2rem;
+  text-transform: uppercase;
+  font-weight: 600;">SUBMIT</button>
 					</div>
 
 

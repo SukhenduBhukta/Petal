@@ -26,7 +26,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 
 		try {
 
-			String sql = "insert into appointment(user_id,ownerName,petName,gender,mob,address,street,city,state,pincode,email,age,date,did,status) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
+			String sql = "insert into appointment(user_id,ownerName,petName,gender,mob,address,street,city,state,pincode,email,age,date,did,status,disease) values(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)";
 			PreparedStatement ps = con.prepareStatement(sql);
 			ps.setInt(1, ap.getUserid());
 			ps.setString(2, ap.getOwnerName());
@@ -43,7 +43,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 			ps.setString(13, ap.getDate());
 			ps.setInt(14, ap.getDoctorid());
 			ps.setString(15, ap.getStatus());
-
+			ps.setString(16, ap.getDis());
 			int i = ps.executeUpdate();
 			if (i == 1) {
 				f = true;
@@ -161,6 +161,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 							ap.setTime(rs2.getString(17));
 							ap.setLink(rs2.getString(18));
 							ap.setReport(rs2.getString(19));
+							ap.setDis(rs2.getString(20));
 							list.add(ap);
 						}
 					}
@@ -223,6 +224,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 							ap.setTime(rs2.getString(17));
 							ap.setLink(rs2.getString(18));
 							ap.setReport(rs2.getString(19));
+							ap.setDis(rs2.getString(20));
 							list.add(ap);
 						}
 					}
@@ -285,6 +287,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 							ap.setTime(rs2.getString(17));
 							ap.setLink(rs2.getString(18));
 							ap.setReport(rs2.getString(19));
+							ap.setDis(rs2.getString(20));
 							list.add(ap);
 						}
 					}
@@ -372,6 +375,7 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 				ap.setTime(rs2.getString(17));
 				ap.setLink(rs2.getString(18));
 				ap.setReport(rs2.getString(19));
+				ap.setDis(rs2.getString(20));
 				list.add(ap);
 			}
 		} catch (Exception e) {
@@ -407,20 +411,56 @@ public class AppointmentDAOImpl implements AppointmentDAO {
 	public boolean giveRatingDoctor(int r, int uid, int did, String des) {
 		boolean f=false;
 		try {
-			String sql = "insert into doctor_rating(did, uid, rcount, comment) values(?,?,?,?)";
-			PreparedStatement psmt2 = con.prepareStatement(sql);
-			psmt2.setInt(1, did);
-			psmt2.setInt(2, uid);
-			psmt2.setInt(3, r);
-			psmt2.setString(4, des);
-			int i=psmt2.executeUpdate();
-			if(i==1) {
-				f=true;
+			String sql1="select comment from doctor_rating where did=? and uid=?";
+			PreparedStatement psmt = con.prepareStatement(sql1);
+			psmt.setInt(1, did);
+			psmt.setInt(2, uid);
+			ResultSet rSet=psmt.executeQuery();
+			if(rSet.next()) {
+				String sql2="update doctor_rating set comment=?,rcount=? where did=? and uid=?";
+				PreparedStatement psmt3 = con.prepareStatement(sql2);
+				psmt3.setString(1, des);
+				psmt3.setInt(2, r);
+				psmt3.setInt(3, did);
+				psmt3.setInt(4, uid);
+				int i=psmt3.executeUpdate();
+				if(i==1) {
+					f=true;
+				}
+				
+			}else {
+				String sql = "insert into doctor_rating(did, uid, rcount, comment) values(?,?,?,?)";
+				PreparedStatement psmt2 = con.prepareStatement(sql);
+				psmt2.setInt(1, did);
+				psmt2.setInt(2, uid);
+				psmt2.setInt(3, r);
+				psmt2.setString(4, des);
+				int i=psmt2.executeUpdate();
+				if(i==1) {
+					f=true;
+				}
 			}
+			
 		} catch (Exception e) {
 			e.printStackTrace();
 		}
 		return f;
+	}
+
+	public String getEmailByapid(int id) {
+		String s="";
+		try {
+			String sql="select email from appointment where id=?";
+			PreparedStatement psmt=con.prepareStatement(sql);
+			psmt.setInt(1, id);
+			ResultSet rSet=psmt.executeQuery();
+			if(rSet.next()) {
+				s+=rSet.getString("email");
+			}
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+		return s;
 	}
 	
 	

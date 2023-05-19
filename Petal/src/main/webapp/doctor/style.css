@@ -447,11 +447,11 @@ i {
 }
 .container .main .details .recentorders table tr td {
   padding: 1.5rem;
-  min-width: 10rem;
+  min-width: 7rem;
   align-items: center;
 }
 .container .main .details .recentorders table tr td:nth-child(10){
-	min-width: 15rem;
+	min-width: 10rem;
 }
 .container .main .details .recentorders table tr td:nth-child(1){
 	min-width: 5rem;

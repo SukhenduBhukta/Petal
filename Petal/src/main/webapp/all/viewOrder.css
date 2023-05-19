@@ -44,6 +44,9 @@ i {
   font-size: 1.8rem;
   cursor: pointer;
 }
+.maincontainer .navbar .open-menu {
+  max-height: 40rem;
+}
 .maincontainer .view_order h1 {
   text-align: center;
   margin-top: 1.5rem;
@@ -51,6 +54,40 @@ i {
 }
 .maincontainer .view_order .order-container {
   margin-top: 2rem;
+}
+.maincontainer .view_order .order-container .order-details-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+  border-bottom: 1px solid #ccc;
+}
+.maincontainer .view_order .order-container .order-details-nav .order-number {
+  font-weight: bold;
+  font-size: 2.5rem;
+  margin-left: 8rem;
+}
+.maincontainer .view_order .order-container .order-details-nav .delivery-date {
+  color: #000;
+  font-size: 2.5rem;
+  margin-right: 7rem;
+  font-weight: 600;
+}
+.maincontainer .view_order .order-container .order-details-nav .product-name-img {
+  font-size: 2.5rem;
+  margin-right: 1.5rem;
+  margin-left: 2rem;
+  font-weight: 600;
+}
+.maincontainer .view_order .order-container .order-details-nav .order-value {
+  font-size: 2.5rem;
+  font-weight: 600;
+  margin-right: 7rem;
+}
+.maincontainer .view_order .order-container .order-details-nav .product-name {
+  font-weight: bold;
+  padding-left: 3rem;
+  font-size: 2.5rem;
 }
 .maincontainer .view_order .order-container .order {
   display: flex;
@@ -73,7 +110,7 @@ i {
 .maincontainer .view_order .order .product-details {
   display: flex;
   align-items: center;
-  width: 35rem;
+  width: 38rem;
   font-size: 2rem;
 }
 .maincontainer .view_order .order .product-image {
@@ -81,7 +118,7 @@ i {
   height: 9rem;
   -o-object-fit: cover;
      object-fit: cover;
-  margin-right: 10px;
+  margin-right: 1.8rem;
 }
 .maincontainer .view_order .order .product-name {
   font-weight: bold;
@@ -89,4 +126,5 @@ i {
 }
 .maincontainer .view_order .order .order-value {
   font-size: 2rem;
+  margin-left: 5rem;
 }

@@ -3,6 +3,7 @@ package com.user.servlet;
 import java.io.BufferedReader;
 import java.io.IOException;
 
+import javax.print.attribute.standard.RequestingUserName;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
@@ -12,6 +13,8 @@ import javax.servlet.http.HttpSession;
 
 import org.json.JSONObject;
 
+import com.DAO.AppointmentDAOImpl;
+import com.DAO.DoctorDAOImpl;
 import com.DAO.OrderDAOImpl;
 import com.DB.DBconnect;
 
@@ -35,7 +38,16 @@ public class UpdatePay extends HttpServlet{
         
         OrderDAOImpl dao=new OrderDAOImpl(DBconnect.getCon());
         boolean f=dao.paymentUpdate(status, orderid, payid, sign);
+        AppointmentDAOImpl dao3=new AppointmentDAOImpl(DBconnect.getCon());
+        int apid=dao.getapid(orderid);
+        String email=dao3.getEmailByapid(apid);
+        String message = "<html><body>Wlecome,<br>Your Appointment Successfully Booked.<br><br>Payment Id:- "+payid+"<br><br>Order Id:-"+orderid+"</body></html>";
+        String sub="Payment Successfull";
         
+        DoctorDAOImpl dao2DaoImpl=new DoctorDAOImpl(DBconnect.getCon());
+        dao2DaoImpl.sendEmail(message, sub, email, status);
+        resp.setContentType("text/plain");
+        resp.getWriter().write("success");
         HttpSession session=req.getSession();
         if(f) {
         	resp.sendRedirect("thankyou.jsp");

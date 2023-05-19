@@ -13,7 +13,7 @@
 <body>
 	<div class="maincontainer">
 		<div class="doc">
-			<h3>Wellcome to PETAL</h3>
+			<h3>Welcome to PETAL</h3>
 			<div class="logologin">
 				<!-- <a href="index.html "><img src="./all/Img/features/cat.png" alt="logo" class="cat"></a> -->
 
@@ -74,7 +74,7 @@
 
 			<button type="submit">Login</button>
 			<p>
-				New User? <a href="registration.jsp">registation</a>
+				New User? <a href="registration.jsp">registration</a>
 			</p>
 		</form>
 

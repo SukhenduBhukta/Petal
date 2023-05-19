@@ -108,11 +108,13 @@ User u=(User)session.getAttribute("userobj");
 					<%
                         DoctorDAOImpl dao = new DoctorDAOImpl(DBconnect.getCon());
                         List<Doctor> list = dao.getDoctorbyId();
+                        		
                         for(Doctor us: list){
+                        	double r=dao.DoctorStar(us.getDid());
                         	%>
 
                     <div class="swiper-slide">
-                        <div class="card_1 swiper-slide" id="card_4">
+                        <div class="card_1 swiper-slide" id="card_2">
                             <div class="doc_img_box">
                             <%
                             if(us.getPimg()!=null){
@@ -127,6 +129,13 @@ User u=(User)session.getAttribute("userobj");
                             	%>
                             </div>
                             <div class="doc_details">
+                            <%if(r>0.0){ %>
+                            <div class="star" style="position: relative;
+    top: -20px;
+    right: -28px;">
+					<h4 style="font-size:1.6rem;"><%=r %><i class="fas fa-star" style="color: red;"></i></h4>
+				</div>
+				<%}%>
                                 <div class="doc_name">
                                     <h2>Dr. <%=us.getDfname()+" "+us.getLfname() %> <br> <%if(us.getDesignation()==null){ %>
                                     <span> </span>

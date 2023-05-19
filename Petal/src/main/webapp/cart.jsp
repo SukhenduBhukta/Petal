@@ -74,11 +74,7 @@
 
         <section id="cart-add" class="section-p1">
             <div id="coupon">
-                <h3>Apply Coupon</h3>
-                <div>
-                    <input type="text" placeholder="Enter Your Coupon">
-                    <button class="normal">Apply</button>
-                </div>
+                
             </div>
     
             <div id="subtotal">

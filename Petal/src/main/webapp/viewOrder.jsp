@@ -29,6 +29,17 @@
 			
 
 			<div class="order-container">
+			<div class="order-details-nav">
+        <div class="product-details">
+          <span class="product-name-img">IMAGE</span>
+          <span class="product-name">Product name</span>
+        </div>
+        <span class="order-number">Order No.</span>
+        <span class="order-value">Order Value</span>
+        <span class="delivery-date">Status</span>
+        <span class="delivery-date">Delivery Date</span>
+        <span class="delivery-date">Action</span>
+      </div>
 				<%
 				User u = (User) session.getAttribute("userobj");
 				OrderDAOImpl dao = new OrderDAOImpl(DBconnect.getCon());
@@ -55,7 +66,7 @@
 						<%if(o.getStatus().equals("Cancel")||o.getStatus().equals("Delivered")){ %>
 					 <span class="order-value"></span> 
 						<%}else{ %>
-							<span class="order-value"><a href="cancelOrder?oid=<%=o.getOid() %>"><button>Cancel</button></a></span> 
+							<span class="order-value"><a href="cancelOrder?oid=<%=o.getOid() %>"><button style="padding:1rem 2rem; background: red; border-radius: 5px; color:#fff;">Cancel</button></a></span> 
 						<%} %>
 				</div>
 				<%

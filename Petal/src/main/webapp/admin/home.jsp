@@ -49,8 +49,9 @@
                                 <td>Pet Name</td>
                                 <td>Email</td>
                                 <td>Mobile</td>
-                                <td>Doctor Name</td>
                                 <td>Doctor Id</td>
+                                <td>Doctor Name</td>
+                                
                                 <td>Status</td>
                                 <td>Payment Id</td>
                             </tr>

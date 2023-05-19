@@ -68,7 +68,7 @@ const payment = () => {
 						console.log(response.error.reason);
 						console.log(response.error.metadata.order_id);
 						console.log(response.error.metadata.payment_id);
-						alert("Opps payment failed");
+						alert("Oops! payment failed");
 					});
 					rzp1.open();
 				}
@@ -90,10 +90,13 @@ const updatePaymentDetails = (payment, order_id, signature, statuss) => {
 			dataType: 'json',
 			success: function (response) {
 				alert("Order done!");
+				window.location.href = "/Petal/thankyou.jsp";
+				
 			},
 			error: function (error) {
 				console.log(error);
-				alert("Order done!");
+				alert("Somthing went wrong! Please contact with us.");
+				window.location.href = "/Petal/thankyou.jsp";
 			}
 		}
 	)

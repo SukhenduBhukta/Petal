@@ -41,6 +41,8 @@ User u=(User)session.getAttribute("userobj");
 				<div class="star">
 					<h4>3.5<i class="fas fa-star"></i></h4>
 				</div>
+				<span> Expire By:- <%=g.getExpdate() %> </span><br><br>
+				<span> Company Name:- <%=g.getCname() %> </span>
 				<h4>Product Details</h4>
 				<span> <%=g.getDescription() %> </span>
 			</div>

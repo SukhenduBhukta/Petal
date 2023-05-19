@@ -21,14 +21,17 @@ public class Appointment {
 	private String time;
 	private String link;
 	private String report;
+	private String dis;
 	public Appointment() {
 		super();
 		// TODO Auto-generated constructor stub
 	}
 	
+	
+
 	public Appointment(int id, int userid, String ownerName, String petName, String gender, String mob, String adrs,
 			String street, String city, String state, String pinCode, String email, String age, String date,
-			int doctorid, String status, String time, String link, String report) {
+			int doctorid, String status, String time, String link, String report, String dis) {
 		super();
 		this.id = id;
 		this.userid = userid;
@@ -49,7 +52,10 @@ public class Appointment {
 		this.time = time;
 		this.link = link;
 		this.report = report;
+		this.dis = dis;
 	}
+
+
 
 	public int getId() {
 		return id;
@@ -170,7 +176,20 @@ public class Appointment {
 
 	public void setReport(String report) {
 		this.report = report;
+
 	}
+
+	public String getDis() {
+		return dis;
+	}
+
+
+
+	public void setDis(String dis) {
+		this.dis = dis;
+	}
+
+
 
 	@Override
 	public String toString() {
@@ -178,8 +197,12 @@ public class Appointment {
 				+ ", Gender=" + Gender + ", mob=" + mob + ", adrs=" + adrs + ", street=" + street + ", city=" + city
 				+ ", state=" + state + ", pinCode=" + pinCode + ", email=" + email + ", age=" + age + ", date=" + date
 				+ ", doctorid=" + doctorid + ", status=" + status + ", time=" + time + ", link=" + link + ", report="
-				+ report + "]";
+				+ report + ", dis=" + dis + "]";
 	}
+
+
+
+	
 
 	
 	

@@ -20,13 +20,18 @@ User us=(User)session.getAttribute("userobj");
                 <%
                 Doctor u=(Doctor)session.getAttribute("userobj2");
                 DoctorDAOImpl dao=new DoctorDAOImpl(DBconnect.getCon());
+                    		double r=dao.DoctorStar(u.getDid());
                 String s=dao.activeIn(u.getDid());
                 if(s.equals("active")){
                 %>
+                
                 <a href="../active?did=<%=u.getDid() %>"><button style="padding: 5px 10px; background: red; color:#fff; border-radius: 30px;">Inactive</button></a>
                 <%}else{ %>
                 <a href="../inactive?did=<%=u.getDid() %>"><button style="padding: 5px 10px; background: green; color:#fff; border-radius: 30px;">Active</button></a>
                 <%} %>
+                <div class="star">
+					<h3><%=r %><i class="fas fa-star"></i></h3>
+				</div>
                 <c:if test="${not empty userobj2.pimg }">
 							<div class="profile" style="height: 6rem;width:6rem;border-radius:50%;">
 								<img src="../Documents/${userobj2.pimg }" style="height: 6rem;width:6rem;border-radius:50%;">

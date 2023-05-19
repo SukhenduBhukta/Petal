@@ -12,6 +12,8 @@
 <%@page import="com.DAO.CartDAOImpl"%>
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+	<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+	<%@page isELIgnored="false" %>
 <!DOCTYPE html>
 <html>
 <head>
@@ -27,6 +29,14 @@
 		</c:if>
 		
 		<div class="appointment_status">
+		<c:if test="${not empty succMsgs }">
+					<p style="color:green;">${succMsgs }</p>
+					<c:remove var="succMsgs" scope="session"/>
+				</c:if>
+			<c:if test="${not empty faildMsgs }">
+					<p style="color:red;">${faildMsgs }</p>
+					<c:remove var="faildMsgs" scope="session"/>
+				</c:if>
         <h1>Appointment View</h1>
         <%
         User u=(User)session.getAttribute("userobj");

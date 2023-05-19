@@ -99,11 +99,11 @@
 
 			<button type="submit">Registration</button>
 			<p>
-				Exsiting User? <a href="login.jsp">Login</a>
+				Existing User? <a href="login.jsp">Login</a>
 			</p>
 		</form>
 		<div class="doc">
-			<h3>Wellcome to PETAL</h3>
+			<h3>Welcome to PETAL</h3>
 
 		</div>
 
